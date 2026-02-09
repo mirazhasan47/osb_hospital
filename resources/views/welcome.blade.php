@@ -12,19 +12,26 @@
 
 <body class="bg-gray-100 text-gray-800">
 
-    <header class="hidden lg:block fixed top-0 w-full z-[999] bg-white shadow-md font-['Lato',_sans-serif]">
+    <header
+        class="hidden lg:block fixed top-0 w-full z-[999] bg-[#D8A96A] shadow-md font-['Lato',_sans-serif] bg-[#D8A96A]">
         <div class="max-w-7xl mx-auto px-4 h-[70px] flex items-center justify-between">
 
 
 
             <div class="flex-shrink-0">
+                <a href="#hero-1" class="flex items-center gap-4">
+                    <img src="{{ asset('pictures/osb_eye_hospital_logo.png') }}"
+                        class="w-[85px] h-[80px] object-contain" alt="header-logo">
 
-                <a href="#hero-1">
-
-                    <img src="images/logo-grey.png" width="180" height="40" alt="header-logo">
-
+                    <div class="flex flex-col justify-center border-l border-gray-300 pl-4">
+                        <span class="text-[20px] font-bold text-gray-800 leading-tight">
+                            ওএসবি চক্ষু হাসপাতাল
+                        </span>
+                        <span class="text-[12px] text-stone-900 font-medium">
+                            OSB Eye Hospital
+                        </span>
+                    </div>
                 </a>
-
             </div>
 
 
@@ -38,22 +45,22 @@
                     <li class="group relative">
 
                         <a href="#"
-                            class="px-4 py-6 text-[14.5px] font-medium text-gray-600 flex items-center group-hover:text-cyan-600 transition-colors">
+                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 flex items-center group-hover:text-cyan-600 transition-colors">
 
                             Home <span class="ml-2 border-t-4 border-x-4 border-x-transparent border-t-gray-400"></span>
 
                         </a>
 
                         <ul
-                            class="absolute top-[70px] left-0 w-48 bg-white border border-gray-100 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -rotate-x-12 group-hover:rotate-0">
+                            class="absolute top-[70px] left-0 w-48 bg-[#BF8142] border border-gray-100 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -rotate-x-12 group-hover:rotate-0">
 
                             <li><a href="demo-2.html"
-                                    class="block px-4 py-2 text-sm text-gray-500 hover:bg-cyan-600 hover:text-white hover:pl-6 transition-all">Home
+                                    class="block px-4 py-2 text-sm text-white hover:bg-cyan-600 hover:text-white hover:pl-6 transition-all">Home
 
                                     Concept #2</a></li>
 
                             <li><a href="demo-3.html"
-                                    class="block px-4 py-2 text-sm text-gray-500 hover:bg-cyan-600 hover:text-white hover:pl-6 transition-all">Home
+                                    class="block px-4 py-2 text-sm text-white hover:bg-cyan-600 hover:text-white hover:pl-6 transition-all">Home
 
                                     Concept #3</a></li>
 
@@ -66,7 +73,7 @@
                     <li class="group static">
 
                         <a href="#"
-                            class="px-4 py-6 text-[14.5px] font-medium text-gray-600 flex items-center group-hover:text-cyan-600 transition-colors">
+                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 flex items-center group-hover:text-cyan-600 transition-colors">
 
                             Pages <span
                                 class="ml-2 border-t-4 border-x-4 border-x-transparent border-t-gray-400"></span>
@@ -74,23 +81,23 @@
                         </a>
 
                         <div
-                            class="absolute top-[70px] left-0 w-full bg-white border-t border-gray-100 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -rotate-x-12 group-hover:rotate-0 px-8 py-10">
+                            class="absolute top-[70px] left-0 w-full bg-[#BF8142] border-t border-gray-100 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -rotate-x-12 group-hover:rotate-0 px-8 py-10">
 
                             <div class="max-w-7xl mx-auto grid grid-cols-4 gap-8">
 
                                 <div>
 
-                                    <h3 class="text-lg font-bold text-gray-800 mb-4">Standard Pages:</h3>
+                                    <h3 class="text-lg font-bold text-white mb-4">Standard Pages:</h3>
 
                                     <ul class="space-y-1">
 
                                         <li><a href="about-us.html"
-                                                class="block py-2 text-[15px] text-gray-500 border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">About
+                                                class="block py-2 text-[15px] text-white border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">About
 
                                                 Us Page</a></li>
 
                                         <li><a href="who-we-are.html"
-                                                class="block py-2 text-[15px] text-gray-500 border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Who
+                                                class="block py-2 text-[15px] text-white border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Who
 
                                                 We Are</a></li>
 
@@ -100,17 +107,17 @@
 
                                 <div>
 
-                                    <h3 class="text-lg font-bold text-gray-800 mb-4">Medical Pages:</h3>
+                                    <h3 class="text-lg font-bold text-white mb-4">Medical Pages:</h3>
 
                                     <ul class="space-y-1">
 
                                         <li><a href="all-departments.html"
-                                                class="block py-2 text-[15px] text-gray-500 border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Our
+                                                class="block py-2 text-[15px] text-white border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Our
 
                                                 Departments</a></li>
 
                                         <li><a href="all-doctors.html"
-                                                class="block py-2 text-[15px] text-gray-500 border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Meet
+                                                class="block py-2 text-[15px] text-white border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Meet
 
                                                 the Doctors</a></li>
 
@@ -120,12 +127,12 @@
 
                                 <div>
 
-                                    <h3 class="text-lg font-bold text-gray-800 mb-4">Special Pages:</h3>
+                                    <h3 class="text-lg font-bold text-white mb-4">Special Pages:</h3>
 
                                     <ul class="space-y-1">
 
                                         <li><a href="appointment.html"
-                                                class="block py-2 text-[15px] text-gray-500 border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Make
+                                                class="block py-2 text-[15px] text-white border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Make
 
                                                 an Appointment</a></li>
 
@@ -135,12 +142,12 @@
 
                                 <div>
 
-                                    <h3 class="text-lg font-bold text-gray-800 mb-4">Auxiliary Pages:</h3>
+                                    <h3 class="text-lg font-bold text-white mb-4">Auxiliary Pages:</h3>
 
                                     <ul class="space-y-1">
 
                                         <li><a href="blog-listing.html"
-                                                class="block py-2 text-[15px] text-gray-500 border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Blog
+                                                class="block py-2 text-[15px] text-white border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Blog
 
                                                 Listing</a></li>
 
@@ -158,49 +165,49 @@
 
                     <li class="group static">
                         <a href="#"
-                            class="px-4 py-6 text-[14.5px] font-medium text-gray-600 flex items-center group-hover:text-cyan-600 transition-colors">
+                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 flex items-center group-hover:text-cyan-600 transition-colors">
                             Mega Menu
                             <span class="ml-2 border-t-4 border-x-4 border-x-transparent border-t-gray-400"></span>
                         </a>
 
                         <div
-                            class="absolute top-[70px] left-0 w-full bg-white border-t border-gray-100 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -rotate-x-12 group-hover:rotate-0 px-8 py-10">
+                            class="absolute top-[70px] left-0 w-full bg-[#BF8142] border-t border-gray-100 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -rotate-x-12 group-hover:rotate-0 px-8 py-10">
 
                             <div class="max-w-7xl mx-auto flex flex-wrap lg:flex-nowrap gap-8">
 
                                 <div class="w-1/4">
-                                    <h3 class="text-lg font-bold text-gray-800 mb-4">Quick Links:</h3>
+                                    <h3 class="text-lg font-bold text-white mb-4">Quick Links:</h3>
                                     <ul class="space-y-1">
                                         <li><a href="#"
-                                                class="block py-2 text-[15px] text-gray-500 border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Online
+                                                class="block py-2 text-[15px] text-white border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Online
                                                 Patients Portal</a></li>
                                         <li><a href="#"
-                                                class="block py-2 text-[15px] text-gray-500 border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Insurance
+                                                class="block py-2 text-[15px] text-white border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Insurance
                                                 Info</a></li>
                                         <li><a href="#"
-                                                class="block py-2 text-[15px] text-gray-500 border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Medical
+                                                class="block py-2 text-[15px] text-white border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Medical
                                                 Services</a></li>
                                         <li><a href="#"
-                                                class="block py-2 text-[15px] text-gray-500 border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Find
+                                                class="block py-2 text-[15px] text-white border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Find
                                                 a Doctor</a></li>
                                     </ul>
                                 </div>
 
                                 <div class="w-5/12">
-                                    <h3 class="text-lg font-bold text-gray-800 mb-4">Featured News:</h3>
+                                    <h3 class="text-lg font-bold text-white mb-4">Featured News:</h3>
                                     <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
                                         class="w-full rounded h-48 object-cover" alt="Medical News Featured">
-                                    <h5 class="mt-4 text-md font-bold text-gray-700 hover:underline cursor-pointer">
+                                    <h5 class="mt-4 text-md font-bold text-white hover:underline cursor-pointer">
                                         5 Benefits of integrative medicine
                                     </h5>
-                                    <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                                    <p class="text-xs text-white mt-2 leading-relaxed">
                                         Porta semper lacus cursus, feugiat primis ultrice in ligula risus auctor tempus
                                         feugiat dolor.
                                     </p>
                                 </div>
 
                                 <div class="w-1/3">
-                                    <h3 class="text-lg font-bold text-gray-800 mb-4">Latest News:</h3>
+                                    <h3 class="text-lg font-bold text-white mb-4">Latest News:</h3>
 
                                     <div class="space-y-4 max-h-[400px] overflow-y-auto pr-4 custom-news-scrollbar">
 
@@ -211,10 +218,10 @@
                                                 alt="News">
                                             <div>
                                                 <a href="#"
-                                                    class="text-sm text-gray-600 hover:text-cyan-600 hover:underline font-medium leading-tight block">
+                                                    class="text-sm text-white hover:text-cyan-600 hover:underline font-medium leading-tight block">
                                                     Etiam sapien risus ante auctor tempus...
                                                 </a>
-                                                <p class="text-xs text-gray-400 mt-1">43 Comments</p>
+                                                <p class="text-xs text-white-400 mt-1">43 Comments</p>
                                             </div>
                                         </div>
 
@@ -225,10 +232,10 @@
                                                 alt="News">
                                             <div>
                                                 <a href="#"
-                                                    class="text-sm text-gray-600 hover:text-cyan-600 hover:underline font-medium leading-tight block">
+                                                    class="text-sm text-white hover:text-cyan-600 hover:underline font-medium leading-tight block">
                                                     Maecenas vel elit at purus lacinia...
                                                 </a>
-                                                <p class="text-xs text-gray-400 mt-1">12 Comments</p>
+                                                <p class="text-xs text-white-400 mt-1">12 Comments</p>
                                             </div>
                                         </div>
 
@@ -239,10 +246,10 @@
                                                 alt="News">
                                             <div>
                                                 <a href="#"
-                                                    class="text-sm text-gray-600 hover:text-cyan-600 hover:underline font-medium leading-tight block">
+                                                    class="text-sm text-white hover:text-cyan-600 hover:underline font-medium leading-tight block">
                                                     New advancements in Cardiology 2024...
                                                 </a>
-                                                <p class="text-xs text-gray-400 mt-1">18 Comments</p>
+                                                <p class="text-xs text-white-400 mt-1">18 Comments</p>
                                             </div>
                                         </div>
 
@@ -253,10 +260,10 @@
                                                 alt="News">
                                             <div>
                                                 <a href="#"
-                                                    class="text-sm text-gray-600 hover:text-cyan-600 hover:underline font-medium leading-tight block">
+                                                    class="text-sm text-white hover:text-cyan-600 hover:underline font-medium leading-tight block">
                                                     Understanding the future of Telehealth...
                                                 </a>
-                                                <p class="text-xs text-gray-400 mt-1">25 Comments</p>
+                                                <p class="text-xs text-white-400 mt-1">25 Comments</p>
                                             </div>
                                         </div>
 
@@ -267,10 +274,10 @@
                                                 alt="News">
                                             <div>
                                                 <a href="#"
-                                                    class="text-sm text-gray-600 hover:text-cyan-600 hover:underline font-medium leading-tight block">
+                                                    class="text-sm text-white hover:text-cyan-600 hover:underline font-medium leading-tight block">
                                                     Global Health Summit highlights...
                                                 </a>
-                                                <p class="text-xs text-gray-400 mt-1">9 Comments</p>
+                                                <p class="text-xs text-white-400 mt-1">9 Comments</p>
                                             </div>
                                         </div>
 
@@ -305,7 +312,7 @@
 
 
                     <li><a href="#"
-                            class="px-4 py-6 text-[14.5px] font-medium text-gray-600 hover:text-cyan-600 transition-colors">Simple
+                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 hover:text-cyan-600 transition-colors">Simple
 
                             Link</a></li>
 
@@ -314,7 +321,7 @@
                     <li class="pl-4">
 
                         <a href="appointment.html"
-                            class="bg-cyan-600 text-white px-5 py-2.5 rounded text-[14.5px] font-medium hover:bg-cyan-700 transition-colors">
+                            class="bg-cyan-600 text-stone-900 px-5 py-2.5 rounded text-[14.5px] font-medium hover:bg-cyan-700 transition-colors">
 
                             Make an Appointment
 
@@ -381,6 +388,76 @@
             </nav>
         </div>
     </header>
+
+
+
+
+
+
+    <div x-data="{ 
+    activeSlide: 1, 
+    slides: [
+        { id: 1, title: 'NEURAL NETS', tag: 'Architecture', desc: 'Designing next-gen autonomous systems.', img: 'https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=2000' },
+        { id: 2, title: 'DEEP SPACE', tag: 'Exploration', desc: 'New frontiers in orbital logistics.', img: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2000' },
+        { id: 3, title: 'QUANTUM OPS', tag: 'Computing', desc: 'Secure sub-atomic data processing.', img: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2000' }
+    ],
+    timer: null,
+    startTimer() {
+        this.timer = setInterval(() => { this.next() }, 2000)
+    },
+    stopTimer() {
+        clearInterval(this.timer)
+    },
+    next() { this.activeSlide = this.activeSlide === this.slides.length ? 1 : this.activeSlide + 1 },
+    prev() { this.activeSlide = this.activeSlide === 1 ? this.slides.length : this.activeSlide - 1 },
+    init() { this.startTimer() }
+}" @mouseleave="startTimer()"
+        class="relative h-[80vh] min-h-[600px] w-full overflow-hidden bg-black group">
+
+        <template x-for="slide in slides" :key="slide.id">
+            <div x-show="activeSlide === slide.id" x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="opacity-0 scale-105" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0" class="absolute inset-0">
+
+                <img :src="slide.img" class="absolute inset-0 w-full h-full object-cover" alt="">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent"></div>
+
+                <div class="relative h-full flex items-center px-8 md:px-20">
+                    <div class="max-w-xl">
+                        <h2 class="text-white text-6xl md:text-8xl font-black italic tracking-tighter leading-none mb-4"
+                            x-text="slide.title"></h2>
+                        <p class="text-gray-300 text-lg md:text-xl font-medium" x-text="slide.desc"></p>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <div class="absolute inset-0 flex items-center justify-between px-4 z-30 pointer-events-none">
+            <button @click="prev()"
+                class="pointer-events-auto p-3 rounded-full bg-white/10 hover:bg-white text-white hover:text-black transition-all duration-300 backdrop-blur-sm">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button @click="next()"
+                class="pointer-events-auto p-3 rounded-full bg-white/10 hover:bg-white text-white hover:text-black transition-all duration-300 backdrop-blur-sm">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex space-x-3 z-30">
+            <template x-for="slide in slides" :key="slide.id">
+                <button @click="activeSlide = slide.id" class="h-1.5 transition-all duration-500 rounded-full"
+                    :class="activeSlide === slide.id ? 'w-12 bg-white' : 'w-4 bg-white/30 hover:bg-white/50'"></button>
+            </template>
+        </div>
+    </div>
+
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     {{-- Hero Section --}}
     <section class="bg-white">
         <div class="max-w-7xl mx-auto px-6 py-10">
