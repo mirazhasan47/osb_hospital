@@ -8,6 +8,24 @@
 
     {{-- Tailwind via Vite --}}
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+    <style>
+        /* Ensures smooth parallax scrolling on compatible browsers */
+        .parallax-footer {
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Mobile adjustment: parallax can be taxing on mobile CPUs, 
+           so we often disable 'fixed' for smoother scrolling on small screens */
+        @media (max-width: 768px) {
+            .parallax-footer {
+                background-attachment: scroll;
+            }
+        }
+    </style>
 </head>
 
 <body class="text-gray-800">
@@ -510,83 +528,6 @@
 
 
 
-    <section id="about-1" class="relative z-10 bg-[#FAEBD7] py-16 px-4 rounded-xl">
-        <div class="container mx-auto px-0 w-11/12">
-            <div class="flex flex-wrap">
-
-                <!-- ABOUT BOX #1 (lightest gold) -->
-                <div id="abox-1" class="w-full sm:w-1/2 lg:w-1/4">
-                    <div
-                        class="h-80 bg-[#F0D9A2] rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none text-stone-900 flex flex-col justify-between p-8 sm:p-12">
-                        <h5 class="text-xl font-bold mb-6">Working Time</h5>
-                        <table class="w-full text-stone-900 border-separate border-spacing-y-2">
-                            <tbody>
-                                <tr class="border-b border-dashed border-stone-900/60">
-                                    <td>Mon – Wed</td>
-                                    <td>-</td>
-                                    <td class="text-right font-medium">9:00 AM - 7:00 PM</td>
-                                </tr>
-                                <tr class="border-b border-dashed border-stone-900/60">
-                                    <td>Thursday</td>
-                                    <td>-</td>
-                                    <td class="text-right font-medium">9:00 AM - 6:30 PM</td>
-                                </tr>
-                                <tr class="border-b border-dashed border-stone-900/60">
-                                    <td>Friday</td>
-                                    <td>-</td>
-                                    <td class="text-right font-medium">9:00 AM - 6:00 PM</td>
-                                </tr>
-                                <tr>
-                                    <td>Sun - Sun</td>
-                                    <td>-</td>
-                                    <td class="text-right font-medium">CLOSED</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- ABOUT BOX #2 (slightly darker) -->
-                <div id="abox-2" class="w-full sm:w-1/2 lg:w-1/4">
-                    <div
-                        class="h-80 bg-[#D8A96A] text-stone-900 flex flex-col justify-between p-8 sm:p-12 rounded-none lg:rounded-none">
-                        <h5 class="text-xl font-bold mb-6">Doctors Timetable</h5>
-                        <p class="text-sm mb-6">An magnis nulla dolor at sapien augue erat iaculis purus tempor magna
-                            ipsum and vitae a purus primis ipsum magna ipsum</p>
-                        <a href="timetable.html"
-                            class="mt-auto inline-block text-stone-900 border-2 border-stone-900 rounded-lg px-6 py-3 text-sm hover:bg-stone-900 hover:text-[#D8A96A] transition-all">View
-                            Timetable</a>
-                    </div>
-                </div>
-
-                <!-- ABOUT BOX #3 (darker brown) -->
-                <div id="abox-3" class="w-full sm:w-1/2 lg:w-1/4">
-                    <div
-                        class="h-80 bg-[#BF8142] text-stone-900 flex flex-col justify-between p-8 sm:p-12 rounded-none lg:rounded-none">
-                        <h5 class="text-xl font-bold mb-6">Appointments</h5>
-                        <p class="text-sm mb-6">An magnis nulla dolor at sapien augue erat iaculis purus tempor magna
-                            ipsum and vitae a purus primis ipsum magna ipsum</p>
-                        <a href="#"
-                            class="mt-auto inline-block text-stone-900 border-2 border-stone-900 rounded-lg px-6 py-3 text-sm hover:bg-stone-900 hover:text-[#BF8142] transition-all">Make
-                            an Appointment</a>
-                    </div>
-                </div>
-
-                <!-- ABOUT BOX #4 (darkest brown) -->
-                <div id="abox-4" class="w-full sm:w-1/2 lg:w-1/4">
-                    <div
-                        class="h-80 bg-[#8C5E2C] text-stone-900 flex flex-col justify-between p-8 sm:p-12 rounded-b-lg lg:rounded-r-lg lg:rounded-bl-none">
-                        <h5 class="text-xl font-bold mb-6">Emergency Cases</h5>
-                        <h5 class="text-lg font-bold flex items-center mb-5"><i class="fas fa-phone mr-2"></i>
-                            1-800-123-4560</h5>
-                        <p class="text-sm">An magnis nulla dolor sapien augue erat iaculis purus tempor magna ipsum and
-                            vitae a purus primis ipsum magna ipsum</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
 
     <section id="doctors-1" class="py-24 bg-[#FAEBD7]">
@@ -594,8 +535,8 @@
 
             <!-- SECTION TITLE -->
             <div class="text-center mb-16">
-                <h3 class="text-4xl font-bold text-[#004861] mb-5">Hospitall Management Committee</h3>
-                <p class="text-gray-500 px-10 md:px-48">
+                <h3 class="text-4xl font-bold text-stone mb-5">Hospital Management Committee</h3>
+                <p class="text-stone px-10 md:px-48">
                     Our Management Committee brings together seasoned healthcare leaders dedicated to strategic
                     excellence. By integrating clinical expertise with robust administrative oversight, we ensure our
                     facility remains at the forefront of modern medicine.
@@ -605,13 +546,10 @@
             <div class="flex flex-wrap -mx-4">
 
                 <!-- DOCTOR #1 -->
-                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-12">
-                    <!-- Image container with relative group -->
-                    <div class="relative overflow-hidden">
+                <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-12">
+                    <div class="relative overflow-hidden h-80">
                         <img src="{{ asset('pictures/doctorOne.jpg') }}" alt="doctor-foto"
-                            class="w-full h-auto transform scale-110 group-hover:scale-100 transition-transform duration-500">
-
-                        <!-- Overlay restricted to image -->
+                            class="w-full h-full object-cover transform scale-110 hover:scale-100 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-[#00a3c8]/85 opacity-0 hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
                             <a href="doctor-1.html"
@@ -620,23 +558,27 @@
                             </a>
                         </div>
                     </div>
-
-                    <!-- Meta/text outside image container -->
                     <div class="pt-4">
-                        <h5 class="text-lg font-bold text-[#004861] mb-1">Jonathan Barnes D.M.</h5>
-                        <span class="text-[#00a3c8] block mb-2">Chief Medical Officer</span>
+                        <h5 class="text-lg font-bold text-stone mb-1">Prof. Md. Shahabuddin</h5>
+                        <span class="text-[#00a3c8] block mb-2">Convener</span>
                         <p class="text-gray-600 text-sm">
-                            Donec vel sapien augue integer turpis cursus porta, mauris sed augue luctus magna dolor
-                            luctus ipsum neque
+                            Welcome to the website of Opthalmological Society Of Bangladesh (OSB) which was developed by
+                            the Ophthalmologists of Bangladesh in 1972. The aim of the society is to work for the
+                            betterment of Ophthalmologists of Bangladesh as well as to work for the betterment of
+                            Ophthalmology in Bangladesh.</p>
+                        <p class="text-gray-600 text-sm">
+                            বাংলাদেশের প্রায় ৮ লক্ষ মানুষ অন্ধত্বের শিকার এবং প্রতি বছর প্রায় ২ লক্ষ মানুষ নতুন করে অন্ধ
+                            হচ্ছে। আমরা ২০৩০ সালের মধ্যে সবার চোখের দৃষ্টি ফিরিয়ে দিতে অঙ্গীকারবদ্ধ। বাংলাদেশের সকল
+                            চক্ষু চিকিৎসকগণ দেশের সকলের চক্ষু চিকিৎসা সেবা নিশ্চিত করতে বদ্ধপরিকর।
                         </p>
                     </div>
                 </div>
 
                 <!-- DOCTOR #2 -->
-                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-12">
-                    <div class="relative overflow-hidden">
+                <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-12">
+                    <div class="relative overflow-hidden h-80">
                         <img src="{{ asset('pictures/doctorTwo.jpg') }}" alt="doctor-foto"
-                            class="w-full h-auto transform scale-110 hover:scale-100 transition-transform duration-500">
+                            class="w-full h-full object-cover transform scale-110 hover:scale-100 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-[#00a3c8]/85 opacity-0 hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
                             <a href="doctor-2.html"
@@ -646,20 +588,26 @@
                         </div>
                     </div>
                     <div class="pt-4">
-                        <h5 class="text-lg font-bold text-[#004861] mb-1">Hannah Harper D.M.</h5>
-                        <span class="text-[#00a3c8] block mb-2">Anesthesiologist</span>
+                        <h5 class="text-lg font-bold text-stone mb-1">Prof. Md. Zinnu Rain (Newton)</h5>
+                        <span class="text-[#00a3c8] block mb-2">Member Secretary</span>
                         <p class="text-gray-600 text-sm">
-                            Donec vel sapien augue integer turpis cursus porta, mauris sed augue luctus magna dolor
-                            luctus ipsum neque
+                            At the very beginning, I respectfully remember those who, out of love for their country,
+                            sacrificed their lives in 1971 to bring us the red sun of independence — giving the nation
+                            the red and green flag of freedom. I also remember with deep respect my honorable teachers
+                            and ophthalmologists who have departed from us forever.</p>
+                        <p class="text-gray-600 text-sm">
+                            দেশের বিভিন্ন হাসপাতাল এবং মেডিকেল কলেজগুলোতে শূন্যপদ পূরণ, Post Graduate ছাত্রের সংখ্যা
+                            বৃদ্ধি, গবেষণার ক্ষেত্রে অনুদান, প্রতিটি মেডিকেল কলেজ এবং ইনস্টিটিউট অফথালমোলজী
+                            সাব-স্পেশালিটি পদ সৃষ্টিসহ চিকিৎসক নিয়োগের জন্য সরকারের নিকট আবেদন জানাচ্ছি।
                         </p>
                     </div>
                 </div>
 
                 <!-- DOCTOR #3 -->
-                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-12">
-                    <div class="relative overflow-hidden">
+                <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-12">
+                    <div class="relative overflow-hidden h-80">
                         <img src="{{ asset('pictures/doctorThree.jpg') }}" alt="doctor-foto"
-                            class="w-full h-auto transform scale-110 hover:scale-100 transition-transform duration-500">
+                            class="w-full h-full object-cover transform scale-110 hover:scale-100 transition-transform duration-500">
                         <div
                             class="absolute inset-0 bg-[#00a3c8]/85 opacity-0 hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
                             <a href="doctor-3.html"
@@ -669,34 +617,18 @@
                         </div>
                     </div>
                     <div class="pt-4">
-                        <h5 class="text-lg font-bold text-[#004861] mb-1">Matthew Anderson D.M.</h5>
-                        <span class="text-[#00a3c8] block mb-2">Cardiology</span>
+                        <h5 class="text-lg font-bold text-stone mb-1">Dr Syeed Mehbub Ul Kadir</h5>
+                        <span class="text-[#00a3c8] block mb-2">Consultant Orbit, Aesthetic & Ocluplastic
+                            Surgeon.</span>
                         <p class="text-gray-600 text-sm">
-                            Donec vel sapien augue integer turpis cursus porta, mauris sed augue luctus magna dolor
-                            luctus ipsum neque
-                        </p>
-                    </div>
-                </div>
-
-                <!-- DOCTOR #4 -->
-                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-12">
-                    <div class="relative overflow-hidden">
-                        <img src="{{ asset('pictures/doctorFour.jpg') }}" alt="doctor-foto"
-                            class="w-full h-auto transform scale-110 hover:scale-100 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-[#00a3c8]/85 opacity-0 hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
-                            <a href="doctor-4.html"
-                                class="bg-white text-black px-4 py-2 rounded opacity-100 transform translate-y-0 transition-all duration-400">
-                                View More Info
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pt-4">
-                        <h5 class="text-lg font-bold text-[#004861] mb-1">Megan Coleman D.M.</h5>
-                        <span class="text-[#00a3c8] block mb-2">Neurosurgeon</span>
+                            At the very beginning, I respectfully remember those who, out of love for their country,
+                            sacrificed their lives in 1971 to bring us the red sun of independence — giving the nation
+                            the red and green flag of freedom. I also remember with deep respect my honorable teachers
+                            and ophthalmologists who have departed from us forever.</p>
                         <p class="text-gray-600 text-sm">
-                            Donec vel sapien augue integer turpis cursus porta, mauris sed augue luctus magna dolor
-                            luctus ipsum neque
+                            দেশের বিভিন্ন হাসপাতাল এবং মেডিকেল কলেজগুলোতে শূন্যপদ পূরণ, Post Graduate ছাত্রের সংখ্যা
+                            বৃদ্ধি, গবেষণার ক্ষেত্রে অনুদান, প্রতিটি মেডিকেল কলেজ এবং ইনস্টিটিউট অফথালমোলজী
+                            সাব-স্পেশালিটি পদ সৃষ্টিসহ চিকিৎসক নিয়োগের জন্য সরকারের নিকট আবেদন জানাচ্ছি।
                         </p>
                     </div>
                 </div>
@@ -713,6 +645,8 @@
 
         </div>
     </section>
+
+
 
 
 
@@ -793,18 +727,62 @@
 
 
 
-    {{-- Hero Section --}}
-    <section class="bg-white">
-        <div class="max-w-7xl mx-auto px-6 py-10">
-            <img src="/images/hero.jpg" alt="Conference" class="w-full h-[420px] object-cover rounded-md" />
+    <!-- Include Alpine.js for modal functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-            <div class="mt-4 border-t-4 border-indigo-700 pt-3">
-                <p class="text-sm text-indigo-700 font-medium">
-                    Enhancing eye care through consultancy and capacity building
-                </p>
+    <section class="py-24 bg-[#FAEBD7]" x-data="{ open: false, activeImage: '' }">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-red-600 uppercase font-medium border-l-4 border-red-600 pl-3">Our Photo Gallery</span>
+                <h2 class="text-4xl font-bold mt-4">We are Dedicated to <strong>Helping Our Patients</strong></h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer"
+                    @click="activeImage='https://visioneyebd.org/storage/files/Gallery/1739260930WhatsAppImage2025-02-10at231941042fa774.jpg'; open = true">
+                    <img src="https://visioneyebd.org/storage/files/Gallery/1739260930WhatsAppImage2025-02-10at231941042fa774.jpg"
+                        alt="Patient"
+                        class="w-full h-64 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="px-4 py-2 bg-red-600 text-white font-semibold rounded shadow-lg">View</span>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer"
+                    @click="activeImage='https://visioneyebd.org/storage/files/Gallery/1739261048WhatsAppImage2025-02-10at2319390b76b8e0.jpg'; open = true">
+                    <img src="https://visioneyebd.org/storage/files/Gallery/1739261048WhatsAppImage2025-02-10at2319390b76b8e0.jpg"
+                        alt="Patient"
+                        class="w-full h-64 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
+
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="px-4 py-2 bg-red-600 text-white font-semibold rounded shadow-lg">View</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div x-show="open" x-transition.opacity
+                class="fixed inset-0 bg-black/90 flex items-center justify-center z-[9999] p-4"
+                @keydown.escape.window="open = false" style="display: none;">
+                <div class="relative max-w-5xl w-full flex justify-center" @click.outside="open = false">
+                    <img :src="activeImage" class="max-h-[90vh] w-auto rounded-lg shadow-2xl border-4 border-white/10">
+                    <button @click="open = false"
+                        class="absolute -top-10 right-0 text-white text-4xl hover:text-red-500 transition-colors">&times;</button>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="https://visioneyebd.org/gallery"
+                    class="text-red-600 underline font-medium hover:text-red-700">View All Gallery</a>
             </div>
         </div>
     </section>
+
+
 
     {{-- Services Grid --}}
     <section class="max-w-7xl mx-auto px-6 py-12">
@@ -875,46 +853,133 @@
     </section>
 
     {{-- Footer --}}
-    <footer class="bg-gray-300 text-sm">
-        <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="parallax-footer relative bg-[#D8A96A] text-black"
+        style="background-image: linear-gradient(rgba(216, 169, 106, 0.85), rgba(216, 169, 106, 0.9)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000');">
 
-            {{-- Address --}}
-            <div>
-                <h4 class="font-semibold mb-2">ARAVIND EYE HOSPITAL</h4>
-                <p>
-                    1, Anna Nagar, Madurai, Tamil Nadu – 625 020, India
-                </p>
-                <p>Ph: +91 452 435 6100</p>
-                <p>Email: patientcare@aravind.org</p>
+        <div class="max-w-7xl mx-auto px-6 py-20">
+            <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+
+                <div>
+                    <img src="images/logo-black.svg" alt="Logo" class="mb-6 w-44">
+                    <p class="text-black/80 text-sm mb-6">
+                        ClinicMaster Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit, Sed Diam
+                    </p>
+
+                    <div
+                        class="flex items-center gap-4 bg-white/50 backdrop-blur-sm text-black p-4 rounded-xl shadow-md border border-black/10">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Reference_icon.svg"
+                            class="w-8" alt="Google">
+                        <div>
+                            <div class="flex items-center gap-1 text-black">
+                                <i class="fa fa-star text-xs"></i><i class="fa fa-star text-xs"></i><i
+                                    class="fa fa-star text-xs"></i><i class="fa fa-star text-xs"></i><i
+                                    class="fa fa-star text-xs"></i>
+                                <span class="ml-2 text-sm font-bold">(4.8)</span>
+                            </div>
+                            <p class="text-[10px] uppercase tracking-wider text-black/60 font-bold">12k+ ratings on
+                                Google</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2
+                        class="text-lg font-bold mb-5 relative inline-block after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-black after:-bottom-2 after:left-0">
+                        Quick Links</h2>
+                    <ul class="space-y-3 text-sm text-black/80 mt-4 font-medium">
+                        <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-all">About
+                                Us</a></li>
+                        <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-all">Our
+                                Services</a></li>
+                        <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-all">Our
+                                Team</a></li>
+                        <li><a href="#"
+                                class="hover:text-black hover:translate-x-1 inline-block transition-all">Appointments</a>
+                        </li>
+                        <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-all">Contact
+                                Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2
+                        class="text-lg font-bold mb-5 relative inline-block after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-black after:-bottom-2 after:left-0">
+                        Contact Us</h2>
+                    <ul class="space-y-4 text-sm mt-4 font-medium">
+                        <li class="flex items-center gap-3 border-b border-black/10 pb-3">
+                            <i class="fa-regular fa-envelope"></i>
+                            <a href="mailto:contact@company.com" class="hover:underline">contact@company.com</a>
+                        </li>
+                        <li class="flex items-center gap-3 border-b border-black/10 pb-3">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <a href="tel:+11234567890" class="hover:underline">(414) 687 - 5892</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1"></i>
+                            <span>794 Mcallister St <br> San Francisco, 94102</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2
+                        class="text-lg font-bold mb-5 relative inline-block after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-black after:-bottom-2 after:left-0">
+                        Newsletter</h2>
+                    <p class="text-sm text-black/80 mb-4 mt-4 font-medium">
+                        Subscribe our newsletter to get the latest updates
+                    </p>
+
+                    <form class="relative mb-8">
+                        <input type="email" placeholder="Email Address"
+                            class="w-full rounded-xl py-4 pl-5 pr-14 text-black outline-none ring-4 ring-black/10 border-2 border-black shadow-xl transition-all bg-white/90 focus:bg-white"
+                            required>
+                        <button type="submit"
+                            class="absolute right-2 top-1/2 -translate-y-1/2 bg-black hover:bg-gray-800 text-[#D8A96A] w-10 h-10 rounded-lg flex items-center justify-center transition-all shadow-md">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+
+                    <div class="flex gap-3 justify-center lg:justify-start">
+                        <a href="#"
+                            class="w-10 h-10 bg-black text-[#D8A96A] hover:bg-white hover:text-black transition-all duration-300 rounded-lg flex items-center justify-center border border-black">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-black text-[#D8A96A] hover:bg-white hover:text-black transition-all duration-300 rounded-lg flex items-center justify-center border border-black">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-black text-[#D8A96A] hover:bg-white hover:text-black transition-all duration-300 rounded-lg flex items-center justify-center border border-black">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-black text-[#D8A96A] hover:bg-white hover:text-black transition-all duration-300 rounded-lg flex items-center justify-center border border-black">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
+        </div>
 
-            {{-- Services --}}
-            <div>
-                <h4 class="font-semibold mb-2">Our Services</h4>
-                <ul class="space-y-1">
-                    <li>Hospital Locations</li>
-                    <li>Speciality Clinics</li>
-                    <li>Outreach</li>
-                    <li>Tele-Ophthalmology</li>
-                    <li>Consultancy (LAICO)</li>
+        <div class="border-t border-black/10 bg-black/5">
+            <div
+                class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4 text-xs text-center lg:flex-row lg:justify-between lg:text-sm font-semibold">
+                <p class="text-black/70">
+                    © 2026 <a href="#" class="text-black hover:underline">DexignZone</a> Theme. All Rights Reserved.
+                </p>
+
+                <ul class="flex justify-center gap-6 text-black/70">
+                    <li><a href="#" class="hover:text-black underline-offset-4 hover:underline transition-colors">Terms
+                            & Conditions</a></li>
+                    <li><a href="#"
+                            class="hover:text-black underline-offset-4 hover:underline transition-colors">Privacy
+                            Policy</a></li>
                 </ul>
             </div>
-
-            {{-- Quote --}}
-            <div class="italic text-gray-700">
-                “Intelligence and capability are not enough.
-                There must be the joy of doing something beautiful.”
-                <br>
-                <span class="not-italic font-medium block mt-2">
-                    – Dr. G. Venkataswamy
-                </span>
-            </div>
-        </div>
-
-        <div class="text-center text-xs text-gray-600 py-4 border-t border-gray-400">
-            © 2025 Aravind Eye Care System | All rights reserved
         </div>
     </footer>
+
 
 </body>
 
