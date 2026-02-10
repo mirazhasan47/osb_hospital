@@ -10,13 +10,11 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="text-gray-800">
 
     <header
         class="hidden lg:block fixed top-0 w-full z-[999] bg-[#D8A96A] shadow-md font-['Lato',_sans-serif] bg-[#D8A96A]">
         <div class="max-w-7xl mx-auto px-4 h-[70px] flex items-center justify-between">
-
-
 
             <div class="flex-shrink-0">
                 <a href="#hero-1" class="flex items-center gap-4">
@@ -51,8 +49,7 @@
 
                         </a>
 
-                        <ul
-                            class="absolute top-[70px] left-0 w-48 bg-[#BF8142] border border-gray-100 shadow-xl
+                        <ul class="absolute top-[70px] left-0 w-48 bg-[#BF8142] border border-gray-100 shadow-xl
          opacity-0 invisible
          translate-y-4 scale-95
          group-hover:opacity-100 group-hover:visible
@@ -408,34 +405,49 @@
 
 
     <div x-data="{ 
-    activeSlide: 1, 
-    slides: [
-        { 
-            id: 1, 
-            title: 'NEURAL NETS', 
-            desc: 'Next-gen autonomous systems.', 
-            img: '{{ asset('pictures/osb_slider_image_one.png') }}'
+        activeSlide: 1, 
+        slides: [
+            { 
+                id: 1, 
+                title: '', 
+                desc: '', 
+                img: '{{ asset('pictures/osb_slider_image_one.png') }}'
+            },
+            { 
+                id: 2, 
+                title: '', 
+                desc: '', 
+                img: '{{ asset('pictures/osb_slider_image_two.jpg') }}'
+            },
+            { 
+                id: 3, 
+                title: 'QUANTUM OPS', 
+                desc: 'Sub-atomic data processing.', 
+                img: '{{ asset('pictures/osb_slider_image_three.jpeg') }}'
+            }
+        ],
+        timer: null,
+        startTimer() {
+            this.stopTimer(); // Clear existing timer first
+            this.timer = setInterval(() => {
+                this.next();
+            }, 8000);
         },
-        { 
-            id: 2, 
-            title: 'DEEP SPACE', 
-            desc: 'Frontiers in orbital logistics.', 
-            img: '{{ asset('pictures/osb_slider_image_two.jpg') }}'
+        stopTimer() {
+            if (this.timer) {
+                clearInterval(this.timer);
+                this.timer = null;
+            }
         },
-        { 
-            id: 3, 
-            title: 'QUANTUM OPS', 
-            desc: 'Sub-atomic data processing.', 
-            img: '{{ asset('pictures/osb_slider_image_three.jpeg') }}'
+        next() {
+            this.activeSlide = this.activeSlide === this.slides.length ? 1 : this.activeSlide + 1;
+            this.startTimer(); // reset timer on manual navigation
+        },
+        prev() {
+            this.activeSlide = this.activeSlide === 1 ? this.slides.length : this.activeSlide - 1;
+            this.startTimer(); // reset timer on manual navigation
         }
-    ],
-    timer: null,
-    startTimer() { this.timer = setInterval(() => { this.next() }, 8000) },
-    stopTimer() { clearInterval(this.timer) },
-    next() { this.activeSlide = this.activeSlide === this.slides.length ? 1 : this.activeSlide + 1 },
-    prev() { this.activeSlide = this.activeSlide === 1 ? this.slides.length : this.activeSlide - 1 },
-    init() { this.startTimer() }
-}" @mouseenter="stopTimer()" @mouseleave="startTimer()"
+    }" x-init="startTimer()" @mouseenter="stopTimer()" @mouseleave="startTimer()"
         class="relative h-dvh min-h-[600px] w-full overflow-hidden bg-black group">
 
         <!-- Slides -->
@@ -445,8 +457,8 @@
                 x-transition:leave="transition ease-in-out duration-[3000ms]"
                 x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-105"
                 class="absolute inset-0">
-                <img :src="slide.img" class="absolute inset-0 w-full h-full object-cover brightness-[0.4]"
-                    alt="{{ $slide['title'] ?? 'Slide image' }}">
+                <img :src="slide.img" class="absolute inset-0 w-full h-full object-cover brightness-[0.8]"
+                    :alt="slide.title || 'Slide image'">
 
                 <div class="relative h-full flex items-center px-12 md:px-24 lg:px-32">
                     <div class="max-w-xl lg:max-w-2xl">
@@ -485,7 +497,8 @@
         <!-- Pagination Dots -->
         <div class="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex space-x-4 z-30">
             <template x-for="slide in slides" :key="slide.id">
-                <button @click="activeSlide = slide.id" class="h-1.5 md:h-2 transition-all duration-1000 rounded-full"
+                <button @click="activeSlide = slide.id; startTimer();"
+                    class="h-1.5 md:h-2 transition-all duration-1000 rounded-full"
                     :class="activeSlide === slide.id ? 'w-16 md:w-20 bg-white' : 'w-4 md:w-6 bg-white/30'"></button>
             </template>
         </div>
@@ -494,6 +507,290 @@
 
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+
+    <section id="about-1" class="relative z-10 bg-[#FAEBD7] py-16 px-4 rounded-xl">
+        <div class="container mx-auto px-0 w-11/12">
+            <div class="flex flex-wrap">
+
+                <!-- ABOUT BOX #1 (lightest gold) -->
+                <div id="abox-1" class="w-full sm:w-1/2 lg:w-1/4">
+                    <div
+                        class="h-80 bg-[#F0D9A2] rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none text-stone-900 flex flex-col justify-between p-8 sm:p-12">
+                        <h5 class="text-xl font-bold mb-6">Working Time</h5>
+                        <table class="w-full text-stone-900 border-separate border-spacing-y-2">
+                            <tbody>
+                                <tr class="border-b border-dashed border-stone-900/60">
+                                    <td>Mon – Wed</td>
+                                    <td>-</td>
+                                    <td class="text-right font-medium">9:00 AM - 7:00 PM</td>
+                                </tr>
+                                <tr class="border-b border-dashed border-stone-900/60">
+                                    <td>Thursday</td>
+                                    <td>-</td>
+                                    <td class="text-right font-medium">9:00 AM - 6:30 PM</td>
+                                </tr>
+                                <tr class="border-b border-dashed border-stone-900/60">
+                                    <td>Friday</td>
+                                    <td>-</td>
+                                    <td class="text-right font-medium">9:00 AM - 6:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Sun - Sun</td>
+                                    <td>-</td>
+                                    <td class="text-right font-medium">CLOSED</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ABOUT BOX #2 (slightly darker) -->
+                <div id="abox-2" class="w-full sm:w-1/2 lg:w-1/4">
+                    <div
+                        class="h-80 bg-[#D8A96A] text-stone-900 flex flex-col justify-between p-8 sm:p-12 rounded-none lg:rounded-none">
+                        <h5 class="text-xl font-bold mb-6">Doctors Timetable</h5>
+                        <p class="text-sm mb-6">An magnis nulla dolor at sapien augue erat iaculis purus tempor magna
+                            ipsum and vitae a purus primis ipsum magna ipsum</p>
+                        <a href="timetable.html"
+                            class="mt-auto inline-block text-stone-900 border-2 border-stone-900 rounded-lg px-6 py-3 text-sm hover:bg-stone-900 hover:text-[#D8A96A] transition-all">View
+                            Timetable</a>
+                    </div>
+                </div>
+
+                <!-- ABOUT BOX #3 (darker brown) -->
+                <div id="abox-3" class="w-full sm:w-1/2 lg:w-1/4">
+                    <div
+                        class="h-80 bg-[#BF8142] text-stone-900 flex flex-col justify-between p-8 sm:p-12 rounded-none lg:rounded-none">
+                        <h5 class="text-xl font-bold mb-6">Appointments</h5>
+                        <p class="text-sm mb-6">An magnis nulla dolor at sapien augue erat iaculis purus tempor magna
+                            ipsum and vitae a purus primis ipsum magna ipsum</p>
+                        <a href="#"
+                            class="mt-auto inline-block text-stone-900 border-2 border-stone-900 rounded-lg px-6 py-3 text-sm hover:bg-stone-900 hover:text-[#BF8142] transition-all">Make
+                            an Appointment</a>
+                    </div>
+                </div>
+
+                <!-- ABOUT BOX #4 (darkest brown) -->
+                <div id="abox-4" class="w-full sm:w-1/2 lg:w-1/4">
+                    <div
+                        class="h-80 bg-[#8C5E2C] text-stone-900 flex flex-col justify-between p-8 sm:p-12 rounded-b-lg lg:rounded-r-lg lg:rounded-bl-none">
+                        <h5 class="text-xl font-bold mb-6">Emergency Cases</h5>
+                        <h5 class="text-lg font-bold flex items-center mb-5"><i class="fas fa-phone mr-2"></i>
+                            1-800-123-4560</h5>
+                        <p class="text-sm">An magnis nulla dolor sapien augue erat iaculis purus tempor magna ipsum and
+                            vitae a purus primis ipsum magna ipsum</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="doctors-1" class="py-24 bg-[#FAEBD7]">
+        <div class="container w-4/5 mx-auto px-4">
+
+            <!-- SECTION TITLE -->
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-[#004861] mb-5">Hospitall Management Committee</h3>
+                <p class="text-gray-500 px-10 md:px-48">
+                    Our Management Committee brings together seasoned healthcare leaders dedicated to strategic
+                    excellence. By integrating clinical expertise with robust administrative oversight, we ensure our
+                    facility remains at the forefront of modern medicine.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap -mx-4">
+
+                <!-- DOCTOR #1 -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-12">
+                    <!-- Image container with relative group -->
+                    <div class="relative overflow-hidden">
+                        <img src="{{ asset('pictures/doctorOne.jpg') }}" alt="doctor-foto"
+                            class="w-full h-auto transform scale-110 group-hover:scale-100 transition-transform duration-500">
+
+                        <!-- Overlay restricted to image -->
+                        <div
+                            class="absolute inset-0 bg-[#00a3c8]/85 opacity-0 hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
+                            <a href="doctor-1.html"
+                                class="bg-white text-black px-4 py-2 rounded opacity-100 transform translate-y-0 transition-all duration-400">
+                                View More Info
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Meta/text outside image container -->
+                    <div class="pt-4">
+                        <h5 class="text-lg font-bold text-[#004861] mb-1">Jonathan Barnes D.M.</h5>
+                        <span class="text-[#00a3c8] block mb-2">Chief Medical Officer</span>
+                        <p class="text-gray-600 text-sm">
+                            Donec vel sapien augue integer turpis cursus porta, mauris sed augue luctus magna dolor
+                            luctus ipsum neque
+                        </p>
+                    </div>
+                </div>
+
+                <!-- DOCTOR #2 -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-12">
+                    <div class="relative overflow-hidden">
+                        <img src="{{ asset('pictures/doctorTwo.jpg') }}" alt="doctor-foto"
+                            class="w-full h-auto transform scale-110 hover:scale-100 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-[#00a3c8]/85 opacity-0 hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
+                            <a href="doctor-2.html"
+                                class="bg-white text-black px-4 py-2 rounded opacity-100 transform translate-y-0 transition-all duration-400">
+                                View More Info
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h5 class="text-lg font-bold text-[#004861] mb-1">Hannah Harper D.M.</h5>
+                        <span class="text-[#00a3c8] block mb-2">Anesthesiologist</span>
+                        <p class="text-gray-600 text-sm">
+                            Donec vel sapien augue integer turpis cursus porta, mauris sed augue luctus magna dolor
+                            luctus ipsum neque
+                        </p>
+                    </div>
+                </div>
+
+                <!-- DOCTOR #3 -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-12">
+                    <div class="relative overflow-hidden">
+                        <img src="{{ asset('pictures/doctorThree.jpg') }}" alt="doctor-foto"
+                            class="w-full h-auto transform scale-110 hover:scale-100 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-[#00a3c8]/85 opacity-0 hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
+                            <a href="doctor-3.html"
+                                class="bg-white text-black px-4 py-2 rounded opacity-100 transform translate-y-0 transition-all duration-400">
+                                View More Info
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h5 class="text-lg font-bold text-[#004861] mb-1">Matthew Anderson D.M.</h5>
+                        <span class="text-[#00a3c8] block mb-2">Cardiology</span>
+                        <p class="text-gray-600 text-sm">
+                            Donec vel sapien augue integer turpis cursus porta, mauris sed augue luctus magna dolor
+                            luctus ipsum neque
+                        </p>
+                    </div>
+                </div>
+
+                <!-- DOCTOR #4 -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-12">
+                    <div class="relative overflow-hidden">
+                        <img src="{{ asset('pictures/doctorFour.jpg') }}" alt="doctor-foto"
+                            class="w-full h-auto transform scale-110 hover:scale-100 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-[#00a3c8]/85 opacity-0 hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
+                            <a href="doctor-4.html"
+                                class="bg-white text-black px-4 py-2 rounded opacity-100 transform translate-y-0 transition-all duration-400">
+                                View More Info
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h5 class="text-lg font-bold text-[#004861] mb-1">Megan Coleman D.M.</h5>
+                        <span class="text-[#00a3c8] block mb-2">Neurosurgeon</span>
+                        <p class="text-gray-600 text-sm">
+                            Donec vel sapien augue integer turpis cursus porta, mauris sed augue luctus magna dolor
+                            luctus ipsum neque
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ALL DOCTORS BUTTON -->
+            <div class="text-center mt-12">
+                <a href="all-doctors.html"
+                    class="bg-[#00a3c8] hover:bg-[#0e8eab] text-white font-semibold px-6 py-3 rounded transition-colors duration-300">
+                    Meet All Doctors
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <section id="info-8" class="relative py-24 text-stone-900 bg-[#FAEBD7]">
+
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap items-center">
+
+                <!-- Content -->
+                <div class="w-full md:w-7/12 lg:w-5/12">
+                    <div class="bg-[#BF8142] p-8 md:p-12 md:pr-16 rounded-lg relative
+                    z-10
+                    transform translate-y-[141px] md:translate-y-0 md:translate-x-[85px]
+                    wow fadeInUp " data-wow-delay="0.4s">
+
+                        <!-- Title -->
+                        <h4 class="text-2xl md:text-3xl font-bold mb-4">Opening Hours:</h4>
+
+                        <!-- Text -->
+                        <p class="mb-6">
+                            Porta semper lacus cursus, feugiat primis ultrice ligula risus auctor tempus feugiat
+                            dolor lacinia cursus vitae massa
+                        </p>
+
+                        <!-- Table -->
+                        <table class="w-full mb-6 text-sm sm:text-base">
+                            <tbody>
+                                <tr class="border-b border-dashed border-white/60 uppercase font-extrabold text-lg">
+                                    <td>Mon – Wed</td>
+                                    <td class="px-2">-</td>
+                                    <td class="text-right">9:00 AM - 7:00 PM</td>
+                                </tr>
+                                <tr class="border-b border-dashed border-white/60 uppercase font-extrabold text-lg">
+                                    <td>Thursday</td>
+                                    <td class="px-2">-</td>
+                                    <td class="text-right">9:00 AM - 6:30 PM</td>
+                                </tr>
+                                <tr class="border-b border-dashed border-white/60 uppercase font-extrabold text-lg">
+                                    <td>Friday</td>
+                                    <td class="px-2">-</td>
+                                    <td class="text-right">9:00 AM - 6:00 PM</td>
+                                </tr>
+                                <tr class="uppercase font-extrabold text-lg">
+                                    <td>Sat – Sun</td>
+                                    <td class="px-2">-</td>
+                                    <td class="text-right">Closed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Secondary Title -->
+                        <h5 class="text-xl md:text-2xl font-bold mb-4">Need a personal health plan?</h5>
+
+                        <!-- Text -->
+                        <p>
+                            Porta semper lacus cursus, feugiat primis ultrice ligula risus auctor tempus feugiat
+                            dolor lacinia undo cursus nulla massa suscipit, luctus neque purus ipsum neque dolor primis
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Image -->
+        <div class="absolute top-0 left-0 w-full h-64 sm:h-80 md:top-0 md:left-2/5 md:w-3/5 md:h-full bg-cover bg-center"
+            style="background-image: url('{{ asset('pictures/timetable_image.jpg') }}');">
+        </div>
+    </section>
+
+
+
+
+
+
+
 
 
     {{-- Hero Section --}}
