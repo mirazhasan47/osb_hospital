@@ -498,14 +498,14 @@
         <!-- Navigation Buttons -->
         <div class="absolute inset-0 flex items-center justify-between px-6 md:px-10 lg:px-16 z-30 pointer-events-none">
             <button @click="prev()"
-                class="pointer-events-auto p-4 md:p-6 rounded-full border border-white/20 bg-black/50 hover:bg-white text-white hover:text-black transition-all duration-500 backdrop-blur-lg shadow-lg">
+                class="pointer-events-auto p-4 md:p-6 rounded-full border border-black/20 bg-black/50 hover:bg-white text-white hover:text-black transition-all duration-500 backdrop-blur-lg shadow-lg">
                 <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-width="2" d="M15 19l-7-7 7-7" />
                 </svg>
             </button>
 
             <button @click="next()"
-                class="pointer-events-auto p-4 md:p-6 rounded-full border border-white/20 bg-black/50 hover:bg-white text-white hover:text-black transition-all duration-500 backdrop-blur-lg shadow-lg">
+                class="pointer-events-auto p-4 md:p-6 rounded-full border border-black/20 bg-black/50 hover:bg-white text-white hover:text-black transition-all duration-500 backdrop-blur-lg shadow-lg">
                 <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
@@ -659,54 +659,50 @@
                 <!-- Content -->
                 <div class="w-full md:w-7/12 lg:w-5/12">
                     <div class="bg-[#BF8142] p-8 md:p-12 md:pr-16 rounded-lg relative
-                    z-10
-                    transform translate-y-[141px] md:translate-y-0 md:translate-x-[85px]
-                    wow fadeInUp " data-wow-delay="0.4s">
+    z-10
+    transform translate-y-[141px] md:translate-y-0 md:translate-x-[85px]
+    wow fadeInUp" data-wow-delay="0.4s">
 
                         <!-- Title -->
-                        <h4 class="text-2xl md:text-3xl font-bold mb-4">Opening Hours:</h4>
+                        <h4 class="text-2xl md:text-3xl font-bold mb-4">Consultation Charges</h4>
 
-                        <!-- Text -->
-                        <p class="mb-6">
-                            Porta semper lacus cursus, feugiat primis ultrice ligula risus auctor tempus feugiat
-                            dolor lacinia cursus vitae massa
+                        <!-- Short Description -->
+                        <p class="mb-6 text-base leading-relaxed">
+                            Our consultation fees are structured to ensure accessible and quality care for every
+                            patient.
+                            Please see the details below.
                         </p>
 
                         <!-- Table -->
                         <table class="w-full mb-6 text-sm sm:text-base">
                             <tbody>
-                                <tr class="border-b border-dashed border-white/60 uppercase font-extrabold text-lg">
-                                    <td>Mon – Wed</td>
-                                    <td class="px-2">-</td>
-                                    <td class="text-right">9:00 AM - 7:00 PM</td>
+                                <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
+                                    <td>Regular Consultation (Fast Track)</td>
+                                    <td class="px-2">—</td>
+                                    <td class="text-right">৳ 500</td>
                                 </tr>
-                                <tr class="border-b border-dashed border-white/60 uppercase font-extrabold text-lg">
-                                    <td>Thursday</td>
-                                    <td class="px-2">-</td>
-                                    <td class="text-right">9:00 AM - 6:30 PM</td>
+                                <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
+                                    <td>Follow-up Visit</td>
+                                    <td class="px-2">—</td>
+                                    <td class="text-right">৳ 300</td>
                                 </tr>
-                                <tr class="border-b border-dashed border-white/60 uppercase font-extrabold text-lg">
-                                    <td>Friday</td>
-                                    <td class="px-2">-</td>
-                                    <td class="text-right">9:00 AM - 6:00 PM</td>
+                                <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
+                                    <td>Sub-specialty Consultation</td>
+                                    <td class="px-2">—</td>
+                                    <td class="text-right">৳ 500</td>
                                 </tr>
-                                <tr class="uppercase font-extrabold text-lg">
-                                    <td>Sat – Sun</td>
-                                    <td class="px-2">-</td>
-                                    <td class="text-right">Closed</td>
+                                <tr class="font-semibold text-lg">
+                                    <td>Referred Sub-specialty Visit</td>
+                                    <td class="px-2">—</td>
+                                    <td class="text-right">৳ 300</td>
                                 </tr>
                             </tbody>
                         </table>
 
-                        <!-- Secondary Title -->
-                        <h5 class="text-xl md:text-2xl font-bold mb-4">Need a personal health plan?</h5>
-
-                        <!-- Text -->
-                        <p>
-                            Porta semper lacus cursus, feugiat primis ultrice ligula risus auctor tempus feugiat
-                            dolor lacinia undo cursus nulla massa suscipit, luctus neque purus ipsum neque dolor primis
+                        <!-- Optional Note -->
+                        <p class="text-sm opacity-90">
+                            * Fees may vary depending on medical requirements.
                         </p>
-
                     </div>
                 </div>
 
@@ -769,7 +765,7 @@
                 class="fixed inset-0 bg-black/90 flex items-center justify-center z-[9999] p-4"
                 @keydown.escape.window="open = false" style="display: none;">
                 <div class="relative max-w-5xl w-full flex justify-center" @click.outside="open = false">
-                    <img :src="activeImage" class="max-h-[90vh] w-auto rounded-lg shadow-2xl border-4 border-white/10">
+                    <img :src="activeImage" class="max-h-[90vh] w-auto rounded-lg shadow-2xl border-4 border-black/10">
                     <button @click="open = false"
                         class="absolute -top-10 right-0 text-white text-4xl hover:text-red-500 transition-colors">&times;</button>
                 </div>
@@ -783,74 +779,128 @@
     </section>
 
 
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
 
-    {{-- Services Grid --}}
-    <section class="max-w-7xl mx-auto px-6 py-12">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            @php
-                $cards = [
-                    'ARAVIND EYE HOSPITALS',
-                    'EDUCATION',
-                    'FOR PATIENTS',
-                    'RESEARCH',
-                    'CAPACITY BUILDING',
-                    'MANUFACTURING',
-                ];
-            @endphp
+    <!-- Title -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+        Opnix Eye Care Services
+      </h2>
+    </div>
 
-            @foreach ($cards as $card)
-                <div class="relative overflow-hidden rounded-lg shadow-md group">
-                    <img src="/images/card-placeholder.jpg" alt="{{ $card }}"
-                        class="w-full h-48 object-cover group-hover:scale-105 transition" />
-                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
-                        <h3 class="text-black font-semibold text-lg tracking-wide">
-                            {{ $card }}
-                        </h3>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </section>
+    <!-- Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-    {{-- News & Announcements --}}
-    <section class="bg-gray-200 py-12">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- CARD 1 -->
+      <div class="group transition-all duration-300 hover:-translate-y-2">
 
-            {{-- Current News --}}
-            <div>
-                <h2 class="text-lg font-semibold mb-4">Current News</h2>
-                <div class="bg-white rounded shadow overflow-hidden">
-                    <img src="/images/news.jpg" alt="Workshop" class="w-full h-56 object-cover" />
-                    <div class="p-4 text-sm">
-                        Workshop on Master MSICS Techniques
-                    </div>
-                </div>
-            </div>
+        <img src="pictures/retina.jpg"
+             class="rounded-xl w-full">
 
-            {{-- Announcements --}}
-            <div>
-                <h2 class="text-lg font-semibold mb-4">Announcements</h2>
-                <div class="bg-white rounded shadow p-4 text-sm space-y-3">
-                    <p class="text-indigo-700">
-                        Recruitment of Project Technical Support III – January 2026
-                    </p>
-                    <p>
-                        Inviting applications for long term fellowship in Paediatric Ophthalmology
-                    </p>
-                    <p>
-                        Inviting applications for fellowship in Orbit & Oculoplasty
-                    </p>
-                    <p>
-                        Fellowship in Anterior Segment / IOL Surgery
-                    </p>
-                    <p>
-                        Fellowship in Comprehensive Ophthalmology
-                    </p>
-                </div>
-            </div>
+        <!-- Small Gold Card -->
+        <div class="relative bg-[#D8A96A] text-white rounded-xl shadow-xl p-6 -mt-10 mx-4 overflow-hidden transition-all duration-300">
+
+          <!-- Animated Corners -->
+          <div class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-600 rounded-tl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+
+          <div class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-600 rounded-tr-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+
+          <div class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-600 rounded-br-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+
+          <div class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-600 rounded-bl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+
+          <!-- Icon -->
+          <div class="relative z-10 w-14 h-14 bg-white text-[#D8A96A] rounded-lg flex items-center justify-center mb-4 shadow-md">
+            👁️
+          </div>
+
+          <h3 class="relative z-10 text-xl font-semibold mb-2">
+            Retina Repair
+          </h3>
+
+          <p class="relative z-10 text-sm text-white/90 mb-3">
+            Advanced retinal treatment solutions for vision restoration.
+          </p>
+
+          <a href="#" class="relative z-10 font-medium underline">
+            More Details +
+          </a>
 
         </div>
-    </section>
+      </div>
+
+
+      <!-- CARD 2 -->
+      <div class="group transition-all duration-300 hover:-translate-y-2">
+
+        <img src="pictures/glaucoma.jpg"
+             class="rounded-xl w-full">
+
+        <div class="relative bg-[#D8A96A] text-white rounded-xl shadow-xl p-6 -mt-10 mx-4 overflow-hidden transition-all duration-300">
+
+          <div class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-600 rounded-tl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+          <div class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-600 rounded-tr-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+          <div class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-600 rounded-br-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+          <div class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-600 rounded-bl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+
+          <div class="relative z-10 w-14 h-14 bg-white text-[#D8A96A] rounded-lg flex items-center justify-center mb-4 shadow-md">
+            🛡️
+          </div>
+
+          <h3 class="relative z-10 text-xl font-semibold mb-2">
+            Glaucoma & Cornea
+          </h3>
+
+          <p class="relative z-10 text-sm text-white/90 mb-3">
+            Complete glaucoma care and corneal disease management.
+          </p>
+
+          <a href="#" class="relative z-10 font-medium underline">
+            More Details +
+          </a>
+
+        </div>
+      </div>
+
+
+      <!-- CARD 3 -->
+      <div class="group transition-all duration-300 hover:-translate-y-2">
+
+        <img src="pictures/pedia.jpg"
+             class="rounded-xl w-full">
+
+        <div class="relative bg-[#D8A96A] text-white rounded-xl shadow-xl p-6 -mt-10 mx-4 overflow-hidden transition-all duration-300">
+
+          <div class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-600 rounded-tl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+          <div class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-600 rounded-tr-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+          <div class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-600 rounded-br-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+          <div class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-600 rounded-bl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+
+          <div class="relative z-10 w-14 h-14 bg-white text-[#D8A96A] rounded-lg flex items-center justify-center mb-4 shadow-md">
+            ✨
+          </div>
+
+          <h3 class="relative z-10 text-xl font-semibold mb-2">
+            Laser Surgery
+          </h3>
+
+          <p class="relative z-10 text-sm text-white/90 mb-3">
+            Safe and advanced laser procedures for clear vision.
+          </p>
+
+          <a href="#" class="relative z-10 font-medium underline">
+            More Details +
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
     {{-- Footer --}}
     <footer class="parallax-footer relative bg-[#D8A96A] text-black"
