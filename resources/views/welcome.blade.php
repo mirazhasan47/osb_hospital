@@ -68,22 +68,49 @@
                         </a>
 
                         <ul class="absolute top-[70px] left-0 w-48 bg-[#BF8142] border border-gray-100 shadow-xl
-         opacity-0 invisible
-         translate-y-4 scale-95
-         group-hover:opacity-100 group-hover:visible
-         group-hover:translate-y-0 group-hover:scale-100
-         transition-all duration-300 ease-out">
+           opacity-0 invisible translate-y-4 scale-95
+           group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:scale-100
+           transition-all duration-300 ease-out">
 
-                            <li><a href="demo-2.html"
-                                    class="block px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:text-black hover:pl-6 transition-all">Home
+                            <li>
+                                <a href="demo-2.html"
+                                    class="block px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:pl-6 transition-all">
+                                    Home Concept #2
+                                </a>
+                            </li>
 
-                                    Concept #2</a></li>
+                            <li class="group/submenu relative">
+                                <a href="#"
+                                    class="flex items-center justify-between px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:pl-6 transition-all">
+                                    <span>More Options</span>
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
 
-                            <li><a href="demo-3.html"
-                                    class="block px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:text-black hover:pl-6 transition-all">Home
+                                <ul class="absolute top-0 left-full w-48 bg-[#BF8142] border border-gray-100 shadow-xl
+                   opacity-0 invisible translate-x-4
+                   group-hover/submenu:opacity-100 group-hover/submenu:visible group-hover/submenu:translate-x-0
+                   transition-all duration-300 ease-out">
+                                    <li>
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:pl-6 transition-all">Sub
+                                            Item A</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:pl-6 transition-all">Sub
+                                            Item B</a>
+                                    </li>
+                                </ul>
+                            </li>
 
-                                    Concept #3</a></li>
-
+                            <li>
+                                <a href="demo-3.html"
+                                    class="block px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:pl-6 transition-all">
+                                    Home Concept #3
+                                </a>
+                            </li>
                         </ul>
 
                     </li>
@@ -778,126 +805,153 @@
     </section>
 
 
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
 
-    <!-- Title -->
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
-        Opnix Eye Care Services
-      </h2>
-    </div>
+            <!-- Title -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                    Opnix Eye Care Services
+                </h2>
+            </div>
 
-    <!-- Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- CARD 1 -->
-      <div class="group transition-all duration-300 hover:-translate-y-2">
+                <!-- CARD 1 -->
+                <div class="group transition-all duration-300 hover:-translate-y-2">
 
-        <img src="pictures/retina.jpg"
-             class="rounded-xl w-full">
+                    <img src="pictures/retina.jpg" class="rounded-xl w-full">
 
-        <!-- Small Gold Card -->
-        <div class="relative bg-[#D8A96A] text-white rounded-xl shadow-xl p-6 -mt-10 mx-4 overflow-hidden transition-all duration-300">
+                    <!-- Small Gold Card -->
+                    <div
+                        class="relative bg-[#D8A96A] text-white rounded-xl shadow-xl p-6 -mt-10 mx-4 overflow-hidden transition-all duration-300">
 
-          <!-- Animated Corners -->
-          <div class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-600 rounded-tl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+                        <!-- Animated Corners -->
+                        <div
+                            class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-600 rounded-tl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
+                        </div>
 
-          <div class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-600 rounded-tr-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+                        <div
+                            class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-600 rounded-tr-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
+                        </div>
 
-          <div class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-600 rounded-br-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+                        <div
+                            class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-600 rounded-br-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
+                        </div>
 
-          <div class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-600 rounded-bl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
+                        <div
+                            class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-600 rounded-bl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
+                        </div>
 
-          <!-- Icon -->
-          <div class="relative z-10 w-14 h-14 bg-white text-[#D8A96A] rounded-lg flex items-center justify-center mb-4 shadow-md">
-            👁️
-          </div>
+                        <!-- Icon -->
+                        <div
+                            class="relative z-10 w-14 h-14 bg-white text-[#D8A96A] rounded-lg flex items-center justify-center mb-4 shadow-md">
+                            👁️
+                        </div>
 
-          <h3 class="relative z-10 text-xl font-semibold mb-2">
-            Retina Repair
-          </h3>
+                        <h3 class="relative z-10 text-xl font-semibold mb-2">
+                            Retina Repair
+                        </h3>
 
-          <p class="relative z-10 text-sm text-white/90 mb-3">
-            Advanced retinal treatment solutions for vision restoration.
-          </p>
+                        <p class="relative z-10 text-sm text-white/90 mb-3">
+                            Advanced retinal treatment solutions for vision restoration.
+                        </p>
 
-          <a href="#" class="relative z-10 font-medium underline">
-            More Details +
-          </a>
+                        <a href="#" class="relative z-10 font-medium underline">
+                            More Details +
+                        </a>
 
+                    </div>
+                </div>
+
+
+                <!-- CARD 2 -->
+                <div class="group transition-all duration-300 hover:-translate-y-2">
+
+                    <img src="pictures/glaucoma.jpg" class="rounded-xl w-full">
+
+                    <div
+                        class="relative bg-[#D8A96A] text-white rounded-xl shadow-xl p-6 -mt-10 mx-4 overflow-hidden transition-all duration-300">
+
+                        <div
+                            class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-600 rounded-tl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
+                        </div>
+                        <div
+                            class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-600 rounded-tr-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
+                        </div>
+                        <div
+                            class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-600 rounded-br-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-600 rounded-bl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
+                        </div>
+
+                        <div
+                            class="relative z-10 w-14 h-14 bg-white text-[#D8A96A] rounded-lg flex items-center justify-center mb-4 shadow-md">
+                            🛡️
+                        </div>
+
+                        <h3 class="relative z-10 text-xl font-semibold mb-2">
+                            Glaucoma & Cornea
+                        </h3>
+
+                        <p class="relative z-10 text-sm text-white/90 mb-3">
+                            Complete glaucoma care and corneal disease management.
+                        </p>
+
+                        <a href="#" class="relative z-10 font-medium underline">
+                            More Details +
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <!-- CARD 3 -->
+                <div class="group transition-all duration-300 hover:-translate-y-2">
+
+                    <img src="pictures/pedia.jpg" class="rounded-xl w-full">
+
+                    <div
+                        class="relative bg-[#D8A96A] text-white rounded-xl shadow-xl p-6 -mt-10 mx-4 overflow-hidden transition-all duration-300">
+
+                        <div
+                            class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-600 rounded-tl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
+                        </div>
+                        <div
+                            class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-600 rounded-tr-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
+                        </div>
+                        <div
+                            class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-600 rounded-br-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-600 rounded-bl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
+                        </div>
+
+                        <div
+                            class="relative z-10 w-14 h-14 bg-white text-[#D8A96A] rounded-lg flex items-center justify-center mb-4 shadow-md">
+                            ✨
+                        </div>
+
+                        <h3 class="relative z-10 text-xl font-semibold mb-2">
+                            Laser Surgery
+                        </h3>
+
+                        <p class="relative z-10 text-sm text-white/90 mb-3">
+                            Safe and advanced laser procedures for clear vision.
+                        </p>
+
+                        <a href="#" class="relative z-10 font-medium underline">
+                            More Details +
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
-
-
-      <!-- CARD 2 -->
-      <div class="group transition-all duration-300 hover:-translate-y-2">
-
-        <img src="pictures/glaucoma.jpg"
-             class="rounded-xl w-full">
-
-        <div class="relative bg-[#D8A96A] text-white rounded-xl shadow-xl p-6 -mt-10 mx-4 overflow-hidden transition-all duration-300">
-
-          <div class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-600 rounded-tl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
-          <div class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-600 rounded-tr-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
-          <div class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-600 rounded-br-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
-          <div class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-600 rounded-bl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
-
-          <div class="relative z-10 w-14 h-14 bg-white text-[#D8A96A] rounded-lg flex items-center justify-center mb-4 shadow-md">
-            🛡️
-          </div>
-
-          <h3 class="relative z-10 text-xl font-semibold mb-2">
-            Glaucoma & Cornea
-          </h3>
-
-          <p class="relative z-10 text-sm text-white/90 mb-3">
-            Complete glaucoma care and corneal disease management.
-          </p>
-
-          <a href="#" class="relative z-10 font-medium underline">
-            More Details +
-          </a>
-
-        </div>
-      </div>
-
-
-      <!-- CARD 3 -->
-      <div class="group transition-all duration-300 hover:-translate-y-2">
-
-        <img src="pictures/pedia.jpg"
-             class="rounded-xl w-full">
-
-        <div class="relative bg-[#D8A96A] text-white rounded-xl shadow-xl p-6 -mt-10 mx-4 overflow-hidden transition-all duration-300">
-
-          <div class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-600 rounded-tl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
-          <div class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-600 rounded-tr-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
-          <div class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-600 rounded-br-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
-          <div class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-600 rounded-bl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14"></div>
-
-          <div class="relative z-10 w-14 h-14 bg-white text-[#D8A96A] rounded-lg flex items-center justify-center mb-4 shadow-md">
-            ✨
-          </div>
-
-          <h3 class="relative z-10 text-xl font-semibold mb-2">
-            Laser Surgery
-          </h3>
-
-          <p class="relative z-10 text-sm text-white/90 mb-3">
-            Safe and advanced laser procedures for clear vision.
-          </p>
-
-          <a href="#" class="relative z-10 font-medium underline">
-            More Details +
-          </a>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
 
 
