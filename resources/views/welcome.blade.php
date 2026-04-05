@@ -452,22 +452,22 @@
         activeSlide: 1, 
         slides: [
             { 
-                id: 1, 
-                title: '', 
-                desc: '', 
-                img: '{{ asset('pictures/osb_slider_image_one.png') }}'
+                id: 1,
+                title: 'আপনার চোখের যত্নই আমাদের অগ্রাধিকার',
+                desc: 'সুস্থ দৃষ্টি, সুন্দর জীবন',
+                img: '{{ asset('pictures/hospital_picture_one.jpg') }}'
             },
             { 
                 id: 2, 
-                title: '', 
+                title: 'আধুনিক প্রযুক্তিতে উন্নত চোখের চিকিৎসা', 
                 desc: '', 
-                img: '{{ asset('pictures/osb_slider_image_two.jpg') }}'
+                img: '{{ asset('pictures/hospital_picture_two.jpg') }}'
             },
             { 
                 id: 3, 
-                title: 'QUANTUM OPS', 
-                desc: 'Sub-atomic data processing.', 
-                img: '{{ asset('pictures/osb_slider_image_three.jpeg') }}'
+                title: 'চোখের সকল সমস্যার সমাধান এক ছাদের নিচে', 
+                desc: '', 
+                img: '{{ asset('pictures/hospital_picture_three.jpg') }}'
             }
         ],
         timer: null,
@@ -506,12 +506,12 @@
 
                 <div class="relative h-full flex items-center px-12 md:px-24 lg:px-32">
                     <div class="max-w-xl lg:max-w-2xl">
-                        <h2 class="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black italic tracking-tighter leading-none mb-4 md:mb-6"
+                        <h2 class="text-white ml-5 text-4xl sm:text-4xl md:text-4xl lg:text-4xl font-black italic tracking-tighter leading-none mb-4 md:mb-6"
                             x-show="activeSlide === slide.id"
                             x-transition:enter="transition duration-[3000ms] delay-500"
                             x-transition:enter-start="opacity-0 translate-y-8"
                             x-transition:enter-end="opacity-100 translate-y-0" x-text="slide.title"></h2>
-                        <p class="text-blue-400 text-lg md:text-xl lg:text-2xl font-bold uppercase tracking-widest"
+                        <p class="text-blue-400 text-lg ml-[30px] md:text-xl lg:text-2xl font-bold uppercase tracking-widest"
                             x-show="activeSlide === slide.id"
                             x-transition:enter="transition duration-[3000ms] delay-800"
                             x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
@@ -553,8 +553,55 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 
+    <div class="p-4 bg-white">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
 
+            <div class="lg:col-span-2 lg:row-span-2 overflow-hidden relative group">
+                <img src="{{ asset('pictures/hospital_picture_one.jpg') }}"
+                    class="w-full h-full object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                    <h4 class="text-xl font-serif">Featured Piece</h4>
+                </div>
+            </div>
 
+            <div class="lg:col-span-1 lg:row-span-1 overflow-hidden">
+                <img src="{{ asset('pictures/hospital_picture_ten.jpg') }}"
+                    class="w-full h-full object-cover">
+            </div>
+
+            <div class="lg:col-span-1 lg:row-span-2 overflow-hidden">
+                <img src="{{ asset('pictures/hospital_picture_three.jpg') }}"
+                    class="w-full h-full object-cover">
+            </div>
+
+            <div class="lg:col-span-1 lg:row-span-1 overflow-hidden">
+                <img src="{{ asset('pictures/hospital_picture_four.jpg') }}"
+                    class="w-full h-full object-cover">
+            </div>
+
+            <div class="lg:col-span-3 lg:row-span-1 overflow-hidden">
+                <img src="{{ asset('pictures/hospital_picture_five.jpg') }}"
+                    class="w-full h-full object-cover">
+            </div>
+
+            <div class="lg:col-span-1 lg:row-span-3 overflow-hidden">
+                <img src="{{ asset('pictures/hospital_picture_six.jpg') }}"
+                    class="w-full h-full object-cover">
+            </div>
+
+            <div class="lg:col-span-1 lg:row-span-2 overflow-hidden">
+                <img src="{{ asset('pictures/hospital_picture_seven.jpg') }}"
+                    class="w-full h-full object-cover">
+            </div>
+
+            <div class="lg:col-span-2 lg:row-span-2 overflow-hidden">
+                <img src="{{ asset('pictures/hospital_picture_eight.jpg') }}"
+                    class="w-full h-full object-cover">
+            </div>
+
+        </div>
+    </div>
 
     <section id="doctors-1" class="py-24 bg-[#FAEBD7]">
         <div class="container w-4/5 mx-auto px-4">
