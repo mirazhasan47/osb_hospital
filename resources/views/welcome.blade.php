@@ -552,247 +552,370 @@
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    <section class="bg-gradient-to-r from-green-900 to-green-600 py-20 overflow-hidden">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-10">
 
-    <div class="p-4 bg-white">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
+            <!-- LEFT: TEXT -->
+            <div class="text-white max-w-xl">
+                <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    আপনার চোখ, <span class="text-[#BF8142]">আপনার ভবিষ্যৎ</span>
+                </h2>
 
-            <div class="lg:col-span-2 lg:row-span-2 overflow-hidden relative group">
-                <img src="{{ asset('pictures/hospital_picture_one.jpg') }}"
-                    class="w-full h-full object-cover">
-                <div
-                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                    <h4 class="text-xl font-serif">Featured Piece</h4>
-                </div>
-            </div>
-
-            <div class="lg:col-span-1 lg:row-span-1 overflow-hidden">
-                <img src="{{ asset('pictures/hospital_picture_ten.jpg') }}"
-                    class="w-full h-full object-cover">
-            </div>
-
-            <div class="lg:col-span-1 lg:row-span-2 overflow-hidden">
-                <img src="{{ asset('pictures/hospital_picture_three.jpg') }}"
-                    class="w-full h-full object-cover">
-            </div>
-
-            <div class="lg:col-span-1 lg:row-span-1 overflow-hidden">
-                <img src="{{ asset('pictures/hospital_picture_four.jpg') }}"
-                    class="w-full h-full object-cover">
-            </div>
-
-            <div class="lg:col-span-3 lg:row-span-1 overflow-hidden">
-                <img src="{{ asset('pictures/hospital_picture_five.jpg') }}"
-                    class="w-full h-full object-cover">
-            </div>
-
-            <div class="lg:col-span-1 lg:row-span-3 overflow-hidden">
-                <img src="{{ asset('pictures/hospital_picture_six.jpg') }}"
-                    class="w-full h-full object-cover">
-            </div>
-
-            <div class="lg:col-span-1 lg:row-span-2 overflow-hidden">
-                <img src="{{ asset('pictures/hospital_picture_seven.jpg') }}"
-                    class="w-full h-full object-cover">
-            </div>
-
-            <div class="lg:col-span-2 lg:row-span-2 overflow-hidden">
-                <img src="{{ asset('pictures/hospital_picture_eight.jpg') }}"
-                    class="w-full h-full object-cover">
-            </div>
-
-        </div>
-    </div>
-
-    <section id="doctors-1" class="py-24 bg-[#FAEBD7]">
-        <div class="container w-4/5 mx-auto px-4">
-
-            <!-- SECTION TITLE -->
-            <div class="text-center mb-16">
-                <h3 class="text-4xl font-bold text-stone mb-5">Hospital Management Committee</h3>
-                <p class="text-stone px-10 md:px-48">
-                    Our Management Committee brings together seasoned healthcare leaders dedicated to strategic
-                    excellence. By integrating clinical expertise with robust administrative oversight, we ensure our
-                    facility remains at the forefront of modern medicine.
+                <p class="text-lg mb-6 opacity-90">
+                    আধুনিক প্রযুক্তি ও অভিজ্ঞ চিকিৎসকের মাধ্যমে আমরা নিশ্চিত করি আপনার দৃষ্টির সঠিক যত্ন।
                 </p>
+
+                <p id="typeText" class="text-2xl font-semibold text-[#FFD700]"></p>
             </div>
 
-            <div class="flex flex-wrap -mx-4">
+            <!-- RIGHT: ANIMATED SVG -->
+            <!-- RIGHT: ADVANCED ANIMATED EYE -->
+            <div class="relative w-[320px] h-[320px] flex items-center justify-center">
 
-                <!-- DOCTOR #1 -->
-                <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-12">
-                    <div class="relative overflow-hidden h-80">
-                        <img src="{{ asset('pictures/doctorOne.jpg') }}" alt="doctor-foto"
-                            class="w-full h-full object-cover transform scale-110 hover:scale-100 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-[#00a3c8]/85 opacity-0 hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
-                            <a href="doctor-1.html"
-                                class="bg-white text-black px-4 py-2 rounded opacity-100 transform translate-y-0 transition-all duration-400">
-                                View More Info
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pt-4">
-                        <h5 class="text-lg font-bold text-stone mb-1">Prof. Md. Shahabuddin</h5>
-                        <span class="text-[#00a3c8] block mb-2">Convener</span>
-                        <p class="text-gray-600 text-sm">
-                            Welcome to the website of Opthalmological Society Of Bangladesh (OSB) which was developed by
-                            the Ophthalmologists of Bangladesh in 1972. The aim of the society is to work for the
-                            betterment of Ophthalmologists of Bangladesh as well as to work for the betterment of
-                            Ophthalmology in Bangladesh.</p>
-                        <p class="text-gray-600 text-sm">
-                            বাংলাদেশের প্রায় ৮ লক্ষ মানুষ অন্ধত্বের শিকার এবং প্রতি বছর প্রায় ২ লক্ষ মানুষ নতুন করে অন্ধ
-                            হচ্ছে। আমরা ২০৩০ সালের মধ্যে সবার চোখের দৃষ্টি ফিরিয়ে দিতে অঙ্গীকারবদ্ধ। বাংলাদেশের সকল
-                            চক্ষু চিকিৎসকগণ দেশের সকলের চক্ষু চিকিৎসা সেবা নিশ্চিত করতে বদ্ধপরিকর।
-                        </p>
-                    </div>
-                </div>
+                <!-- Eye SVG -->
+                <svg viewBox="0 0 200 120" class="w-full">
 
-                <!-- DOCTOR #2 -->
-                <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-12">
-                    <div class="relative overflow-hidden h-80">
-                        <img src="{{ asset('pictures/doctorTwo.jpg') }}" alt="doctor-foto"
-                            class="w-full h-full object-cover transform scale-110 hover:scale-100 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-[#00a3c8]/85 opacity-0 hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
-                            <a href="doctor-2.html"
-                                class="bg-white text-black px-4 py-2 rounded opacity-100 transform translate-y-0 transition-all duration-400">
-                                View More Info
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pt-4">
-                        <h5 class="text-lg font-bold text-stone mb-1">Prof. Md. Zinnu Rain (Newton)</h5>
-                        <span class="text-[#00a3c8] block mb-2">Member Secretary</span>
-                        <p class="text-gray-600 text-sm">
-                            At the very beginning, I respectfully remember those who, out of love for their country,
-                            sacrificed their lives in 1971 to bring us the red sun of independence — giving the nation
-                            the red and green flag of freedom. I also remember with deep respect my honorable teachers
-                            and ophthalmologists who have departed from us forever.</p>
-                        <p class="text-gray-600 text-sm">
-                            দেশের বিভিন্ন হাসপাতাল এবং মেডিকেল কলেজগুলোতে শূন্যপদ পূরণ, Post Graduate ছাত্রের সংখ্যা
-                            বৃদ্ধি, গবেষণার ক্ষেত্রে অনুদান, প্রতিটি মেডিকেল কলেজ এবং ইনস্টিটিউট অফথালমোলজী
-                            সাব-স্পেশালিটি পদ সৃষ্টিসহ চিকিৎসক নিয়োগের জন্য সরকারের নিকট আবেদন জানাচ্ছি।
-                        </p>
-                    </div>
-                </div>
+                    <!-- Eye Outline -->
+                    <path d="M10 60 Q100 10 190 60 Q100 110 10 60Z" fill="none" stroke="white" stroke-width="3" />
 
-                <!-- DOCTOR #3 -->
-                <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-12">
-                    <div class="relative overflow-hidden h-80">
-                        <img src="{{ asset('pictures/doctorThree.jpg') }}" alt="doctor-foto"
-                            class="w-full h-full object-cover transform scale-110 hover:scale-100 transition-transform duration-500">
-                        <div
-                            class="absolute inset-0 bg-[#00a3c8]/85 opacity-0 hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
-                            <a href="doctor-3.html"
-                                class="bg-white text-black px-4 py-2 rounded opacity-100 transform translate-y-0 transition-all duration-400">
-                                View More Info
-                            </a>
-                        </div>
-                    </div>
-                    <div class="pt-4">
-                        <h5 class="text-lg font-bold text-stone mb-1">Dr Syeed Mehbub Ul Kadir</h5>
-                        <span class="text-[#00a3c8] block mb-2">Consultant Orbit, Aesthetic & Ocluplastic
-                            Surgeon.</span>
-                        <p class="text-gray-600 text-sm">
-                            At the very beginning, I respectfully remember those who, out of love for their country,
-                            sacrificed their lives in 1971 to bring us the red sun of independence — giving the nation
-                            the red and green flag of freedom. I also remember with deep respect my honorable teachers
-                            and ophthalmologists who have departed from us forever.</p>
-                        <p class="text-gray-600 text-sm">
-                            দেশের বিভিন্ন হাসপাতাল এবং মেডিকেল কলেজগুলোতে শূন্যপদ পূরণ, Post Graduate ছাত্রের সংখ্যা
-                            বৃদ্ধি, গবেষণার ক্ষেত্রে অনুদান, প্রতিটি মেডিকেল কলেজ এবং ইনস্টিটিউট অফথালমোলজী
-                            সাব-স্পেশালিটি পদ সৃষ্টিসহ চিকিৎসক নিয়োগের জন্য সরকারের নিকট আবেদন জানাচ্ছি।
-                        </p>
-                    </div>
-                </div>
+                    <!-- Iris -->
+                    <circle cx="100" cy="60" r="20" fill="#BF8142">
+                        <animate attributeName="r" values="18;22;18" dur="2s" repeatCount="indefinite" />
+                    </circle>
 
-            </div>
+                    <!-- Pupil -->
+                    <circle cx="100" cy="60" r="8" fill="black" />
 
-            <!-- ALL DOCTORS BUTTON -->
-            <div class="text-center mt-12">
-                <a href="all-doctors.html"
-                    class="bg-[#00a3c8] hover:bg-[#0e8eab] text-white font-semibold px-6 py-3 rounded transition-colors duration-300">
-                    Meet All Doctors
-                </a>
+                    <!-- Scanner Line -->
+                    <line id="scanLine" x1="20" y1="60" x2="180" y2="60" stroke="#00ffcc" stroke-width="2"
+                        opacity="0.8">
+                        <animate attributeName="y1" values="40;80;40" dur="2s" repeatCount="indefinite" />
+                        <animate attributeName="y2" values="40;80;40" dur="2s" repeatCount="indefinite" />
+                    </line>
+
+                </svg>
+
+                <!-- Glow Effect -->
+                <div class="absolute w-40 h-40 rounded-full bg-green-400 opacity-20 blur-2xl animate-pulse"></div>
+
             </div>
 
         </div>
-    </section>
 
+        <section id="info-8" class="relative py-24 text-stone-900">
 
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap items-center">
 
-
-
-
-    <section id="info-8" class="relative py-24 text-stone-900 bg-[#FAEBD7]">
-
-        <div class="container mx-auto px-4">
-            <div class="flex flex-wrap items-center">
-
-                <!-- Content -->
-                <div class="w-full md:w-7/12 lg:w-5/12">
-                    <div class="bg-[#BF8142] p-8 md:p-12 md:pr-16 rounded-lg relative
+                    <!-- Content -->
+                    <div class="w-full md:w-7/12 lg:w-5/12">
+                        <div class="bg-[#BF8142] p-8 md:p-12 md:pr-16 rounded-lg relative
     z-10
     transform translate-y-[141px] md:translate-y-0 md:translate-x-[85px]
     wow fadeInUp" data-wow-delay="0.4s">
 
-                        <!-- Title -->
-                        <h4 class="text-2xl md:text-3xl font-bold mb-4">Consultation Charges</h4>
+                            <!-- Title -->
+                            <h4 class="text-yellow-100 text-2xl md:text-3xl font-bold mb-4">পরামর্শ মূল্য</h4>
 
-                        <!-- Short Description -->
-                        <p class="mb-6 text-base leading-relaxed">
-                            Our consultation fees are structured to ensure accessible and quality care for every
-                            patient.
-                            Please see the details below.
-                        </p>
+                            <!-- Short Description -->
+                            <p class="mb-6 text-white/90 text-base leading-relaxed">
+                                আমাদের পরামর্শ ফি এমনভাবে নির্ধারিত যাতে প্রতিটি রোগী সহজলভ্য এবং মানসম্মত সেবা পেতে
+                                পারেন।
+                                নিচে বিস্তারিত দেখুন।
+                            </p>
 
-                        <!-- Table -->
-                        <table class="w-full mb-6 text-sm sm:text-base">
-                            <tbody>
-                                <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
-                                    <td>Regular Consultation (Fast Track)</td>
-                                    <td class="px-2">—</td>
-                                    <td class="text-right">৳ 500</td>
-                                </tr>
-                                <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
-                                    <td>Follow-up Visit</td>
-                                    <td class="px-2">—</td>
-                                    <td class="text-right">৳ 300</td>
-                                </tr>
-                                <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
-                                    <td>Sub-specialty Consultation</td>
-                                    <td class="px-2">—</td>
-                                    <td class="text-right">৳ 500</td>
-                                </tr>
-                                <tr class="font-semibold text-lg">
-                                    <td>Referred Sub-specialty Visit</td>
-                                    <td class="px-2">—</td>
-                                    <td class="text-right">৳ 300</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <!-- Table -->
+                            <table class="w-full mb-6 text-sm sm:text-base">
+                                <tbody>
+                                    <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
+                                        <td class="text-white">সকাল পরামর্শ</td>
+                                        <td class="px-2 text-white/70">—</td>
+                                        <td class="text-right text-white">৳ 300</td>
+                                    </tr>
+                                    <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
+                                        <td class="text-white">বিকাল পরামর্শ</td>
+                                        <td class="px-2 text-white/70">—</td>
+                                        <td class="text-right text-white">৳ 200</td>
+                                    </tr>
+                                    <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
+                                        <td class="text-white">ফাস্ট ট্র্যাক পরামর্শ</td>
+                                        <td class="px-2 text-white/70">—</td>
+                                        <td class="text-right text-white">৳ 500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
-                        <!-- Optional Note -->
-                        <p class="text-sm opacity-90">
-                            * Fees may vary depending on medical requirements.
-                        </p>
+                            <!-- Optional Note -->
+                            <p class="text-sm text-white/60 opacity-90">
+                                * চিকিৎসাগত প্রয়োজন অনুযায়ী ফি পরিবর্তন হতে পারে।
+                            </p>
+                        </div>
                     </div>
+
+                </div>
+            </div>
+
+            <!-- Image -->
+            <div class="absolute top-0 left-0 w-full h-64 sm:h-80 md:top-0 md:left-2/5 md:w-3/5 md:h-full bg-cover bg-center"
+                style="background-image: url('{{ asset('pictures/hospital_picture_seven.jpg') }}');">
+            </div>
+        </section>
+
+        <div class="p-4 mt-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
+
+                <div class="lg:col-span-2 lg:row-span-2 overflow-hidden relative group">
+                    <img src="{{ asset('pictures/hospital_picture_one.jpg') }}" class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <h4 class="text-xl font-serif"></h4>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-1 lg:row-span-1 overflow-hidden">
+                    <img src="{{ asset('pictures/hospital_picture_ten.jpg') }}" class="w-full h-full object-cover">
+                </div>
+
+                <div class="lg:col-span-1 lg:row-span-2 overflow-hidden">
+                    <img src="{{ asset('pictures/hospital_picture_three.jpg') }}" class="w-full h-full object-cover">
+                </div>
+
+                <div class="lg:col-span-1 lg:row-span-1 overflow-hidden">
+                    <img src="{{ asset('pictures/hospital_picture_four.jpg') }}" class="w-full h-full object-cover">
+                </div>
+
+                <div class="lg:col-span-3 lg:row-span-1 overflow-hidden">
+                    <img src="{{ asset('pictures/hospital_picture_five.jpg') }}" class="w-full h-full object-cover">
+                </div>
+
+                <div class="lg:col-span-1 lg:row-span-3 overflow-hidden">
+                    <img src="{{ asset('pictures/hospital_picture_six.jpg') }}" class="w-full h-full object-cover">
+                </div>
+
+                <div class="lg:col-span-1 lg:row-span-2 overflow-hidden">
+                    <img src="{{ asset('pictures/hospital_picture_seven.jpg') }}" class="w-full h-full object-cover">
+                </div>
+
+                <div class="lg:col-span-2 lg:row-span-2 overflow-hidden">
+                    <img src="{{ asset('pictures/hospital_picture_eight.jpg') }}" class="w-full h-full object-cover">
                 </div>
 
             </div>
         </div>
 
-        <!-- Image -->
-        <div class="absolute top-0 left-0 w-full h-64 sm:h-80 md:top-0 md:left-2/5 md:w-3/5 md:h-full bg-cover bg-center"
-            style="background-image: url('{{ asset('pictures/timetable_image.jpg') }}');">
-        </div>
+
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4">
+
+                <!-- Header -->
+                <div class="flex flex-col lg:flex-row justify-between items-center mb-10">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                            আমাদের হাসপাতালে <span class="text-[#BF8142]">আধুনিক ও বিশ্বমানের সেবাসমূহ</span>
+                        </h2>
+                    </div>
+
+                    <a href="#" class="mt-4 lg:mt-0 text-[#BF8142] underline font-medium">
+                        View All Services
+                    </a>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+                    <!-- Card -->
+                    <div
+                        class="bg-[#BF8142] text-white rounded-2xl p-6 shadow-lg hover:scale-105 transition duration-300 flex flex-col items-center text-center">
+                        <img src="https://visioneyebd.org/storage/files/Department/17194082653.jpg"
+                            class="w-16 h-16 object-contain mb-4 rounded-full bg-white p-2">
+
+                        <h5 class="font-semibold text-lg mb-2">Cataract</h5>
+
+                        <a href="#" class="text-sm underline mt-auto">
+                            Explore More →
+                        </a>
+                    </div>
+
+                    <!-- Duplicate cards -->
+                    <div
+                        class="bg-[#BF8142] text-white rounded-2xl p-6 shadow-lg hover:scale-105 transition duration-300 flex flex-col items-center text-center">
+                        <img src="https://visioneyebd.org/storage/files/Department/17194082922.jpg"
+                            class="w-16 h-16 object-contain mb-4 rounded-full bg-white p-2">
+
+                        <h5 class="font-semibold text-lg mb-2">Vitreo-Retina</h5>
+
+                        <a href="#" class="text-sm underline mt-auto">
+                            Explore More →
+                        </a>
+                    </div>
+
+                    <div
+                        class="bg-[#BF8142] text-white rounded-2xl p-6 shadow-lg hover:scale-105 transition duration-300 flex flex-col items-center text-center">
+                        <img src="https://visioneyebd.org/storage/files/Department/17194083191.jpg"
+                            class="w-16 h-16 object-contain mb-4 rounded-full bg-white p-2">
+
+                        <h5 class="font-semibold text-lg mb-2">Glaucoma</h5>
+
+                        <a href="#" class="text-sm underline mt-auto">
+                            Explore More →
+                        </a>
+                    </div>
+
+                    <div
+                        class="bg-[#BF8142] text-white rounded-2xl p-6 shadow-lg hover:scale-105 transition duration-300 flex flex-col items-center text-center">
+                        <img src="https://visioneyebd.org/storage/files/Department/171940836812.jpg"
+                            class="w-16 h-16 object-contain mb-4 rounded-full bg-white p-2">
+
+                        <h5 class="font-semibold text-lg mb-2">Pediatric</h5>
+
+                        <a href="#" class="text-sm underline mt-auto">
+                            Explore More →
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap justify-center gap-8">
+
+                    <!-- Milestone 1 -->
+                    <div class="flex items-center bg-[#BF8142] text-white rounded-xl p-6 shadow-md w-72">
+                        <div class="w-16 h-16 flex items-center justify-center border-2 border-white rounded-full">
+                            <!-- Calendar Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7H3v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h5 class="text-2xl font-bold">
+                                <span class="counter text-4xl" data-target="20">0</span> Years
+                            </h5>
+                            <p class="text-lg font-semibold">of Establishment</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="flex items-center bg-[#BF8142] text-white rounded-xl p-6 shadow-md w-72">
+                        <div class="w-16 h-16 flex items-center justify-center border-2 border-white rounded-full">
+                            <!-- Hospital Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 21h18M9 21V9h6v12M4 10h4M16 10h4M10 3h4v4h-4z" />
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h5 class="text-2xl font-bold">
+                                <span class="counter text-4xl" data-target="11">0</span>
+                            </h5>
+                            <p class="text-lg font-semibold">Branches</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="flex items-center bg-[#BF8142] text-white rounded-xl p-6 shadow-md w-72">
+                        <div class="w-16 h-16 flex items-center justify-center border-2 border-white rounded-full">
+                            <!-- Doctor Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5.121 17.804A7 7 0 1118.364 4.56 7 7 0 015.12 17.804zM12 14v4m-2-2h4" />
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h5 class="text-2xl font-bold">
+                                <span class="counter text-4xl" data-target="265">0</span>+
+                            </h5>
+                            <p class="text-lg font-semibold">Consultants</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="flex items-center bg-[#BF8142] text-white rounded-xl p-6 shadow-md w-72">
+                        <div class="w-16 h-16 flex items-center justify-center border-2 border-white rounded-full">
+                            <!-- Users Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-1a4 4 0 00-3-3.87M9 20H4v-1a4 4 0 013-3.87m6-2.13a4 4 0 10-6 0m6 0a4 4 0 116 0" />
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h5 class="text-2xl font-bold">
+                                <span class="counter text-4xl" data-target="1200">0</span>+
+                            </h5>
+                            <p class="text-lg font-semibold">Staffs</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Counter Script -->
+        <script>
+            const counters = document.querySelectorAll('.counter');
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / 200;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 10);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                updateCount();
+            });
+        </script>
+
     </section>
 
+    <script>
+        // Typing Bangla Text
+        const text = "দৃষ্টি পরিষ্কার, জীবন উজ্জ্বল";
+        let i = 0;
 
+        function typeEffect() {
+            if (i < text.length) {
+                document.getElementById("typeText").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, 60);
+            }
+        }
+        typeEffect();
 
+        // Scanner Animation Loop
+        const scan = document.getElementById("scan");
 
+        setInterval(() => {
+            scan.style.opacity = "1";
+            scan.style.transform = "translateX(-50%) translateY(0px)";
 
+            let pos = 0;
+            let interval = setInterval(() => {
+                pos += 2;
+                scan.style.transform = `translateX(-50%) translateY(${pos}px)`;
 
+                if (pos >= 120) {
+                    clearInterval(interval);
+                    scan.style.opacity = "0";
+                }
+            }, 10);
+
+        }, 2000);
+    </script>
 
 
 
