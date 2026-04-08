@@ -25,10 +25,21 @@
                 background-attachment: scroll;
             }
         }
+
+        li a {
+            color: #353535;
+            font-weight: bold;
+        }
+
+        li a:hover {
+            color: white;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body class="text-gray-800">
+    
 
     <header
         class="hidden lg:block fixed top-0 w-full z-[999] bg-[#D8A96A] shadow-md font-['Lato',_sans-serif] bg-[#D8A96A]">
@@ -57,13 +68,76 @@
                 <ul class="flex items-center space-x-1">
 
 
+                    <li class="pl-4">
+
+                        <a href="appointment.html"
+                            class="bg-cyan-600 text-stone-900 px-5 py-2.5 rounded text-[14.5px] font-medium hover:bg-cyan-700 transition-colors">
+
+                            Make an Appointment
+
+                        </a>
+
+                    </li>
+
+                    <li class="group static">
+
+                        <a href="#"
+                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 flex items-center group-hover:text-cyan-600 transition-colors">
+                            Contact Number
+                            <span class="ml-2 border-t-4 border-x-4 border-x-transparent border-t-gray-400"></span>
+                        </a>
+
+                        <div class="absolute top-[70px] left-0 w-full bg-[#BF8142] border-t border-gray-100 shadow-2xl
+        opacity-0 invisible
+        translate-y-6 scale-95
+        group-hover:opacity-100 group-hover:visible
+        group-hover:translate-y-0 group-hover:scale-100
+        transition-all duration-300 ease-out px-8 py-10">
+
+                            <div class="max-w-5xl mx-auto grid grid-cols-2 gap-10">
+
+                                <!-- Phone Numbers -->
+                                <div>
+                                    <h3 class="text-lg font-bold text-black mb-4">📞 Phone Numbers</h3>
+                                    <ul class="space-y-2">
+                                        <li class="text-[15px] text-black border-b border-dashed border-gray-300 py-2">
+                                            +880 1234 567890
+                                        </li>
+                                        <li class="text-[15px] text-black border-b border-dashed border-gray-300 py-2">
+                                            +880 9876 543210
+                                        </li>
+                                        <li class="text-[15px] text-black border-b border-dashed border-gray-300 py-2">
+                                            Emergency: 999
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Emails -->
+                                <div>
+                                    <h3 class="text-lg font-bold text-black mb-4">📧 Email Address</h3>
+                                    <ul class="space-y-2">
+                                        <li class="text-[15px] text-black border-b border-dashed border-gray-300 py-2">
+                                            info@hospital.com
+                                        </li>
+                                        <li class="text-[15px] text-black border-b border-dashed border-gray-300 py-2">
+                                            support@hospital.com
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </li>
 
                     <li class="group relative">
 
                         <a href="#"
                             class="px-4 py-6 text-[14.5px] font-medium text-stone-900 flex items-center group-hover:text-cyan-600 transition-colors">
 
-                            Home <span class="ml-2 border-t-4 border-x-4 border-x-transparent border-t-gray-400"></span>
+                            Services <span
+                                class="ml-2 border-t-4 border-x-4 border-x-transparent border-t-gray-400"></span>
 
                         </a>
 
@@ -75,140 +149,27 @@
                             <li>
                                 <a href="demo-2.html"
                                     class="block px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:pl-6 transition-all">
-                                    Home Concept #2
+                                    Operation
                                 </a>
-                            </li>
-
-                            <li class="group/submenu relative">
-                                <a href="#"
-                                    class="flex items-center justify-between px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:pl-6 transition-all">
-                                    <span>More Options</span>
-                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </a>
-
-                                <ul class="absolute top-0 left-full w-48 bg-[#BF8142] border border-gray-100 shadow-xl
-                   opacity-0 invisible translate-x-4
-                   group-hover/submenu:opacity-100 group-hover/submenu:visible group-hover/submenu:translate-x-0
-                   transition-all duration-300 ease-out">
-                                    <li>
-                                        <a href="#"
-                                            class="block px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:pl-6 transition-all">Sub
-                                            Item A</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="block px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:pl-6 transition-all">Sub
-                                            Item B</a>
-                                    </li>
-                                </ul>
                             </li>
 
                             <li>
-                                <a href="demo-3.html"
+                                <a href="demo-2.html"
                                     class="block px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:pl-6 transition-all">
-                                    Home Concept #3
+                                    Investigation
                                 </a>
                             </li>
                         </ul>
 
                     </li>
 
+                    <li><a href="#"
+                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 hover:text-cyan-600 transition-colors">Ticket</a>
+                    </li>
 
-                    <li class="group static">
-
-                        <a href="#"
-                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 flex items-center group-hover:text-cyan-600 transition-colors">
-
-                            Pages <span
-                                class="ml-2 border-t-4 border-x-4 border-x-transparent border-t-gray-400"></span>
-
-                        </a>
-
-                        <div class="absolute top-[70px] left-0 w-full bg-[#BF8142] border-t border-gray-100 shadow-2xl
-         opacity-0 invisible
-         translate-y-6 scale-95
-         group-hover:opacity-100 group-hover:visible
-         group-hover:translate-y-0 group-hover:scale-100
-         transition-all duration-400 ease-out px-8 py-10">
-
-                            <div class="max-w-7xl mx-auto grid grid-cols-4 gap-8">
-
-                                <div>
-
-                                    <h3 class="text-lg font-bold text-black mb-4">Standard Pages:</h3>
-
-                                    <ul class="space-y-1">
-
-                                        <li><a href="about-us.html"
-                                                class="block py-2 text-[15px] text-black border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">About
-
-                                                Us Page</a></li>
-
-                                        <li><a href="who-we-are.html"
-                                                class="block py-2 text-[15px] text-black border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Who
-
-                                                We Are</a></li>
-
-                                    </ul>
-
-                                </div>
-
-                                <div>
-
-                                    <h3 class="text-lg font-bold text-black mb-4">Medical Pages:</h3>
-
-                                    <ul class="space-y-1">
-
-                                        <li><a href="all-departments.html"
-                                                class="block py-2 text-[15px] text-black border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Our
-
-                                                Departments</a></li>
-
-                                        <li><a href="all-doctors.html"
-                                                class="block py-2 text-[15px] text-black border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Meet
-
-                                                the Doctors</a></li>
-
-                                    </ul>
-
-                                </div>
-
-                                <div>
-
-                                    <h3 class="text-lg font-bold text-black mb-4">Special Pages:</h3>
-
-                                    <ul class="space-y-1">
-
-                                        <li><a href="appointment.html"
-                                                class="block py-2 text-[15px] text-black border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Make
-
-                                                an Appointment</a></li>
-
-                                    </ul>
-
-                                </div>
-
-                                <div>
-
-                                    <h3 class="text-lg font-bold text-black mb-4">Auxiliary Pages:</h3>
-
-                                    <ul class="space-y-1">
-
-                                        <li><a href="blog-listing.html"
-                                                class="block py-2 text-[15px] text-black border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Blog
-
-                                                Listing</a></li>
-
-                                    </ul>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
+                    <li><a href="#"
+                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 hover:text-cyan-600 transition-colors">Consultant
+                            Information</a>
                     </li>
 
 
@@ -364,25 +325,6 @@
                     </style>
 
 
-
-                    <li><a href="#"
-                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 hover:text-cyan-600 transition-colors">Simple
-
-                            Link</a></li>
-
-
-
-                    <li class="pl-4">
-
-                        <a href="appointment.html"
-                            class="bg-cyan-600 text-stone-900 px-5 py-2.5 rounded text-[14.5px] font-medium hover:bg-cyan-700 transition-colors">
-
-                            Make an Appointment
-
-                        </a>
-
-                    </li>
-
                 </ul>
 
             </nav>
@@ -453,13 +395,13 @@
         slides: [
             { 
                 id: 1,
-                title: 'আপনার চোখের যত্নই আমাদের অগ্রাধিকার',
+                title: 'বাংলাদেশের সর্বাধুনিক চক্ষু চিকিৎসা কেন্দ্র',
                 desc: 'সুস্থ দৃষ্টি, সুন্দর জীবন',
                 img: '{{ asset('pictures/hospital_picture_one.jpg') }}'
             },
             { 
                 id: 2, 
-                title: 'আধুনিক প্রযুক্তিতে উন্নত চোখের চিকিৎসা', 
+                title: 'আপনার চোখের যত্নই আমাদের অগ্রাধিকার', 
                 desc: '', 
                 img: '{{ asset('pictures/hospital_picture_two.jpg') }}'
             },
@@ -661,47 +603,166 @@
             </div>
         </section>
 
-        <div class="p-4 mt-5">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
+        <div class="space-y-4">
+            <div class="p-4 mt-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
 
-                <div class="lg:col-span-2 lg:row-span-2 overflow-hidden relative group">
-                    <img src="{{ asset('pictures/hospital_picture_one.jpg') }}" class="w-full h-full object-cover">
-                    <div
-                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                        <h4 class="text-xl font-serif"></h4>
+                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden relative group cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_one.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_one.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_ten.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_ten.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_three.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_three.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_four.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_four.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <div class="lg:col-span-3 lg:row-span-1 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_five.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_five.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <div class="lg:col-span-1 lg:row-span-3 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_six.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_six.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_seven.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_seven.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_eight.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_eight.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
                 </div>
+            </div>
 
-                <div class="lg:col-span-1 lg:row-span-1 overflow-hidden">
-                    <img src="{{ asset('pictures/hospital_picture_ten.jpg') }}" class="w-full h-full object-cover">
+            <div class="p-4 pt-0">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
+
+                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden relative group cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_fourteen.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_fourteen.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_fifteen.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_fifteen.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_sixteen.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_sixteen.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hosppital_picture_seventeen.jpg') }}')">
+                        <img src="{{ asset('pictures/hosppital_picture_seventeen.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <div class="lg:col-span-3 lg:row-span-1 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_eighteen.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_eighteen.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <div class="lg:col-span-1 lg:row-span-3 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_nineteen.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_nineteen.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_twenty.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_twenty.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+
+                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_eight.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_eight.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
                 </div>
-
-                <div class="lg:col-span-1 lg:row-span-2 overflow-hidden">
-                    <img src="{{ asset('pictures/hospital_picture_three.jpg') }}" class="w-full h-full object-cover">
-                </div>
-
-                <div class="lg:col-span-1 lg:row-span-1 overflow-hidden">
-                    <img src="{{ asset('pictures/hospital_picture_four.jpg') }}" class="w-full h-full object-cover">
-                </div>
-
-                <div class="lg:col-span-3 lg:row-span-1 overflow-hidden">
-                    <img src="{{ asset('pictures/hospital_picture_five.jpg') }}" class="w-full h-full object-cover">
-                </div>
-
-                <div class="lg:col-span-1 lg:row-span-3 overflow-hidden">
-                    <img src="{{ asset('pictures/hospital_picture_six.jpg') }}" class="w-full h-full object-cover">
-                </div>
-
-                <div class="lg:col-span-1 lg:row-span-2 overflow-hidden">
-                    <img src="{{ asset('pictures/hospital_picture_seven.jpg') }}" class="w-full h-full object-cover">
-                </div>
-
-                <div class="lg:col-span-2 lg:row-span-2 overflow-hidden">
-                    <img src="{{ asset('pictures/hospital_picture_eight.jpg') }}" class="w-full h-full object-cover">
-                </div>
-
             </div>
         </div>
+
+        <div id="imageModal"
+            class="fixed inset-0 z-[999] hidden bg-black/95 flex items-center justify-center p-4 cursor-zoom-out backdrop-blur-sm"
+            onclick="closeModal()">
+
+            <img id="modalImage" src=""
+                class="max-w-full max-h-full object-contain rounded-sm shadow-2xl transition-all duration-300 transform scale-95 origin-center"
+                onclick="event.stopPropagation()">
+        </div>
+
+        <script>
+            function openModal(imageSrc) {
+                const modal = document.getElementById('imageModal');
+                const modalImg = document.getElementById('modalImage');
+
+                // Update image source
+                modalImg.src = imageSrc;
+
+                // Show modal and handle animation
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modalImg.classList.remove('scale-95', 'opacity-0');
+                    modalImg.classList.add('scale-100', 'opacity-100');
+                }, 20);
+
+                // Prevent background scrolling
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                const modal = document.getElementById('imageModal');
+                const modalImg = document.getElementById('modalImage');
+
+                // Hide modal
+                modal.classList.add('hidden');
+                modalImg.classList.add('scale-95');
+                modalImg.classList.remove('scale-100');
+
+                // Restore scrolling
+                document.body.style.overflow = 'auto';
+            }
+
+            // Close on Escape Key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === "Escape") closeModal();
+            });
+        </script>
+
+
 
 
         <section class="py-16">
@@ -919,209 +980,6 @@
 
 
 
-    <!-- Include Alpine.js for modal functionality -->
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-    <section class="py-24 bg-[#FAEBD7]" x-data="{ open: false, activeImage: '' }">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <span class="text-red-600 uppercase font-medium border-l-4 border-red-600 pl-3">Our Photo Gallery</span>
-                <h2 class="text-4xl font-bold mt-4">We are Dedicated to <strong>Helping Our Patients</strong></h2>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-
-                <div class="relative group overflow-hidden rounded-lg cursor-pointer"
-                    @click="activeImage='https://visioneyebd.org/storage/files/Gallery/1739260930WhatsAppImage2025-02-10at231941042fa774.jpg'; open = true">
-                    <img src="https://visioneyebd.org/storage/files/Gallery/1739260930WhatsAppImage2025-02-10at231941042fa774.jpg"
-                        alt="Patient"
-                        class="w-full h-64 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
-
-                    <div
-                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span class="px-4 py-2 bg-red-600 text-white font-semibold rounded shadow-lg">View</span>
-                    </div>
-                </div>
-
-                <div class="relative group overflow-hidden rounded-lg cursor-pointer"
-                    @click="activeImage='https://visioneyebd.org/storage/files/Gallery/1739261048WhatsAppImage2025-02-10at2319390b76b8e0.jpg'; open = true">
-                    <img src="https://visioneyebd.org/storage/files/Gallery/1739261048WhatsAppImage2025-02-10at2319390b76b8e0.jpg"
-                        alt="Patient"
-                        class="w-full h-64 object-cover transition-transform duration-700 ease-in-out group-hover:scale-110">
-
-                    <div
-                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span class="px-4 py-2 bg-red-600 text-white font-semibold rounded shadow-lg">View</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <div x-show="open" x-transition.opacity
-                class="fixed inset-0 bg-black/90 flex items-center justify-center z-[9999] p-4"
-                @keydown.escape.window="open = false" style="display: none;">
-                <div class="relative max-w-5xl w-full flex justify-center" @click.outside="open = false">
-                    <img :src="activeImage" class="max-h-[90vh] w-auto rounded-lg shadow-2xl border-4 border-black/10">
-                    <button @click="open = false"
-                        class="absolute -top-10 right-0 text-white text-4xl hover:text-red-500 transition-colors">&times;</button>
-                </div>
-            </div>
-
-            <div class="text-center mt-8">
-                <a href="https://visioneyebd.org/gallery"
-                    class="text-red-600 underline font-medium hover:text-red-700">View All Gallery</a>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-
-            <!-- Title -->
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
-                    Opnix Eye Care Services
-                </h2>
-            </div>
-
-            <!-- Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- CARD 1 -->
-                <div class="group transition-all duration-300 hover:-translate-y-2">
-
-                    <img src="pictures/retina.jpg" class="rounded-xl w-full">
-
-                    <!-- Small Gold Card -->
-                    <div
-                        class="relative bg-[#D8A96A] text-white rounded-xl shadow-xl p-6 -mt-10 mx-4 overflow-hidden transition-all duration-300">
-
-                        <!-- Animated Corners -->
-                        <div
-                            class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-600 rounded-tl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
-                        </div>
-
-                        <div
-                            class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-600 rounded-tr-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
-                        </div>
-
-                        <div
-                            class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-600 rounded-br-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
-                        </div>
-
-                        <div
-                            class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-600 rounded-bl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
-                        </div>
-
-                        <!-- Icon -->
-                        <div
-                            class="relative z-10 w-14 h-14 bg-white text-[#D8A96A] rounded-lg flex items-center justify-center mb-4 shadow-md">
-                            👁️
-                        </div>
-
-                        <h3 class="relative z-10 text-xl font-semibold mb-2">
-                            Retina Repair
-                        </h3>
-
-                        <p class="relative z-10 text-sm text-white/90 mb-3">
-                            Advanced retinal treatment solutions for vision restoration.
-                        </p>
-
-                        <a href="#" class="relative z-10 font-medium underline">
-                            More Details +
-                        </a>
-
-                    </div>
-                </div>
-
-
-                <!-- CARD 2 -->
-                <div class="group transition-all duration-300 hover:-translate-y-2">
-
-                    <img src="pictures/glaucoma.jpg" class="rounded-xl w-full">
-
-                    <div
-                        class="relative bg-[#D8A96A] text-white rounded-xl shadow-xl p-6 -mt-10 mx-4 overflow-hidden transition-all duration-300">
-
-                        <div
-                            class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-600 rounded-tl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
-                        </div>
-                        <div
-                            class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-600 rounded-tr-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
-                        </div>
-                        <div
-                            class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-600 rounded-br-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-600 rounded-bl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
-                        </div>
-
-                        <div
-                            class="relative z-10 w-14 h-14 bg-white text-[#D8A96A] rounded-lg flex items-center justify-center mb-4 shadow-md">
-                            🛡️
-                        </div>
-
-                        <h3 class="relative z-10 text-xl font-semibold mb-2">
-                            Glaucoma & Cornea
-                        </h3>
-
-                        <p class="relative z-10 text-sm text-white/90 mb-3">
-                            Complete glaucoma care and corneal disease management.
-                        </p>
-
-                        <a href="#" class="relative z-10 font-medium underline">
-                            More Details +
-                        </a>
-
-                    </div>
-                </div>
-
-
-                <!-- CARD 3 -->
-                <div class="group transition-all duration-300 hover:-translate-y-2">
-
-                    <img src="pictures/pedia.jpg" class="rounded-xl w-full">
-
-                    <div
-                        class="relative bg-[#D8A96A] text-white rounded-xl shadow-xl p-6 -mt-10 mx-4 overflow-hidden transition-all duration-300">
-
-                        <div
-                            class="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-cyan-600 rounded-tl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
-                        </div>
-                        <div
-                            class="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-cyan-600 rounded-tr-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
-                        </div>
-                        <div
-                            class="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-cyan-600 rounded-br-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-cyan-600 rounded-bl-xl transition-all duration-300 group-hover:w-14 group-hover:h-14">
-                        </div>
-
-                        <div
-                            class="relative z-10 w-14 h-14 bg-white text-[#D8A96A] rounded-lg flex items-center justify-center mb-4 shadow-md">
-                            ✨
-                        </div>
-
-                        <h3 class="relative z-10 text-xl font-semibold mb-2">
-                            Laser Surgery
-                        </h3>
-
-                        <p class="relative z-10 text-sm text-white/90 mb-3">
-                            Safe and advanced laser procedures for clear vision.
-                        </p>
-
-                        <a href="#" class="relative z-10 font-medium underline">
-                            More Details +
-                        </a>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
 
 
