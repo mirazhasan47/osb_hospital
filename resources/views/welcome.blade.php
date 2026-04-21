@@ -39,7 +39,7 @@
 </head>
 
 <body class="text-gray-800">
-    
+
 
     <header
         class="hidden lg:block fixed top-0 w-full z-[999] bg-[#D8A96A] shadow-md font-['Lato',_sans-serif] bg-[#D8A96A]">
@@ -101,13 +101,7 @@
                                     <h3 class="text-lg font-bold text-black mb-4">📞 Phone Numbers</h3>
                                     <ul class="space-y-2">
                                         <li class="text-[15px] text-black border-b border-dashed border-gray-300 py-2">
-                                            +880 1234 567890
-                                        </li>
-                                        <li class="text-[15px] text-black border-b border-dashed border-gray-300 py-2">
-                                            +880 9876 543210
-                                        </li>
-                                        <li class="text-[15px] text-black border-b border-dashed border-gray-300 py-2">
-                                            Emergency: 999
+                                            Hospital Helpline: +8801335147313
                                         </li>
                                     </ul>
                                 </div>
@@ -117,10 +111,7 @@
                                     <h3 class="text-lg font-bold text-black mb-4">📧 Email Address</h3>
                                     <ul class="space-y-2">
                                         <li class="text-[15px] text-black border-b border-dashed border-gray-300 py-2">
-                                            info@hospital.com
-                                        </li>
-                                        <li class="text-[15px] text-black border-b border-dashed border-gray-300 py-2">
-                                            support@hospital.com
+                                            it@osb.org.bd
                                         </li>
                                     </ul>
                                 </div>
@@ -604,10 +595,51 @@
         </section>
 
         <div class="space-y-4">
+
             <div class="p-4 mt-5">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
 
-                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden relative group cursor-pointer"
+                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_twenty_one.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_twenty_one.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_twenty_two.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_twenty_two.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+
+
+                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_twenty_three.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_twenty_three.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+
+
+                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
+                        onclick="openModal('{{ asset('pictures/hospital_picture_twenty_four.jpg') }}')">
+                        <img src="{{ asset('pictures/hospital_picture_twenty_four.jpg') }}"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="p-4 mt-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
+
+                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_one.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_one.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
@@ -615,54 +647,55 @@
                         </div>
                     </div>
 
-                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_ten.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_ten.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
-                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_three.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_three.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
-                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_four.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_four.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
-                    <div class="lg:col-span-3 lg:row-span-1 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-3 lg:row-span-1 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_five.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_five.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
-                    <div class="lg:col-span-1 lg:row-span-3 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-1 lg:row-span-3 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_six.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_six.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
-                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_seven.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_seven.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
-                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_eight.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_eight.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
+
                 </div>
             </div>
 
             <div class="p-4 pt-0">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
 
-                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden relative group cursor-pointer"
+                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_fourteen.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_fourteen.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
@@ -670,47 +703,48 @@
                         </div>
                     </div>
 
-                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_fifteen.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_fifteen.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
-                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_sixteen.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_sixteen.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
-                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hosppital_picture_seventeen.jpg') }}')">
                         <img src="{{ asset('pictures/hosppital_picture_seventeen.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
-                    <div class="lg:col-span-3 lg:row-span-1 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-3 lg:row-span-1 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_eighteen.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_eighteen.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
-                    <div class="lg:col-span-1 lg:row-span-3 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-1 lg:row-span-3 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_nineteen.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_nineteen.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
-                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_twenty.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_twenty.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
 
-                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden cursor-pointer"
+                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
                         onclick="openModal('{{ asset('pictures/hospital_picture_eight.jpg') }}')">
                         <img src="{{ asset('pictures/hospital_picture_eight.jpg') }}"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                     </div>
+
                 </div>
             </div>
         </div>
