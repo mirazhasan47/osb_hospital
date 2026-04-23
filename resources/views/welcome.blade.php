@@ -10,6 +10,8 @@
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <style>
         /* Ensures smooth parallax scrolling on compatible browsers */
         .parallax-footer {
@@ -42,7 +44,7 @@
 
 
     <header
-        class="hidden lg:block fixed top-0 w-full z-[999] bg-[#D8A96A] shadow-md font-['Lato',_sans-serif] bg-[#D8A96A]">
+        class="hidden lg:block fixed top-0 w-full z-[999] bg-gradient-to-r from-[#2C5D8A] via-[#5FA8D3] to-[#D8A96A]  shadow-md font-['Lato',_sans-serif]">
         <div class="max-w-7xl mx-auto px-4 h-[70px] flex items-center justify-between">
 
             <div class="flex-shrink-0">
@@ -51,10 +53,10 @@
                         class="w-[85px] h-[80px] object-contain" alt="header-logo">
 
                     <div class="flex flex-col justify-center border-l border-gray-300 pl-4">
-                        <span class="text-[20px] font-bold text-gray-800 leading-tight">
+                        <span class="text-[#3effb1] font-bold text-2xl tracking-tight [filter:drop-shadow(2px_3px_2px_rgba(0,0,0,0.2))] mb-2">
                             ওএসবি চক্ষু হাসপাতাল
                         </span>
-                        <span class="text-[12px] text-stone-900 font-medium">
+                        <span class="text-[15px] text-white font-semibold">
                             OSB Eye Hospital
                         </span>
                     </div>
@@ -65,7 +67,7 @@
 
             <nav class="hidden lg:block">
 
-                <ul class="flex items-center space-x-1">
+                <ul class="flex items-center">
 
 
                     <li class="pl-4">
@@ -486,10 +488,10 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <section class="bg-gradient-to-r from-green-900 to-green-600 py-20 overflow-hidden">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-10">
+        <div class="container mx-auto px-4 items-center justify-between gap-10">
 
             <!-- LEFT: TEXT -->
-            <div class="text-white max-w-xl">
+            <div class="text-white text-center mb-[100px]">
                 <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
                     আপনার চোখ, <span class="text-[#BF8142]">আপনার ভবিষ্যৎ</span>
                 </h2>
@@ -503,35 +505,6 @@
 
             <!-- RIGHT: ANIMATED SVG -->
             <!-- RIGHT: ADVANCED ANIMATED EYE -->
-            <div class="relative w-[320px] h-[320px] flex items-center justify-center">
-
-                <!-- Eye SVG -->
-                <svg viewBox="0 0 200 120" class="w-full">
-
-                    <!-- Eye Outline -->
-                    <path d="M10 60 Q100 10 190 60 Q100 110 10 60Z" fill="none" stroke="white" stroke-width="3" />
-
-                    <!-- Iris -->
-                    <circle cx="100" cy="60" r="20" fill="#BF8142">
-                        <animate attributeName="r" values="18;22;18" dur="2s" repeatCount="indefinite" />
-                    </circle>
-
-                    <!-- Pupil -->
-                    <circle cx="100" cy="60" r="8" fill="black" />
-
-                    <!-- Scanner Line -->
-                    <line id="scanLine" x1="20" y1="60" x2="180" y2="60" stroke="#00ffcc" stroke-width="2"
-                        opacity="0.8">
-                        <animate attributeName="y1" values="40;80;40" dur="2s" repeatCount="indefinite" />
-                        <animate attributeName="y2" values="40;80;40" dur="2s" repeatCount="indefinite" />
-                    </line>
-
-                </svg>
-
-                <!-- Glow Effect -->
-                <div class="absolute w-40 h-40 rounded-full bg-green-400 opacity-20 blur-2xl animate-pulse"></div>
-
-            </div>
 
         </div>
 
@@ -561,12 +534,12 @@
                             <table class="w-full mb-6 text-sm sm:text-base">
                                 <tbody>
                                     <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
-                                        <td class="text-white">সকাল পরামর্শ</td>
+                                        <td class="text-white">মর্নিং</td>
                                         <td class="px-2 text-white/70">—</td>
                                         <td class="text-right text-white">৳ 300</td>
                                     </tr>
                                     <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
-                                        <td class="text-white">বিকাল পরামর্শ</td>
+                                        <td class="text-white">ইভিনিং</td>
                                         <td class="px-2 text-white/70">—</td>
                                         <td class="text-right text-white">৳ 200</td>
                                     </tr>
@@ -805,7 +778,7 @@
                 <!-- Header -->
                 <div class="flex flex-col lg:flex-row justify-between items-center mb-10">
                     <div>
-                        <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                        <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
                             আমাদের হাসপাতালে <span class="text-[#BF8142]">আধুনিক ও বিশ্বমানের সেবাসমূহ</span>
                         </h2>
                     </div>
