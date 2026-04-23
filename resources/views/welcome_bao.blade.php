@@ -31,9 +31,38 @@
             font-weight: bold;
         }
 
+        .button_sec {
+            color: #353535;
+            font-weight: bold;
+            background-color: #396cf0;
+        }
+
         li a:hover {
             color: white;
             font-weight: bold;
+        }
+
+        .btn-gradient-hover {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-gradient-hover::after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 0%;
+            top: 0;
+            right: 0;
+            background-color: #396cf0;
+            z-index: -1;
+            transition: all 0.5s ease-out;
+        }
+
+        .btn-gradient-hover:hover::after {
+            width: 100%;
+            left: 0;
         }
     </style>
 
@@ -500,7 +529,67 @@
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    <section class="relative bg-cover bg-center pt-20 lg:pt-40">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col xl:flex-row flex-wrap -mx-4">
 
+                <div class="w-full xl:w-7/12 px-4 order-1 xl:order-2 mb-10 xl:mb-40">
+                    <div class="item-content">
+                        <h2 class="text-3xl lg:text-4xl font-semibold text-gray-900 capitalize mb-5 leading-tight">
+                            Welcome To MediLink. Central Hospital
+                        </h2>
+                        <div class="text-xl font-medium text-gray-900 mb-5">
+                            Hospital imply dummy text of the printing and type setng industry been the industry.
+                        </div>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Mtandard dummy texr since when an unknown printer took a galley.MediPoint Lorem ipsum
+                            dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam.
+                        </p>
+                        <img src="img/about/sign1.png" alt="sign" class="max-w-full h-auto">
+                    </div>
+                </div>
+
+                <div class="w-full xl:w-4/12 lg:w-7/12 px-4 order-2 xl:order-3 mb-10 xl:mb-0">
+                    <ul class="space-y-2">
+                        <li class="button_sec">
+                            <a href="appointment.html"
+                                class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                <i
+                                    class="far fa-calendar-alt absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
+                                Request Appointment
+                            </a>
+                        </li>
+                        <li class="button_sec">
+                            <a href="doctors1.html"
+                                class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                <i
+                                    class="far fa-user absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
+                                Find Doctors
+                            </a>
+                        </li>
+                        <li class="button_sec">
+                            <a href="appointment.html"
+                                class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                <i
+                                    class="fas fa-map-marker-alt absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
+                                Find Locations
+                            </a>
+                        </li>
+                        <li class="button_sec">
+                            <a href="appointment.html"
+                                class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                <i
+                                    class="fas fa-phone absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
+                                Emergency Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
 
 
     <div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-16 px-4">

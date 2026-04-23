@@ -53,7 +53,8 @@
                         class="w-[85px] h-[80px] object-contain" alt="header-logo">
 
                     <div class="flex flex-col justify-center border-l border-gray-300 pl-4">
-                        <span class="text-[#3effb1] font-bold text-2xl tracking-tight [filter:drop-shadow(2px_3px_2px_rgba(0,0,0,0.2))] mb-2">
+                        <span
+                            class="text-[#3effb1] font-bold text-2xl tracking-tight [filter:drop-shadow(2px_3px_2px_rgba(0,0,0,0.2))] mb-2">
                             ওএসবি চক্ষু হাসপাতাল
                         </span>
                         <span class="text-[15px] text-white font-semibold">
@@ -493,7 +494,7 @@
             <!-- LEFT: TEXT -->
             <div class="text-white text-center mb-[100px]">
                 <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                    আপনার চোখ, <span class="text-[#BF8142]">আপনার ভবিষ্যৎ</span>
+                    আপনার চোখ, <span class="text-[#f19e4a]">আপনার ভবিষ্যৎ</span>
                 </h2>
 
                 <p class="text-lg mb-6 opacity-90">
@@ -508,7 +509,70 @@
 
         </div>
 
-        <section id="info-8" class="relative py-24 text-stone-900">
+        <section class="relative bg-cover bg-center pt-10 lg:pt-10 w-[90%] m-auto">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col xl:flex-row flex-wrap mb-[150px]">
+
+                    <div class="w-full xl:w-7/12 px-4 order-1 xl:order-2 mb-10 xl:mb-40">
+                        <div class="item-content">
+                            <h2 class="text-3xl lg:text-4xl font-semibold text-white capitalize mb-5 leading-tight">
+                                ওএসবি হাসপাতালে <span class="text-[#f19e4a]">আপনাকে স্বাগতম</span>
+                            </h2>
+                            <div class="text-xl font-medium text-[#FFD700] mb-5">
+                                তাৎক্ষণিক ও নিরবচ্ছিন্ন সেবা গ্রহণ করুন
+                            </div>
+                            <p class="text-white mb-6 leading-relaxed">
+                                আমাদের ইনস্ট্যান্ট যোগাযোগ সেবার মাধ্যমে আপনি খুব সহজে এবং দ্রুত প্রয়োজনীয় সেবা পেতে
+                                পারবেন। এখানে অপেক্ষা ছাড়াই তাৎক্ষণিকভাবে যোগাযোগ করে আপনার সমস্যার সমাধান নেওয়ার সুযোগ
+                                রয়েছে, যা আপনাকে আরও নিরবচ্ছিন্ন ও কার্যকর অভিজ্ঞতা প্রদান করে।
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="w-full xl:w-4/12 lg:w-7/12 px-4 order-2 xl:order-3 mb-10 xl:mb-0">
+                        <ul class="space-y-2">
+                            <li class="button_sec">
+                                <a href="appointment.html"
+                                    class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                    <i
+                                        class="far fa-calendar-alt absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
+                                    Request Appointment
+                                </a>
+                            </li>
+                            <li class="button_sec">
+                                <a href="doctors1.html"
+                                    class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                    <i
+                                        class="far fa-user absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
+                                    Find Doctors
+                                </a>
+                            </li>
+                            <li class="button_sec">
+                                <a href="appointment.html"
+                                    class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                    <i
+                                        class="fas fa-map-marker-alt absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
+                                    Find Locations
+                                </a>
+                            </li>
+                            <li class="button_sec">
+                                <a href="appointment.html"
+                                    class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                    <i
+                                        class="fas fa-phone absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
+                                    Emergency Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section id="info-8" class="relative py-24 text-stone-900 w-[90%] m-auto mb-[150px]">
 
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap items-center">
@@ -567,9 +631,9 @@
             </div>
         </section>
 
-        <div class="space-y-4">
+        <div class="space-y-4 w-[90%] m-auto">
 
-            <div class="p-4 mt-5">
+            <div class="mt-5">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
 
                     <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
@@ -609,7 +673,7 @@
                 </div>
             </div>
 
-            <div class="p-4 mt-5">
+            <div class="mt-5">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
 
                     <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
@@ -665,7 +729,7 @@
                 </div>
             </div>
 
-            <div class="p-4 pt-0">
+            <div class="pt-0">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
 
                     <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
@@ -779,7 +843,7 @@
                 <div class="flex flex-col lg:flex-row justify-between items-center mb-10">
                     <div>
                         <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                            আমাদের হাসপাতালে <span class="text-[#BF8142]">আধুনিক ও বিশ্বমানের সেবাসমূহ</span>
+                            আমাদের হাসপাতালে <span class="text-[#f19e4a]">আধুনিক ও বিশ্বমানের সেবাসমূহ</span>
                         </h2>
                     </div>
 
@@ -926,6 +990,42 @@
             </div>
         </section>
 
+        <section class="relative py-24 overflow-hidden">
+
+            <!-- decorative image -->
+
+            <div class="container mx-auto px-6">
+                <div class="flex justify-center">
+                    <div class="w-full lg:w-2/3 text-center">
+
+                        <h2 class="text-3xl md:text-4xl font-semibold text-[#369fff] leading-snug max-w-3xl mx-auto">
+                            আমরা আমাদের রোগীদের <span class="text-[#f19e4a]">সর্বোচ্চ মানের সেবা ও যত্ন প্রদান
+                                করি</span>
+                        </h2>
+
+                        <!-- phone -->
+                        <div class="mt-8">
+                            <a href="tel:+12344092888"
+                                class="inline-flex items-center gap-3 text-2xl md:text-3xl font-medium text-white hover:text-blue-600 transition">
+                                <span class="text-blue-600 text-xl md:text-2xl">📞</span>
+                                +123 44092 888
+                            </a>
+                        </div>
+
+                        <!-- button -->
+                        <div class="mt-8">
+                            <a href="#"
+                                class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-lg shadow-md hover:bg-transparent hover:text-blue-600 border border-blue-600 transition">
+                                Make an Appointment
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
         <!-- Counter Script -->
         <script>
             const counters = document.querySelectorAll('.counter');
@@ -949,6 +1049,7 @@
         </script>
 
     </section>
+
 
     <script>
         // Typing Bangla Text
