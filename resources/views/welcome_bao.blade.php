@@ -36,6 +36,32 @@
             font-weight: bold;
         }
     </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer components {
+            .glass-card {
+                @apply relative bg-white/70 backdrop-blur-md border border-white/40 
+                       rounded-3xl p-6 pt-16 mt-12 transition-all duration-500 
+                       hover:bg-white/90 hover:shadow-[0_20px_50px_rgba(0,102,204,0.15)]
+                       hover:-translate-y-2 opacity-0 animate-[fadeInUp_0.7s_ease-out_forwards];
+            }
+            .profile-hex {
+                @apply absolute -top-12 left-1/2 -translate-x-1/2 w-28 h-28 
+                       md:w-32 md:h-32 rounded-[2rem] rotate-45 overflow-hidden 
+                       border-4 border-white shadow-xl transition-transform duration-500 
+                       group-hover:rotate-[55deg] group-hover:scale-110;
+            }
+            .profile-img {
+                @apply w-full h-full object-cover -rotate-45 scale-125;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 
 <body class="text-gray-800">
@@ -47,8 +73,8 @@
 
             <div class="flex-shrink-0">
                 <a href="#hero-1" class="flex items-center gap-4">
-                    <img src="{{ asset('pictures/bao_logo.png') }}"
-                        class="w-[85px] h-[80px] object-contain" alt="header-logo">
+                    <img src="{{ asset('pictures/bao_logo.png') }}" class="w-[85px] h-[80px] object-contain"
+                        alt="header-logo">
 
                     <div class="flex flex-col justify-center border-l border-gray-300 pl-4">
                         <span class="text-[14px] font-bold text-gray-800 leading-tight">
@@ -375,19 +401,19 @@
         slides: [
             { 
                 id: 1,
-                title: 'বাংলাদেশের সর্বাধুনিক চক্ষু চিকিৎসা কেন্দ্র',
-                desc: 'সুস্থ দৃষ্টি, সুন্দর জীবন',
+                title: '',
+                desc: '',
                 img: '{{ asset('pictures/hospital_picture_one.jpg') }}'
             },
             { 
                 id: 2, 
-                title: 'আপনার চোখের যত্নই আমাদের অগ্রাধিকার', 
+                title: '', 
                 desc: '', 
                 img: '{{ asset('pictures/hospital_picture_two.jpg') }}'
             },
             { 
                 id: 3, 
-                title: 'চোখের সকল সমস্যার সমাধান এক ছাদের নিচে', 
+                title: '', 
                 desc: '', 
                 img: '{{ asset('pictures/hospital_picture_three.jpg') }}'
             }
@@ -474,536 +500,275 @@
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <section class="bg-gradient-to-r from-green-900 to-green-600 py-20 overflow-hidden">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-10">
 
-            <!-- LEFT: TEXT -->
-            <div class="text-white max-w-xl">
-                <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                    আপনার চোখ, <span class="text-[#BF8142]">আপনার ভবিষ্যৎ</span>
-                </h2>
 
-                <p class="text-lg mb-6 opacity-90">
-                    আধুনিক প্রযুক্তি ও অভিজ্ঞ চিকিৎসকের মাধ্যমে আমরা নিশ্চিত করি আপনার দৃষ্টির সঠিক যত্ন।
-                </p>
 
-                <p id="typeText" class="text-2xl font-semibold text-[#FFD700]"></p>
-            </div>
+    <div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-16 px-4">
 
-            <!-- RIGHT: ANIMATED SVG -->
-            <!-- RIGHT: ADVANCED ANIMATED EYE -->
-            <div class="relative w-[320px] h-[320px] flex items-center justify-center">
+        <!-- HEADER -->
+        <div class="text-center mb-16">
+            <p class="text-blue-600 font-semibold tracking-widest uppercase text-sm">
+                Executive Committee
+            </p>
 
-                <!-- Eye SVG -->
-                <svg viewBox="0 0 200 120" class="w-full">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mt-2">
+                বাংলাদেশ একাডেমি অফ অপথ্যালমোলজি
+            </h1>
 
-                    <!-- Eye Outline -->
-                    <path d="M10 60 Q100 10 190 60 Q100 110 10 60Z" fill="none" stroke="white" stroke-width="3" />
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mt-4 rounded-full"></div>
 
-                    <!-- Iris -->
-                    <circle cx="100" cy="60" r="20" fill="#BF8142">
-                        <animate attributeName="r" values="18;22;18" dur="2s" repeatCount="indefinite" />
-                    </circle>
-
-                    <!-- Pupil -->
-                    <circle cx="100" cy="60" r="8" fill="black" />
-
-                    <!-- Scanner Line -->
-                    <line id="scanLine" x1="20" y1="60" x2="180" y2="60" stroke="#00ffcc" stroke-width="2"
-                        opacity="0.8">
-                        <animate attributeName="y1" values="40;80;40" dur="2s" repeatCount="indefinite" />
-                        <animate attributeName="y2" values="40;80;40" dur="2s" repeatCount="indefinite" />
-                    </line>
-
-                </svg>
-
-                <!-- Glow Effect -->
-                <div class="absolute w-40 h-40 rounded-full bg-green-400 opacity-20 blur-2xl animate-pulse"></div>
-
-            </div>
-
+            <p class="text-slate-500 mt-4 italic">
+                জুলাই ২০২৫ - জুন ২০২৭
+            </p>
         </div>
 
-        <section id="info-8" class="relative py-24 text-stone-900">
+        <!-- GRID -->
+        <div class="min-h-screen bg-gradient-to-br from-slate-100 via-indigo-50 to-cyan-50 p-10">
 
-            <div class="container mx-auto px-4">
-                <div class="flex flex-wrap items-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
 
-                    <!-- Content -->
-                    <div class="w-full md:w-7/12 lg:w-5/12">
-                        <div class="bg-[#BF8142] p-8 md:p-12 md:pr-16 rounded-lg relative
-    z-10
-    transform translate-y-[141px] md:translate-y-0 md:translate-x-[85px]
-    wow fadeInUp" data-wow-delay="0.4s">
-
-                            <!-- Title -->
-                            <h4 class="text-yellow-100 text-2xl md:text-3xl font-bold mb-4">পরামর্শ মূল্য</h4>
-
-                            <!-- Short Description -->
-                            <p class="mb-6 text-white/90 text-base leading-relaxed">
-                                আমাদের পরামর্শ ফি এমনভাবে নির্ধারিত যাতে প্রতিটি রোগী সহজলভ্য এবং মানসম্মত সেবা পেতে
-                                পারেন।
-                                নিচে বিস্তারিত দেখুন।
-                            </p>
-
-                            <!-- Table -->
-                            <table class="w-full mb-6 text-sm sm:text-base">
-                                <tbody>
-                                    <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
-                                        <td class="text-white">সকাল পরামর্শ</td>
-                                        <td class="px-2 text-white/70">—</td>
-                                        <td class="text-right text-white">৳ 300</td>
-                                    </tr>
-                                    <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
-                                        <td class="text-white">বিকাল পরামর্শ</td>
-                                        <td class="px-2 text-white/70">—</td>
-                                        <td class="text-right text-white">৳ 200</td>
-                                    </tr>
-                                    <tr class="border-b border-dashed border-black/60 font-semibold text-lg">
-                                        <td class="text-white">ফাস্ট ট্র্যাক পরামর্শ</td>
-                                        <td class="px-2 text-white/70">—</td>
-                                        <td class="text-right text-white">৳ 500</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <!-- Optional Note -->
-                            <p class="text-sm text-white/60 opacity-90">
-                                * চিকিৎসাগত প্রয়োজন অনুযায়ী ফি পরিবর্তন হতে পারে।
-                            </p>
-                        </div>
+                <!-- 1 PRESIDENT -->
+                <div class="group relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
                     </div>
-
+                    <div
+                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-yellow-200/40 bg-gradient-to-br from-yellow-50/80 to-orange-50/60 hover:-translate-y-2 transition">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760521_Prof. Md. Abid Kamal.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: মোঃ আবিদ কামাল</h3>
+                        <p class="text-center text-yellow-700 font-semibold text-sm uppercase">সভাপতি</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image -->
-            <div class="absolute top-0 left-0 w-full h-64 sm:h-80 md:top-0 md:left-2/5 md:w-3/5 md:h-full bg-cover bg-center"
-                style="background-image: url('{{ asset('pictures/hospital_picture_seven.jpg') }}');">
-            </div>
-        </section>
-
-        <div class="space-y-4">
-
-            <div class="p-4 mt-5">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
-
-                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_twenty_one.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_twenty_one.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
+                <!-- 2 -->
+                <div class="group relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-emerald-300 via-green-400 to-teal-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
                     </div>
-
-                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_twenty_two.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_twenty_two.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div
+                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-emerald-200/40 bg-gradient-to-br from-emerald-50/80 to-teal-50/60 hover:-translate-y-2 transition">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760574_Dr.Zah-e-alam Mridha.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
                         </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: জানে আলম মৃধা</h3>
+                        <p class="text-center text-emerald-700 font-semibold text-sm uppercase">মহাসচিব</p>
                     </div>
-
-
-                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_twenty_three.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_twenty_three.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                    </div>
-
-
-                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_twenty_four.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_twenty_four.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                    </div>
-
                 </div>
-            </div>
 
-            <div class="p-4 mt-5">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
-
-                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_one.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_one.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                <!-- 3 -->
+                <div class="group relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-purple-300 via-indigo-400 to-cyan-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
+                    </div>
+                    <div
+                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-purple-200/40 bg-gradient-to-br from-purple-50/80 to-cyan-50/60 hover:-translate-y-2 transition">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760673_avatar_male.png"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
                         </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: মোঃ সামসুল হক</h3>
+                        <p class="text-center text-purple-700 font-semibold text-sm uppercase">সহ-সভাপতি</p>
                     </div>
-
-                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_ten.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_ten.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
-                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_three.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_three.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
-                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_four.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_four.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
-                    <div class="lg:col-span-3 lg:row-span-1 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_five.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_five.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
-                    <div class="lg:col-span-1 lg:row-span-3 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_six.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_six.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
-                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_seven.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_seven.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
-                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_eight.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_eight.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
                 </div>
-            </div>
 
-            <div class="p-4 pt-0">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] grid-flow-dense">
-
-                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl relative group cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_fourteen.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_fourteen.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                <!-- 4 -->
+                <div class="group relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-rose-300 via-pink-400 to-fuchsia-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
+                    </div>
+                    <div
+                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-rose-200/40 bg-gradient-to-br from-rose-50/80 to-pink-50/60 hover:-translate-y-2 transition">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760702_avatar_male.png"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
                         </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: সৈয়দ আব্দুল ওয়াদুদ</h3>
+                        <p class="text-center text-rose-700 font-semibold text-sm uppercase">সহ-সভাপতি</p>
                     </div>
-
-                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_fifteen.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_fifteen.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
-                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_sixteen.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_sixteen.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
-                    <div class="lg:col-span-1 lg:row-span-1 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hosppital_picture_seventeen.jpg') }}')">
-                        <img src="{{ asset('pictures/hosppital_picture_seventeen.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
-                    <div class="lg:col-span-3 lg:row-span-1 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_eighteen.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_eighteen.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
-                    <div class="lg:col-span-1 lg:row-span-3 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_nineteen.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_nineteen.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
-                    <div class="lg:col-span-1 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_twenty.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_twenty.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
-                    <div class="lg:col-span-2 lg:row-span-2 overflow-hidden rounded-2xl shadow-md hover:shadow-xl cursor-pointer"
-                        onclick="openModal('{{ asset('pictures/hospital_picture_eight.jpg') }}')">
-                        <img src="{{ asset('pictures/hospital_picture_eight.jpg') }}"
-                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-
                 </div>
+
+                <!-- 5 -->
+                <div class="group relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-orange-300 via-yellow-400 to-amber-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
+                    </div>
+                    <div
+                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-orange-200/40 bg-gradient-to-br from-orange-50/80 to-yellow-50/60 hover:-translate-y-2 transition">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760733_avatar_male.png"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: মোহাম্মদ মোস্তফা হোসেন</h3>
+                        <p class="text-center text-orange-700 font-semibold text-sm uppercase">সহ-সভাপতি</p>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="group relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-blue-300 via-indigo-400 to-sky-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
+                    </div>
+                    <div
+                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-blue-200/40 bg-gradient-to-br from-blue-50/80 to-sky-50/60 hover:-translate-y-2 transition">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ মিফতাহুল হোসেন চৌধুরী</h3>
+                        <p class="text-center text-blue-700 font-semibold text-sm uppercase">কোষাধ্যক্ষ</p>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="group relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-teal-300 via-cyan-400 to-emerald-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
+                    </div>
+                    <div
+                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-teal-200/40 bg-gradient-to-br from-teal-50/80 to-cyan-50/60 hover:-translate-y-2 transition">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760789_avatar_male.png"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ মাহফুজুল আলম</h3>
+                        <p class="text-center text-teal-700 font-semibold text-sm uppercase">যুগ্ম-মহাসচিব</p>
+                    </div>
+                </div>
+
+                <!-- MEMBERS -->
+                <!-- 8 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-purple-50 to-indigo-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">ডা: এ এস এম ক্বাদির</h3>
+                        <p class="text-center text-purple-700 text-sm">সদস্য</p>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-indigo-50 to-cyan-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">ডা: মোঃ নজরুল ইসলাম</h3>
+                        <p class="text-center text-indigo-700 text-sm">সদস্য</p>
+                    </div>
+                </div>
+
+                <!-- 10 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-emerald-50 to-green-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">ডা: কাজী মনিরুজ্জামান</h3>
+                        <p class="text-center text-emerald-700 text-sm">সদস্য</p>
+                    </div>
+                </div>
+
+                <!-- 11 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-rose-50 to-pink-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">অধ্যাপক ডা: মোঃ আরিফ হায়াত খান পাঠান</h3>
+                        <p class="text-center text-rose-700 text-sm">সদস্য</p>
+                    </div>
+                </div>
+
+                <!-- 12 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-sky-50 to-blue-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">অধ্যাপক ডা: এ বি শামসুদ্দুহা</h3>
+                        <p class="text-center text-sky-700 text-sm">সদস্য</p>
+                    </div>
+                </div>
+
+                <!-- 13 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-purple-50 to-fuchsia-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">ডা: সায়ীদ মেহবুব উল কাদির</h3>
+                        <p class="text-center text-purple-700 text-sm">সদস্য</p>
+                    </div>
+                </div>
+
+                <!-- 14 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-pink-50 to-rose-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">ডা: শাহনাজ বেগম</h3>
+                        <p class="text-center text-pink-700 text-sm">সদস্য</p>
+                    </div>
+                </div>
+
+                <!-- 15 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-teal-50 to-cyan-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">ডা: এ এস এম মইন উদ্দিন</h3>
+                        <p class="text-center text-teal-700 text-sm">সদস্য</p>
+                    </div>
+                </div>
+
+                <!-- 16 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">ডা: মোঃ হাসানুজ্জামান</h3>
+                        <p class="text-center text-blue-700 text-sm">সদস্য</p>
+                    </div>
+                </div>
+
+                <!-- 17 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-orange-50 to-amber-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">ডা: মোঃ ফরিদ হোসেন</h3>
+                        <p class="text-center text-orange-700 text-sm">সদস্য</p>
+                    </div>
+                </div>
+
+                <!-- 18 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-indigo-50 to-purple-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">ডা: মোঃ মাজহারুল ইসলাম</h3>
+                        <p class="text-center text-indigo-700 text-sm">সদস্য</p>
+                    </div>
+                </div>
+
+                <!-- 19 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-slate-50 to-gray-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">ডা: এস এম এ মাহবুব</h3>
+                        <p class="text-center text-slate-700 text-sm">সদস্য</p>
+                    </div>
+                </div>
+
+                <!-- 20 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-indigo-50 to-cyan-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">অধ্যাপক ডা: মোঃ সাহাব উদ্দিন (ওএসবি)</h3>
+                        <p class="text-center text-indigo-700 text-sm">OSB CONVENOR</p>
+                    </div>
+                </div>
+
+                <!-- 21 -->
+                <div class="group relative">
+                    <div
+                        class="relative rounded-3xl p-6 bg-gradient-to-br from-purple-50 to-cyan-50 border hover:-translate-y-2 transition">
+                        <h3 class="text-center font-bold">অধ্যাপক ডা: মোঃ জিন্নু রাইন (নিউটন)</h3>
+                        <p class="text-center text-purple-700 text-sm">OSB SECRETARY</p>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-        <div id="imageModal"
-            class="fixed inset-0 z-[999] hidden bg-black/95 flex items-center justify-center p-4 cursor-zoom-out backdrop-blur-sm"
-            onclick="closeModal()">
-
-            <img id="modalImage" src=""
-                class="max-w-full max-h-full object-contain rounded-sm shadow-2xl transition-all duration-300 transform scale-95 origin-center"
-                onclick="event.stopPropagation()">
-        </div>
-
-        <script>
-            function openModal(imageSrc) {
-                const modal = document.getElementById('imageModal');
-                const modalImg = document.getElementById('modalImage');
-
-                // Update image source
-                modalImg.src = imageSrc;
-
-                // Show modal and handle animation
-                modal.classList.remove('hidden');
-                setTimeout(() => {
-                    modalImg.classList.remove('scale-95', 'opacity-0');
-                    modalImg.classList.add('scale-100', 'opacity-100');
-                }, 20);
-
-                // Prevent background scrolling
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal() {
-                const modal = document.getElementById('imageModal');
-                const modalImg = document.getElementById('modalImage');
-
-                // Hide modal
-                modal.classList.add('hidden');
-                modalImg.classList.add('scale-95');
-                modalImg.classList.remove('scale-100');
-
-                // Restore scrolling
-                document.body.style.overflow = 'auto';
-            }
-
-            // Close on Escape Key
-            document.addEventListener('keydown', function (e) {
-                if (e.key === "Escape") closeModal();
-            });
-        </script>
-
-
-
-
-        <section class="py-16">
-            <div class="max-w-7xl mx-auto px-4">
-
-                <!-- Header -->
-                <div class="flex flex-col lg:flex-row justify-between items-center mb-10">
-                    <div>
-                        <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                            আমাদের হাসপাতালে <span class="text-[#BF8142]">আধুনিক ও বিশ্বমানের সেবাসমূহ</span>
-                        </h2>
-                    </div>
-
-                    <a href="#" class="mt-4 lg:mt-0 text-[#BF8142] underline font-medium">
-                        View All Services
-                    </a>
-                </div>
-
-                <!-- Services Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-
-                    <!-- Card -->
-                    <div
-                        class="bg-[#BF8142] text-white rounded-2xl p-6 shadow-lg hover:scale-105 transition duration-300 flex flex-col items-center text-center">
-                        <img src="https://visioneyebd.org/storage/files/Department/17194082653.jpg"
-                            class="w-16 h-16 object-contain mb-4 rounded-full bg-white p-2">
-
-                        <h5 class="font-semibold text-lg mb-2">Cataract</h5>
-
-                        <a href="#" class="text-sm underline mt-auto">
-                            Explore More →
-                        </a>
-                    </div>
-
-                    <!-- Duplicate cards -->
-                    <div
-                        class="bg-[#BF8142] text-white rounded-2xl p-6 shadow-lg hover:scale-105 transition duration-300 flex flex-col items-center text-center">
-                        <img src="https://visioneyebd.org/storage/files/Department/17194082922.jpg"
-                            class="w-16 h-16 object-contain mb-4 rounded-full bg-white p-2">
-
-                        <h5 class="font-semibold text-lg mb-2">Vitreo-Retina</h5>
-
-                        <a href="#" class="text-sm underline mt-auto">
-                            Explore More →
-                        </a>
-                    </div>
-
-                    <div
-                        class="bg-[#BF8142] text-white rounded-2xl p-6 shadow-lg hover:scale-105 transition duration-300 flex flex-col items-center text-center">
-                        <img src="https://visioneyebd.org/storage/files/Department/17194083191.jpg"
-                            class="w-16 h-16 object-contain mb-4 rounded-full bg-white p-2">
-
-                        <h5 class="font-semibold text-lg mb-2">Glaucoma</h5>
-
-                        <a href="#" class="text-sm underline mt-auto">
-                            Explore More →
-                        </a>
-                    </div>
-
-                    <div
-                        class="bg-[#BF8142] text-white rounded-2xl p-6 shadow-lg hover:scale-105 transition duration-300 flex flex-col items-center text-center">
-                        <img src="https://visioneyebd.org/storage/files/Department/171940836812.jpg"
-                            class="w-16 h-16 object-contain mb-4 rounded-full bg-white p-2">
-
-                        <h5 class="font-semibold text-lg mb-2">Pediatric</h5>
-
-                        <a href="#" class="text-sm underline mt-auto">
-                            Explore More →
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section class="py-16">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-wrap justify-center gap-8">
-
-                    <!-- Milestone 1 -->
-                    <div class="flex items-center bg-[#BF8142] text-white rounded-xl p-6 shadow-md w-72">
-                        <div class="w-16 h-16 flex items-center justify-center border-2 border-white rounded-full">
-                            <!-- Calendar Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7H3v12a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <div class="ml-4">
-                            <h5 class="text-2xl font-bold">
-                                <span class="counter text-4xl" data-target="20">0</span> Years
-                            </h5>
-                            <p class="text-lg font-semibold">of Establishment</p>
-                        </div>
-                    </div>
-
-                    <!-- Milestone 2 -->
-                    <div class="flex items-center bg-[#BF8142] text-white rounded-xl p-6 shadow-md w-72">
-                        <div class="w-16 h-16 flex items-center justify-center border-2 border-white rounded-full">
-                            <!-- Hospital Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 21h18M9 21V9h6v12M4 10h4M16 10h4M10 3h4v4h-4z" />
-                            </svg>
-                        </div>
-                        <div class="ml-4">
-                            <h5 class="text-2xl font-bold">
-                                <span class="counter text-4xl" data-target="11">0</span>
-                            </h5>
-                            <p class="text-lg font-semibold">Branches</p>
-                        </div>
-                    </div>
-
-                    <!-- Milestone 3 -->
-                    <div class="flex items-center bg-[#BF8142] text-white rounded-xl p-6 shadow-md w-72">
-                        <div class="w-16 h-16 flex items-center justify-center border-2 border-white rounded-full">
-                            <!-- Doctor Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5.121 17.804A7 7 0 1118.364 4.56 7 7 0 015.12 17.804zM12 14v4m-2-2h4" />
-                            </svg>
-                        </div>
-                        <div class="ml-4">
-                            <h5 class="text-2xl font-bold">
-                                <span class="counter text-4xl" data-target="265">0</span>+
-                            </h5>
-                            <p class="text-lg font-semibold">Consultants</p>
-                        </div>
-                    </div>
-
-                    <!-- Milestone 4 -->
-                    <div class="flex items-center bg-[#BF8142] text-white rounded-xl p-6 shadow-md w-72">
-                        <div class="w-16 h-16 flex items-center justify-center border-2 border-white rounded-full">
-                            <!-- Users Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 20h5v-1a4 4 0 00-3-3.87M9 20H4v-1a4 4 0 013-3.87m6-2.13a4 4 0 10-6 0m6 0a4 4 0 116 0" />
-                            </svg>
-                        </div>
-                        <div class="ml-4">
-                            <h5 class="text-2xl font-bold">
-                                <span class="counter text-4xl" data-target="1200">0</span>+
-                            </h5>
-                            <p class="text-lg font-semibold">Staffs</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Counter Script -->
-        <script>
-            const counters = document.querySelectorAll('.counter');
-
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText;
-                    const increment = target / 200;
-
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + increment);
-                        setTimeout(updateCount, 10);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-
-                updateCount();
-            });
-        </script>
-
-    </section>
-
-    <script>
-        // Typing Bangla Text
-        const text = "দৃষ্টি পরিষ্কার, জীবন উজ্জ্বল";
-        let i = 0;
-
-        function typeEffect() {
-            if (i < text.length) {
-                document.getElementById("typeText").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeEffect, 60);
-            }
-        }
-        typeEffect();
-
-        // Scanner Animation Loop
-        const scan = document.getElementById("scan");
-
-        setInterval(() => {
-            scan.style.opacity = "1";
-            scan.style.transform = "translateX(-50%) translateY(0px)";
-
-            let pos = 0;
-            let interval = setInterval(() => {
-                pos += 2;
-                scan.style.transform = `translateX(-50%) translateY(${pos}px)`;
-
-                if (pos >= 120) {
-                    clearInterval(interval);
-                    scan.style.opacity = "0";
-                }
-            }, 10);
-
-        }, 2000);
-    </script>
-
-
-
-
+    </div>
 
 
     {{-- Footer --}}
