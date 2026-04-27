@@ -614,246 +614,349 @@
         </div>
 
         <!-- GRID -->
-        <div class="min-h-screen bg-gradient-to-br from-slate-100 via-indigo-50 to-cyan-50 p-10">
-
+        <div class="min-h-screen bg-gradient-to-br from-slate-100 via-indigo-50 to-cyan-50 p-10 font-sans">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
 
-                <!-- 1 PRESIDENT -->
+                <!-- 1. President -->
                 <div class="group relative">
                     <div
-                        class="absolute -inset-1 bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
+                        class="absolute -inset-1 bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
                     </div>
                     <div
-                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-yellow-200/40 bg-gradient-to-br from-yellow-50/80 to-orange-50/60 hover:-translate-y-2 transition">
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-yellow-200/50 bg-gradient-to-br from-yellow-50 to-orange-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
                             <img src="https://osb.org.bd/uploads/head-members/1765760521_Prof. Md. Abid Kamal.jpg"
-                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: মোঃ আবিদ কামাল</h3>
-                        <p class="text-center text-yellow-700 font-semibold text-sm uppercase">সভাপতি</p>
+                        <p class="text-center text-amber-700 font-semibold text-sm uppercase mt-1">সভাপতি</p>
                     </div>
                 </div>
 
-                <!-- 2 -->
+                <!-- 2. Mahasachib -->
                 <div class="group relative">
                     <div
-                        class="absolute -inset-1 bg-gradient-to-r from-emerald-300 via-green-400 to-teal-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
+                        class="absolute -inset-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-500 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
                     </div>
                     <div
-                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-emerald-200/40 bg-gradient-to-br from-emerald-50/80 to-teal-50/60 hover:-translate-y-2 transition">
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-emerald-200/50 bg-gradient-to-br from-emerald-50 to-teal-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
                             <img src="https://osb.org.bd/uploads/head-members/1765760574_Dr.Zah-e-alam Mridha.jpg"
-                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">ডা: জানে আলম মৃধা</h3>
-                        <p class="text-center text-emerald-700 font-semibold text-sm uppercase">মহাসচিব</p>
+                        <p class="text-center text-teal-700 font-semibold text-sm uppercase mt-1">মহাসচিব</p>
                     </div>
                 </div>
 
-                <!-- 3 -->
+                <!-- 3. Sah-Sovapoti 1 -->
                 <div class="group relative">
                     <div
-                        class="absolute -inset-1 bg-gradient-to-r from-purple-300 via-indigo-400 to-cyan-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
+                        class="absolute -inset-1 bg-gradient-to-r from-purple-400 via-indigo-500 to-violet-500 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
                     </div>
                     <div
-                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-purple-200/40 bg-gradient-to-br from-purple-50/80 to-cyan-50/60 hover:-translate-y-2 transition">
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-purple-200/50 bg-gradient-to-br from-purple-50 to-indigo-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760673_avatar_male.png"
-                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
+                            <img src="{{ asset('pictures/shamsul_haque.png') }}"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: মোঃ সামসুল হক</h3>
-                        <p class="text-center text-purple-700 font-semibold text-sm uppercase">সহ-সভাপতি</p>
+                        <p class="text-center text-indigo-700 font-semibold text-sm uppercase mt-1">সহ-সভাপতি</p>
                     </div>
                 </div>
 
-                <!-- 4 -->
+                <!-- 4. Sah-Sovapoti 2 -->
                 <div class="group relative">
                     <div
-                        class="absolute -inset-1 bg-gradient-to-r from-rose-300 via-pink-400 to-fuchsia-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
+                        class="absolute -inset-1 bg-gradient-to-r from-rose-400 via-pink-500 to-fuchsia-500 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
                     </div>
                     <div
-                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-rose-200/40 bg-gradient-to-br from-rose-50/80 to-pink-50/60 hover:-translate-y-2 transition">
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-rose-200/50 bg-gradient-to-br from-rose-50 to-pink-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760702_avatar_male.png"
-                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
+                            <img src="{{ asset('pictures/abdul_wadud.png') }}"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: সৈয়দ আব্দুল ওয়াদুদ</h3>
-                        <p class="text-center text-rose-700 font-semibold text-sm uppercase">সহ-সভাপতি</p>
+                        <p class="text-center text-rose-700 font-semibold text-sm uppercase mt-1">সহ-সভাপতি</p>
                     </div>
                 </div>
 
-                <!-- 5 -->
+                <!-- 5. Sah-Sovapoti 3 -->
                 <div class="group relative">
                     <div
-                        class="absolute -inset-1 bg-gradient-to-r from-orange-300 via-yellow-400 to-amber-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
+                        class="absolute -inset-1 bg-gradient-to-r from-orange-400 via-amber-500 to-yellow-500 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
                     </div>
                     <div
-                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-orange-200/40 bg-gradient-to-br from-orange-50/80 to-yellow-50/60 hover:-translate-y-2 transition">
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-orange-200/50 bg-gradient-to-br from-orange-50 to-amber-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760733_avatar_male.png"
-                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
+                            <img src="{{ asset('pictures/mostafa_hosen.png') }}"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: মোহাম্মদ মোস্তফা হোসেন</h3>
-                        <p class="text-center text-orange-700 font-semibold text-sm uppercase">সহ-সভাপতি</p>
+                        <p class="text-center text-orange-700 font-semibold text-sm uppercase mt-1">সহ-সভাপতি</p>
                     </div>
                 </div>
 
-                <!-- 6 -->
+                <!-- 6. Koshadhyokkho -->
                 <div class="group relative">
                     <div
-                        class="absolute -inset-1 bg-gradient-to-r from-blue-300 via-indigo-400 to-sky-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
+                        class="absolute -inset-1 bg-gradient-to-r from-blue-400 via-sky-500 to-cyan-500 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
                     </div>
                     <div
-                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-blue-200/40 bg-gradient-to-br from-blue-50/80 to-sky-50/60 hover:-translate-y-2 transition">
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-blue-200/50 bg-gradient-to-br from-blue-50 to-sky-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
                             <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
-                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ মিফতাহুল হোসেন চৌধুরী</h3>
-                        <p class="text-center text-blue-700 font-semibold text-sm uppercase">কোষাধ্যক্ষ</p>
+                        <p class="text-center text-blue-700 font-semibold text-sm uppercase mt-1">কোষাধ্যক্ষ</p>
                     </div>
                 </div>
 
-                <!-- 7 -->
+                <!-- 7. Jukto-Mahasachib -->
                 <div class="group relative">
                     <div
-                        class="absolute -inset-1 bg-gradient-to-r from-teal-300 via-cyan-400 to-emerald-300 rounded-3xl blur opacity-25 group-hover:opacity-60 transition">
+                        class="absolute -inset-1 bg-gradient-to-r from-teal-400 via-cyan-500 to-emerald-500 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
                     </div>
                     <div
-                        class="relative rounded-3xl p-6 backdrop-blur-xl border border-teal-200/40 bg-gradient-to-br from-teal-50/80 to-cyan-50/60 hover:-translate-y-2 transition">
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-teal-200/50 bg-gradient-to-br from-teal-50 to-cyan-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
                             <img src="https://osb.org.bd/uploads/head-members/1765760789_avatar_male.png"
-                                class="w-32 h-32 rounded-xl border-4 border-white object-cover">
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ মাহফুজুল আলম</h3>
-                        <p class="text-center text-teal-700 font-semibold text-sm uppercase">যুগ্ম-মহাসচিব</p>
+                        <p class="text-center text-teal-700 font-semibold text-sm uppercase mt-1">যুগ্ম-মহাসচিব</p>
                     </div>
                 </div>
 
-                <!-- MEMBERS -->
-                <!-- 8 -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-purple-50 to-indigo-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">ডা: এ এস এম ক্বাদির</h3>
-                        <p class="text-center text-purple-700 text-sm">সদস্য</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-teal-400 via-cyan-500 to-emerald-500 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-teal-200/50 bg-gradient-to-br from-teal-50 to-cyan-50 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760789_avatar_male.png"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ মাহফুজুল আলম</h3>
+                        <p class="text-center text-teal-700 font-semibold text-sm uppercase mt-1">যুগ্ম-মহাসচিব</p>
                     </div>
                 </div>
 
-                <!-- 9 -->
+                <!-- Remaining Members with Unique Colors -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-indigo-50 to-cyan-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">ডা: মোঃ নজরুল ইসলাম</h3>
-                        <p class="text-center text-indigo-700 text-sm">সদস্য</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-violet-400 to-purple-600 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-violet-200/50 bg-gradient-to-br from-violet-50 to-purple-50 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: এ এস এম ক্বাদির</h3>
+                        <p class="text-center text-purple-700 font-semibold text-sm mt-1">সদস্য</p>
                     </div>
                 </div>
 
-                <!-- 10 -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-emerald-50 to-green-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">ডা: কাজী মনিরুজ্জামান</h3>
-                        <p class="text-center text-emerald-700 text-sm">সদস্য</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-slate-500 to-zinc-600 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-slate-300 bg-gradient-to-br from-slate-50 to-zinc-50 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ নজরুল ইসলাম</h3>
+                        <p class="text-center text-slate-700 font-semibold text-sm mt-1">সদস্য</p>
                     </div>
                 </div>
 
-                <!-- 11 -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-rose-50 to-pink-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">অধ্যাপক ডা: মোঃ আরিফ হায়াত খান পাঠান</h3>
-                        <p class="text-center text-rose-700 text-sm">সদস্য</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-lime-400 to-green-600 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-lime-200/50 bg-gradient-to-br from-lime-50 to-green-50 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: কাজী মনিরুজ্জামান</h3>
+                        <p class="text-center text-green-700 font-semibold text-sm mt-1">সদস্য</p>
                     </div>
                 </div>
 
-                <!-- 12 -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-sky-50 to-blue-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">অধ্যাপক ডা: এ বি শামসুদ্দুহা</h3>
-                        <p class="text-center text-sky-700 text-sm">সদস্য</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-red-400 to-rose-600 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-red-200/50 bg-gradient-to-br from-red-50 to-rose-50 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800 text-xs sm:text-base">অধ্যাপক ডা: মোঃ আরিফ
+                            হায়াত খান পাঠান</h3>
+                        <p class="text-center text-rose-700 font-semibold text-sm mt-1">সদস্য</p>
                     </div>
                 </div>
 
-                <!-- 13 -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-purple-50 to-fuchsia-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">ডা: সায়ীদ মেহবুব উল কাদির</h3>
-                        <p class="text-center text-purple-700 text-sm">সদস্য</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-sky-600 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-cyan-200/50 bg-gradient-to-br from-cyan-50 to-sky-50 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: এ বি শামসুদ্দুহা</h3>
+                        <p class="text-center text-cyan-700 font-semibold text-sm mt-1">সদস্য</p>
                     </div>
                 </div>
 
-                <!-- 14 -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-pink-50 to-rose-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">ডা: শাহনাজ বেগম</h3>
-                        <p class="text-center text-pink-700 text-sm">সদস্য</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-fuchsia-400 to-pink-600 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-fuchsia-200/50 bg-gradient-to-br from-fuchsia-50 to-pink-50 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: সায়ীদ মেহবুব উল কাদির</h3>
+                        <p class="text-center text-fuchsia-700 font-semibold text-sm mt-1">সদস্য</p>
                     </div>
                 </div>
 
-                <!-- 15 -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-teal-50 to-cyan-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">ডা: এ এস এম মইন উদ্দিন</h3>
-                        <p class="text-center text-teal-700 text-sm">সদস্য</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-pink-400 to-rose-500 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-pink-200/50 bg-gradient-to-br from-pink-50 to-rose-50 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: শাহনাজ বেগম</h3>
+                        <p class="text-center text-pink-700 font-semibold text-sm mt-1">সদস্য</p>
                     </div>
                 </div>
 
-                <!-- 16 -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">ডা: মোঃ হাসানুজ্জামান</h3>
-                        <p class="text-center text-blue-700 text-sm">সদস্য</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-emerald-400 to-cyan-500 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-emerald-200/50 bg-gradient-to-br from-emerald-50 to-cyan-50 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: এ এস এম মইন উদ্দিন</h3>
+                        <p class="text-center text-emerald-700 font-semibold text-sm mt-1">সদস্য</p>
                     </div>
                 </div>
 
-                <!-- 17 -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-orange-50 to-amber-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">ডা: মোঃ ফরিদ হোসেন</h3>
-                        <p class="text-center text-orange-700 text-sm">সদস্য</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-blue-200/50 bg-gradient-to-br from-blue-50 to-indigo-50 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ হাসানুজ্জামান</h3>
+                        <p class="text-center text-indigo-700 font-semibold text-sm mt-1">সদস্য</p>
                     </div>
                 </div>
 
-                <!-- 18 -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-indigo-50 to-purple-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">ডা: মোঃ মাজহারুল ইসলাম</h3>
-                        <p class="text-center text-indigo-700 text-sm">সদস্য</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-orange-600 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-amber-200/50 bg-gradient-to-br from-amber-50 to-orange-50 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ ফরিদ হোসেন</h3>
+                        <p class="text-center text-amber-700 font-semibold text-sm mt-1">সদস্য</p>
                     </div>
                 </div>
 
-                <!-- 19 -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-slate-50 to-gray-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">ডা: এস এম এ মাহবুব</h3>
-                        <p class="text-center text-slate-700 text-sm">সদস্য</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-violet-600 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-indigo-200/50 bg-gradient-to-br from-indigo-50 to-violet-50 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ মাজহারুল ইসলাম</h3>
+                        <p class="text-center text-violet-700 font-semibold text-sm mt-1">সদস্য</p>
                     </div>
                 </div>
 
-                <!-- 20 -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-indigo-50 to-cyan-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">অধ্যাপক ডা: মোঃ সাহাব উদ্দিন (ওএসবি)</h3>
-                        <p class="text-center text-indigo-700 text-sm">OSB CONVENOR</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-zinc-400 to-slate-600 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-zinc-200 bg-gradient-to-br from-zinc-50 to-slate-100 hover:-translate-y-2 transition shadow-xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: এস এম এ মাহবুব</h3>
+                        <p class="text-center text-slate-700 font-semibold text-sm mt-1">সদস্য</p>
                     </div>
                 </div>
 
-                <!-- 21 -->
+                <!-- OSB Convenor -->
                 <div class="group relative">
                     <div
-                        class="relative rounded-3xl p-6 bg-gradient-to-br from-purple-50 to-cyan-50 border hover:-translate-y-2 transition">
-                        <h3 class="text-center font-bold">অধ্যাপক ডা: মোঃ জিন্নু রাইন (নিউটন)</h3>
-                        <p class="text-center text-purple-700 text-sm">OSB SECRETARY</p>
+                        class="absolute -inset-1 bg-gradient-to-r from-violet-500 via-purple-600 to-fuchsia-600 rounded-3xl blur opacity-35 group-hover:opacity-75 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-violet-200/60 bg-gradient-to-br from-violet-50 to-purple-50 hover:-translate-y-2 transition shadow-2xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: মোঃ সাহাব উদ্দিন (ওএসবি)</h3>
+                        <p class="text-center text-purple-800 font-black text-xs tracking-widest mt-2 uppercase">OSB
+                            CONVENOR</p>
+                    </div>
+                </div>
+
+                <!-- OSB Secretary -->
+                <div class="group relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-600 to-teal-600 rounded-3xl blur opacity-35 group-hover:opacity-75 transition">
+                    </div>
+                    <div
+                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-cyan-200/60 bg-gradient-to-br from-cyan-50 to-blue-50 hover:-translate-y-2 transition shadow-2xl">
+                        <div class="flex justify-center">
+                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
+                        </div>
+                        <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: মোঃ জিন্নু রাইন (নিউটন)</h3>
+                        <p class="text-center text-blue-800 font-black text-xs tracking-widest mt-2 uppercase">OSB
+                            SECRETARY</p>
                     </div>
                 </div>
 
