@@ -531,39 +531,44 @@
                     </div>
 
                     <div class="w-full xl:w-4/12 lg:w-7/12 px-4 order-2 xl:order-3 mb-10 xl:mb-0">
-                        <ul class="space-y-2">
+                        <ul class="space-y-4">
+
                             <li class="button_sec">
                                 <a href="appointment.html"
-                                    class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                    class="block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded overflow-hidden transition-all duration-300 bg-gradient-to-r from-[#2C5D8A] via-[#5FA8D3] to-[#D8A96A] hover:scale-[1.02] hover:shadow-xl">
                                     <i
                                         class="far fa-calendar-alt absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
                                     Request Appointment
                                 </a>
                             </li>
+
                             <li class="button_sec">
                                 <a href="doctors1.html"
-                                    class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                    class="block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded overflow-hidden transition-all duration-300 bg-gradient-to-r from-[#2C5D8A] via-[#5FA8D3] to-[#D8A96A] hover:scale-[1.02] hover:shadow-xl">
                                     <i
                                         class="far fa-user absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
                                     Find Doctors
                                 </a>
                             </li>
+
                             <li class="button_sec">
                                 <a href="appointment.html"
-                                    class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                    class="block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded overflow-hidden transition-all duration-300 bg-gradient-to-r from-[#2C5D8A] via-[#5FA8D3] to-[#D8A96A] hover:scale-[1.02] hover:shadow-xl">
                                     <i
                                         class="fas fa-map-marker-alt absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
                                     Find Locations
                                 </a>
                             </li>
+
                             <li class="button_sec">
                                 <a href="appointment.html"
-                                    class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                    class="block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded overflow-hidden transition-all duration-300 bg-gradient-to-r from-[#2C5D8A] via-[#5FA8D3] to-[#D8A96A] hover:scale-[1.02] hover:shadow-xl">
                                     <i
                                         class="fas fa-phone absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
                                     Emergency Contact
                                 </a>
                             </li>
+
                         </ul>
                     </div>
 

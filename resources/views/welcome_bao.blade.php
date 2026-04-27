@@ -536,14 +536,16 @@
                 <div class="w-full xl:w-7/12 px-4 order-1 xl:order-2 mb-10 xl:mb-40">
                     <div class="item-content">
                         <h2 class="text-3xl lg:text-4xl font-semibold text-gray-900 capitalize mb-5 leading-tight">
-                            Welcome To MediLink. Central Hospital
+                            বাংলাদেশ একাডেমি অব অপথ্যালমোলজিতে স্বাগতম
                         </h2>
                         <div class="text-xl font-medium text-gray-900 mb-5">
-                            Hospital imply dummy text of the printing and type setng industry been the industry.
+                            চক্ষুবিজ্ঞানের উন্নয়ন, শিক্ষা ও গবেষণায় দেশের অন্যতম অগ্রণী প্রতিষ্ঠান।
                         </div>
                         <p class="text-gray-700 mb-6 leading-relaxed">
-                            Mtandard dummy texr since when an unknown printer took a galley.MediPoint Lorem ipsum
-                            dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam.
+                            বাংলাদেশ একাডেমি অব অপথ্যালমোলজি দেশের চক্ষু চিকিৎসা শিক্ষা ও গবেষণার মান উন্নয়নে
+                            গুরুত্বপূর্ণ ভূমিকা পালন করছে। এখানে দক্ষ চিকিৎসক, গবেষক ও শিক্ষার্থীদের জন্য রয়েছে আধুনিক
+                            প্রশিক্ষণ ব্যবস্থা, সেমিনার এবং কর্মশালার সুযোগ। আন্তর্জাতিক মানের জ্ঞান ও দক্ষতা অর্জনের
+                            মাধ্যমে আমরা ভবিষ্যৎ চক্ষু বিশেষজ্ঞদের গড়ে তুলতে প্রতিশ্রুতিবদ্ধ।
                         </p>
                         <img src="img/about/sign1.png" alt="sign" class="max-w-full h-auto">
                     </div>
