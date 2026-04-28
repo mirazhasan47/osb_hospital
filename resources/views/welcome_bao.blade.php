@@ -721,22 +721,7 @@
                     <div
                         class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-teal-200/50 bg-gradient-to-br from-teal-50 to-cyan-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760789_avatar_male.png"
-                                class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
-                        </div>
-                        <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ মাহফুজুল আলম</h3>
-                        <p class="text-center text-teal-700 font-semibold text-sm uppercase mt-1">যুগ্ম-মহাসচিব</p>
-                    </div>
-                </div>
-
-                <div class="group relative">
-                    <div
-                        class="absolute -inset-1 bg-gradient-to-r from-teal-400 via-cyan-500 to-emerald-500 rounded-3xl blur opacity-30 group-hover:opacity-70 transition">
-                    </div>
-                    <div
-                        class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-teal-200/50 bg-gradient-to-br from-teal-50 to-cyan-50 hover:-translate-y-2 transition shadow-xl">
-                        <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760789_avatar_male.png"
+                            <img src="{{ asset('pictures/mahfuzul_alam.png') }}"
                                 class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ মাহফুজুল আলম</h3>
@@ -752,7 +737,7 @@
                     <div
                         class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-violet-200/50 bg-gradient-to-br from-violet-50 to-purple-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                            <img src="{{ asset('pictures/sm_kadir.png') }}"
                                 class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">ডা: এ এস এম ক্বাদির</h3>
@@ -767,7 +752,7 @@
                     <div
                         class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-slate-300 bg-gradient-to-br from-slate-50 to-zinc-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                            <img src="{{ asset('pictures/dr_nazrul_islam.png') }}"
                                 class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ নজরুল ইসলাম</h3>
@@ -782,7 +767,7 @@
                     <div
                         class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-lime-200/50 bg-gradient-to-br from-lime-50 to-green-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                            <img src="{{ asset('pictures/dr_kazi_moniruzzaman.jpg') }}"
                                 class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">ডা: কাজী মনিরুজ্জামান</h3>
@@ -797,7 +782,7 @@
                     <div
                         class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-red-200/50 bg-gradient-to-br from-red-50 to-rose-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                            <img src="{{ asset('pictures/arif_hayat_khan_pathan.png') }}"
                                 class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800 text-xs sm:text-base">অধ্যাপক ডা: মোঃ আরিফ
@@ -813,7 +798,7 @@
                     <div
                         class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-cyan-200/50 bg-gradient-to-br from-cyan-50 to-sky-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                            <img src="{{ asset('pictures/dr_a_b_shamsuddin.png') }}"
                                 class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: এ বি শামসুদ্দুহা</h3>
@@ -828,7 +813,7 @@
                     <div
                         class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-fuchsia-200/50 bg-gradient-to-br from-fuchsia-50 to-pink-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                            <img src="{{ asset('pictures/mehbub_ul_kadir.png') }}"
                                 class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">ডা: সায়ীদ মেহবুব উল কাদির</h3>
@@ -843,7 +828,7 @@
                     <div
                         class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-pink-200/50 bg-gradient-to-br from-pink-50 to-rose-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                            <img src="{{ asset('pictures/dr_shahnaz_karim.png') }}"
                                 class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">ডা: শাহনাজ বেগম</h3>
