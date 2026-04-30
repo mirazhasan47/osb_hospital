@@ -117,7 +117,6 @@
             </div>
 
 
-
             <nav class="hidden lg:block">
 
                 <ul class="flex items-center space-x-1">
@@ -625,7 +624,7 @@
                     <div
                         class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-yellow-200/50 bg-gradient-to-br from-yellow-50 to-orange-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760521_Prof. Md. Abid Kamal.jpg"
+                            <img src="{{ asset('pictures/dr_abid_kamal.jpg') }}"
                                 class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: মোঃ আবিদ কামাল</h3>
@@ -641,7 +640,7 @@
                     <div
                         class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-emerald-200/50 bg-gradient-to-br from-emerald-50 to-teal-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760574_Dr.Zah-e-alam Mridha.jpg"
+                            <img src="{{ asset('pictures/zan_e_alam_mridha.jpg') }}"
                                 class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">ডা: জানে আলম মৃধা</h3>
@@ -936,7 +935,7 @@
                     <div
                         class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-cyan-200/60 bg-gradient-to-br from-cyan-50 to-blue-50 hover:-translate-y-2 transition shadow-2xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                            <img src="{{ asset('pictures/dr_newton.jpg') }}"
                                 class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">অধ্যাপক ডা: মোঃ জিন্নু রাইন (নিউটন)</h3>
@@ -948,6 +947,31 @@
             </div>
         </div>
     </div>
+
+
+    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mt-2 m-0-auto text-center mt-[100px] mb-[100px]">
+        ফটো গ্যালারি
+    </h1>
+
+    <div class="grid grid-cols-2 gap-2 mb-[100px]">
+        <div>
+            <img class="h-auto max-w-full rounded-base"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-base"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-base"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-base"
+                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
+        </div>
+    </div>
+
 
 
     {{-- Footer --}}
