@@ -96,8 +96,9 @@
 <body class="text-gray-800">
 
 
-    <header
-        class="hidden lg:block fixed top-0 w-full z-[999] bg-[#D8A96A] shadow-md font-['Lato',_sans-serif] bg-[#D8A96A]">
+    <header class="hidden lg:block fixed top-0 w-full z-[999] shadow-md font-['Lato',_sans-serif] 
+             bg-gradient-to-r from-purple-500/10 via-pink-500/10 via-cyan-500/10 to-violet-500/10 
+             backdrop-blur-xl border-b border-white/30">
         <div class="max-w-7xl mx-auto px-4 h-[70px] flex items-center justify-between">
 
             <div class="flex-shrink-0">
@@ -431,19 +432,19 @@
                 id: 1,
                 title: '',
                 desc: '',
-                img: '{{ asset('pictures/hospital_picture_one.jpg') }}'
+                img: '{{ asset('pictures/bao_photo_one.jpg') }}'
             },
             { 
                 id: 2, 
                 title: '', 
                 desc: '', 
-                img: '{{ asset('pictures/hospital_picture_two.jpg') }}'
+                img: '{{ asset('pictures/bao_photo_two.jpg') }}'
             },
             { 
                 id: 3, 
                 title: '', 
                 desc: '', 
-                img: '{{ asset('pictures/hospital_picture_three.jpg') }}'
+                img: '{{ asset('pictures/bao_photo_three.jpg') }}'
             }
         ],
         timer: null,
@@ -546,42 +547,63 @@
                             প্রশিক্ষণ ব্যবস্থা, সেমিনার এবং কর্মশালার সুযোগ। আন্তর্জাতিক মানের জ্ঞান ও দক্ষতা অর্জনের
                             মাধ্যমে আমরা ভবিষ্যৎ চক্ষু বিশেষজ্ঞদের গড়ে তুলতে প্রতিশ্রুতিবদ্ধ।
                         </p>
-                        <img src="img/about/sign1.png" alt="sign" class="max-w-full h-auto">
                     </div>
                 </div>
 
                 <div class="w-full xl:w-4/12 lg:w-7/12 px-4 order-2 xl:order-3 mb-10 xl:mb-0">
-                    <ul class="space-y-2">
-                        <li class="button_sec">
+                    <ul class="space-y-5">
+                        <!-- Button 1 -->
+                        <li>
                             <a href="appointment.html"
-                                class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+                                class="group relative block p-7 lg:p-9 pl-20 lg:pl-24 text-white text-lg lg:text-xl font-bold rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02] 
+                       border-2 border-white/40 shadow-xl hover:border-white/80 hover:shadow-[0_0_30px_rgba(30,74,138,0.3)]">
+
+                                <!-- Deeper Glass Base -->
+                                <!-- Swapped light sky blues for deeper Royal and Navy tones -->
+                                <div
+                                    class="absolute inset-0 bg-[#1e4a8a]/80 bg-gradient-to-br from-[#2f5a9e]/90 via-[#1e4a8a]/95 to-[#0f2d5e] backdrop-blur-xl transition-colors duration-500 group-hover:from-[#254b8a]">
+                                </div>
+
+                                <!-- High-Contrast Micro-Dot Pattern -->
+                                <div class="absolute inset-0 opacity-[0.25] group-hover:opacity-[0.4] transition-opacity duration-500"
+                                    style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 14px 14px;">
+                                </div>
+
+                                <!-- Bright Scanning Animation -->
+                                <div
+                                    class="absolute inset-x-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent -translate-y-full group-hover:translate-y-[200%] transition-all duration-[1200ms] ease-in-out">
+                                </div>
+
+                                <!-- Icon: Switched to White for visibility on deep blue -->
                                 <i
-                                    class="far fa-calendar-alt absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
-                                Request Appointment
+                                    class="fas fa-book absolute left-7 lg:left-9 top-1/2 -translate-y-1/2 text-3xl lg:text-4xl 
+                          text-white/90 group-hover:text-white group-hover:scale-110 transition-all duration-500 z-10"></i>
+
+                                <span class="relative z-10 text-white tracking-wide">Journal of BAO</span>
                             </a>
                         </li>
-                        <li class="button_sec">
-                            <a href="doctors1.html"
-                                class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
+
+                        <!-- Button 2 -->
+                        <li>
+                            <a href="membership.html"
+                                class="group relative block p-7 lg:p-9 pl-20 lg:pl-24 text-white text-lg lg:text-xl font-bold rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02] 
+                       border-2 border-white/40 shadow-xl hover:border-white/80 hover:shadow-[0_0_30px_rgba(30,74,138,0.3)]">
+
+                                <div
+                                    class="absolute inset-0 bg-[#1e4a8a]/80 bg-gradient-to-br from-[#2f5a9e]/90 via-[#1e4a8a]/95 to-[#0f2d5e] backdrop-blur-xl transition-colors duration-500 group-hover:from-[#254b8a]">
+                                </div>
+
+                                <div class="absolute inset-0 opacity-[0.25] group-hover:opacity-[0.4] transition-opacity duration-500"
+                                    style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 14px 14px;">
+                                </div>
+
+                                <div
+                                    class="absolute inset-x-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent -translate-y-full group-hover:translate-y-[200%] transition-all duration-[1200ms] ease-in-out">
+                                </div>
+
                                 <i
-                                    class="far fa-user absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
-                                Find Doctors
-                            </a>
-                        </li>
-                        <li class="button_sec">
-                            <a href="appointment.html"
-                                class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
-                                <i
-                                    class="fas fa-map-marker-alt absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
-                                Find Locations
-                            </a>
-                        </li>
-                        <li class="button_sec">
-                            <a href="appointment.html"
-                                class="btn-gradient-hover block relative z-10 p-6 lg:p-8 pl-16 lg:pl-20 text-white text-lg lg:text-xl rounded bg-gradient-to-r from-[#396cf0] to-[#285ada] transition-all duration-500 overflow-hidden">
-                                <i
-                                    class="fas fa-phone absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 text-2xl lg:text-3xl"></i>
-                                Emergency Contact
+                                    class="fas fa-id-card absolute left-7 lg:left-9 top-1/2 -translate-y-1/2 text-3xl lg:text-4xl text-white/90 group-hover:text-white group-hover:scale-110 transition-all duration-500 z-10"></i>
+                                <span class="relative z-10 text-white tracking-wide">Membership</span>
                             </a>
                         </li>
                     </ul>
@@ -704,7 +726,7 @@
                     <div
                         class="relative h-full rounded-3xl p-6 backdrop-blur-xl border border-blue-200/50 bg-gradient-to-br from-blue-50 to-sky-50 hover:-translate-y-2 transition shadow-xl">
                         <div class="flex justify-center">
-                            <img src="https://osb.org.bd/uploads/head-members/1765760767_Dr.Miftahul.jpg"
+                            <img src="{{ asset('pictures/miftahul_hosen_chowdhury.png') }}"
                                 class="w-32 h-32 rounded-xl border-4 border-white object-cover shadow-md">
                         </div>
                         <h3 class="text-center mt-5 font-bold text-slate-800">ডা: মোঃ মিফতাহুল হোসেন চৌধুরী</h3>
@@ -955,20 +977,16 @@
 
     <div class="grid grid-cols-2 gap-2 mb-[100px]">
         <div>
-            <img class="h-auto max-w-full rounded-base"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
+            <img class="h-auto max-w-full rounded-base" src="{{ asset('pictures/bao_photo_one.jpg') }}" alt="">
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-base"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
+            <img class="h-auto max-w-full rounded-base" src="{{ asset('pictures/bao_photo_two.jpg') }}" alt="">
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-base"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
+            <img class="h-auto max-w-full rounded-base" src="{{ asset('pictures/bao_photo_three.jpg') }}" alt="">
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-base"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
+            <img class="h-auto max-w-full rounded-base" src="{{ asset('pictures/bao_photo_one.jpg') }}" alt="">
         </div>
     </div>
 
