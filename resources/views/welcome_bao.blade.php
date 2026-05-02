@@ -372,7 +372,7 @@
 
             <div class="flex-shrink-0">
                 <a href="#hero-1">
-                    <img src="images/logo-grey.png" class="w-[150px] h-auto" alt="logo">
+                    <img src="{{ asset('pictures/bao_logo.png') }}" class="w-[80px] h-auto" alt="logo">
                 </a>
             </div>
 
@@ -993,86 +993,125 @@
 
 
     {{-- Footer --}}
-    <footer class="parallax-footer relative bg-[#D8A96A] text-black"
-        style="background-image: linear-gradient(rgba(216, 169, 106, 0.85), rgba(216, 169, 106, 0.9)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000');">
+    <footer class="lg:block fixed bottom-0 w-full z-[999] shadow-xl font-['Lato',_sans-serif]
+bg-[linear-gradient(to_right,rgba(168,85,247,0.12),rgba(236,72,153,0.12),rgba(6,182,212,0.12),rgba(139,92,246,0.12)),linear-gradient(rgba(255,255,255,0.25),rgba(255,255,255,0.15)),url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000')]
+bg-cover bg-center bg-no-repeat
+backdrop-blur-2xl
+border-t border-white/40
+shadow-white/20
+relative overflow-hidden
+before:absolute before:inset-0 before:bg-white/30 before:backdrop-blur-3xl before:pointer-events-none">
 
         <div class="max-w-7xl mx-auto px-6 py-20">
             <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
 
-                <div>
-                    <img src="images/logo-black.svg" alt="Logo" class="mb-6 w-44">
-                    <p class="text-black/80 text-sm mb-6">
-                        ClinicMaster Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit, Sed Diam
-                    </p>
+                <!-- Column 1 -->
 
-                    <div
-                        class="flex items-center gap-4 bg-white/50 backdrop-blur-sm text-black p-4 rounded-xl shadow-md border border-black/10">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Reference_icon.svg"
-                            class="w-8" alt="Google">
-                        <div>
-                            <div class="flex items-center gap-1 text-black">
-                                <i class="fa fa-star text-xs"></i><i class="fa fa-star text-xs"></i><i
-                                    class="fa fa-star text-xs"></i><i class="fa fa-star text-xs"></i><i
-                                    class="fa fa-star text-xs"></i>
-                                <span class="ml-2 text-sm font-bold">(4.8)</span>
-                            </div>
-                            <p class="text-[10px] uppercase tracking-wider text-black/60 font-bold">12k+ ratings on
-                                Google</p>
-                        </div>
-                    </div>
+                <div class="flex md:items-start">
+                    <img src="{{ asset('pictures/bao_logo.png') }}"
+                        class="w-[100px] md:w-38 h-auto drop-shadow-lg relative z-10" alt="Logo" />
                 </div>
 
+
+                <!-- Column 2 -->
                 <div>
-                    <h2
-                        class="text-lg font-bold mb-5 relative inline-block after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-black after:-bottom-2 after:left-0">
-                        Quick Links</h2>
-                    <ul class="space-y-3 text-sm text-black/80 mt-4 font-medium">
-                        <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-all">About
-                                Us</a></li>
-                        <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-all">Our
-                                Services</a></li>
-                        <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-all">Our
-                                Team</a></li>
-                        <li><a href="#"
-                                class="hover:text-black hover:translate-x-1 inline-block transition-all">Appointments</a>
+                    <h2 class="text-lg font-bold mb-5 relative inline-block text-gray-900
+    after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after:-bottom-2 after:left-0">
+                        Quick Links
+                    </h2>
+
+                    <ul
+                        class="space-y-3 text-sm text-gray-900 mt-4 font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]">
+
+                        <li>
+                            <a href="#"
+                                class="inline-block transition-all duration-300 hover:text-blue-500 hover:translate-x-2">
+                                About Us
+                            </a>
                         </li>
-                        <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-all">Contact
-                                Us</a></li>
+
+                        <li>
+                            <a href="#"
+                                class="inline-block transition-all duration-300 hover:text-blue-500 hover:translate-x-2">
+                                Our Services
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="inline-block transition-all duration-300 hover:text-blue-500 hover:translate-x-2">
+                                Our Team
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="inline-block transition-all duration-300 hover:text-blue-500 hover:translate-x-2">
+                                Appointments
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="inline-block transition-all duration-300 hover:text-blue-500 hover:translate-x-2">
+                                Contact Us
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
 
+                <!-- Column 3 -->
                 <div>
-                    <h2
-                        class="text-lg font-bold mb-5 relative inline-block after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-black after:-bottom-2 after:left-0">
-                        Contact Us</h2>
-                    <ul class="space-y-4 text-sm mt-4 font-medium">
+                    <h2 class="text-lg font-bold mb-5 relative inline-block text-gray-900
+after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after:-bottom-2 after:left-0">
+                        Contact Us
+                    </h2>
+
+                    <ul
+                        class="space-y-4 text-sm mt-4 font-semibold text-gray-900 drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]">
+
                         <li class="flex items-center gap-3 border-b border-black/10 pb-3">
                             <i class="fa-regular fa-envelope"></i>
-                            <a href="mailto:contact@company.com" class="hover:underline">contact@company.com</a>
+                            <a href="mailto:contact@company.com"
+                                class="hover:text-blue-500 transition-colors duration-300">
+                                contact@company.com
+                            </a>
                         </li>
+
                         <li class="flex items-center gap-3 border-b border-black/10 pb-3">
                             <i class="fa-solid fa-phone-volume"></i>
-                            <a href="tel:+11234567890" class="hover:underline">(414) 687 - 5892</a>
+                            <a href="tel:+11234567890" class="hover:text-blue-500 transition-colors duration-300">
+                                (414) 687 - 5892
+                            </a>
                         </li>
+
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-location-dot mt-1"></i>
-                            <span>794 Mcallister St <br> San Francisco, 94102</span>
+                            <span class="hover:text-blue-500 transition-colors duration-300">
+                                794 Mcallister St <br> San Francisco, 94102
+                            </span>
                         </li>
+
                     </ul>
                 </div>
 
+                <!-- Column 4 -->
                 <div>
-                    <h2
-                        class="text-lg font-bold mb-5 relative inline-block after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-black after:-bottom-2 after:left-0">
-                        Newsletter</h2>
-                    <p class="text-sm text-black/80 mb-4 mt-4 font-medium">
+                    <h2 class="text-lg font-bold mb-5 relative inline-block text-gray-900
+after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after:-bottom-2 after:left-0">
+                        Newsletter
+                    </h2>
+
+                    <p class="text-sm text-gray-900 mb-4 mt-4 font-medium">
                         Subscribe our newsletter to get the latest updates
                     </p>
 
                     <form class="relative mb-8">
                         <input type="email" placeholder="Email Address"
-                            class="w-full rounded-xl py-4 pl-5 pr-14 text-black outline-none ring-4 ring-black/10 border-2 border-black shadow-xl transition-all bg-white/90 focus:bg-white"
+                            class="w-full rounded-xl py-4 pl-5 pr-14 text-gray-900 outline-none ring-4 ring-black/10 border-2 border-black shadow-xl transition-all bg-white/90 focus:bg-white"
                             required>
+
                         <button type="submit"
                             class="absolute right-2 top-1/2 -translate-y-1/2 bg-black hover:bg-gray-800 text-[#D8A96A] w-10 h-10 rounded-lg flex items-center justify-center transition-all shadow-md">
                             <i class="fa-solid fa-paper-plane"></i>
@@ -1102,20 +1141,29 @@
             </div>
         </div>
 
+        <!-- Bottom -->
         <div class="border-t border-black/10 bg-black/5">
             <div
-                class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4 text-xs text-center lg:flex-row lg:justify-between lg:text-sm font-semibold">
-                <p class="text-black/70">
-                    © 2026 <a href="#" class="text-black hover:underline">DexignZone</a> Theme. All Rights Reserved.
+                class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4 text-xs text-center lg:flex-row lg:justify-between lg:text-sm font-semibold text-gray-900">
+
+                <p>
+                    © 2026 <a href="#" class="hover:underline">DexignZone</a> Theme. All Rights Reserved.
                 </p>
 
-                <ul class="flex justify-center gap-6 text-black/70">
-                    <li><a href="#" class="hover:text-black underline-offset-4 hover:underline transition-colors">Terms
-                            & Conditions</a></li>
-                    <li><a href="#"
-                            class="hover:text-black underline-offset-4 hover:underline transition-colors">Privacy
-                            Policy</a></li>
+                <ul
+                    class="flex justify-center gap-6 text-gray-900 font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]">
+                    <li>
+                        <a href="#" class="hover:text-black underline-offset-4 hover:underline transition-colors">
+                            Terms & Conditions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-black underline-offset-4 hover:underline transition-colors">
+                            Privacy Policy
+                        </a>
+                    </li>
                 </ul>
+
             </div>
         </div>
     </footer>
