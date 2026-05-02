@@ -164,7 +164,8 @@
                 <nav class="shrink-0" aria-label="Primary">
                     <ul class="flex items-center gap-0.5 xl:gap-1">
                         <li>
-                            <a href="appointment.html"
+                            <a href="#"
+                                data-open-journal-modal
                                 class="inline-flex items-center rounded-lg px-3 xl:px-4 py-2.5 text-[14px] xl:text-[15px] leading-5 font-medium text-stone-900 hover:text-cyan-600 hover:bg-white/25 transition-colors">
                                 Journal of BAO
                             </a>
@@ -190,6 +191,12 @@
                         </li>
                     </ul>
                 </nav>
+
+                <button type="button" id="bao-admin-header-btn"
+                    class="inline-flex shrink-0 items-center gap-2 rounded-xl border-2 border-stone-800/15 bg-white/75 px-3 py-2 text-[13px] font-bold text-stone-900 shadow-sm backdrop-blur-sm transition hover:border-blue-500 hover:bg-white hover:text-blue-700 xl:px-3.5">
+                    <i id="bao-admin-header-icon" class="fa-solid fa-right-to-bracket text-blue-600" aria-hidden="true"></i>
+                    <span id="bao-admin-header-label">Login</span>
+                </button>
 
                 <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
                     title="Register for MOCK test – July 2026 session"
@@ -224,6 +231,11 @@
             </div>
 
             <div class="flex shrink-0 items-center gap-1.5">
+                <button type="button" id="bao-admin-mobile-header-btn" title="Login" aria-label="Login"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-stone-800/15 bg-white/80 text-stone-900 shadow-sm backdrop-blur-sm transition hover:border-blue-500 hover:text-blue-700 active:scale-95">
+                    <i id="bao-admin-mobile-header-icon" class="fa-solid fa-right-to-bracket text-lg text-blue-600"
+                        aria-hidden="true"></i>
+                </button>
                 <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
                     title="Register for MOCK test – For Postgraduate Examinees (Ophthalmology), July 2026 Session"
                     class="inline-flex max-w-[9.5rem] flex-col items-center justify-center gap-0 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 px-2 py-1.5 text-center text-white shadow-md ring-1 ring-white/30 active:scale-95">
@@ -277,7 +289,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="appointment.html"
+                    <a href="#"
+                        data-open-journal-modal
                         onclick="document.getElementById('menu-toggle').checked=false"
                         class="flex items-center rounded-xl px-4 py-4 text-base font-medium text-stone-900 shadow-sm ring-1 ring-stone-900/10 transition-colors hover:bg-white/45 hover:text-cyan-700 active:bg-white/55">
                         Journal of BAO
@@ -304,6 +317,13 @@
                         class="flex items-center rounded-xl px-4 py-4 text-base font-medium text-stone-900 shadow-sm ring-1 ring-stone-900/10 transition-colors hover:bg-white/45 hover:text-cyan-700 active:bg-white/55">
                         Committee
                     </a>
+                </li>
+                <li>
+                    <button type="button" id="bao-admin-drawer-btn"
+                        class="flex w-full items-center gap-3 rounded-xl px-4 py-4 text-left text-base font-medium text-stone-900 shadow-sm ring-1 ring-stone-900/10 transition-colors hover:bg-white/45 hover:text-cyan-700 active:bg-white/55">
+                        <i id="bao-admin-drawer-icon" class="fa-solid fa-right-to-bracket text-blue-600" aria-hidden="true"></i>
+                        <span id="bao-admin-drawer-label">Login</span>
+                    </button>
                 </li>
             </ul>
         </div>
@@ -436,7 +456,8 @@
                     <ul class="space-y-4 sm:space-y-5">
                         <!-- Button 1 -->
                         <li>
-                            <a href="appointment.html"
+                            <a href="#"
+                                data-open-journal-modal
                                 class="group relative block p-7 lg:p-9 pl-20 lg:pl-24 text-white text-lg lg:text-xl font-bold rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02] 
                        border-2 border-white/40 shadow-xl hover:border-white/80 hover:shadow-[0_0_30px_rgba(30,74,138,0.3)]">
 
@@ -1170,6 +1191,221 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
         </div>
     </div>
 
+    {{-- Journal of BAO: hub, list, submit --}}
+    <div id="journal-root-modal" class="fixed inset-0 z-[2005] hidden" aria-hidden="true" role="dialog"
+        aria-labelledby="journal-root-title">
+        <div
+            class="journal-root-backdrop absolute inset-0 z-0 bg-slate-900/60 backdrop-blur-sm transition-opacity">
+        </div>
+        <div
+            class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center p-4 sm:p-6">
+            <div
+                class="pointer-events-auto relative flex max-h-[min(90dvh,720px)] w-full max-w-lg flex-col rounded-2xl border border-white/20 bg-white shadow-2xl shadow-blue-900/25">
+                <div class="flex shrink-0 items-start justify-between gap-4 border-b border-slate-200 px-5 py-4 sm:px-6">
+                    <h2 id="journal-root-title" class="text-lg font-bold text-slate-900 sm:text-xl">Journal of BAO</h2>
+                    <button type="button" data-close-journal-root
+                        class="rounded-lg p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-800">
+                        <span class="sr-only">Close</span>
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="min-h-0 flex-1 overflow-y-auto px-5 py-5 sm:px-6 sm:py-6">
+                    <div id="journal-screen-menu" class="journal-screen">
+                        <p class="mb-6 text-sm text-slate-600">Browse published submissions or upload a new journal (PDF).
+                        </p>
+                        <div class="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                            <button type="button" id="journal-btn-view"
+                                class="flex-1 rounded-xl border-2 border-slate-200 bg-slate-50 px-4 py-4 text-center text-sm font-bold text-slate-800 shadow-sm transition hover:border-blue-400 hover:bg-white hover:text-blue-800">
+                                <i class="fa-solid fa-list mb-2 block text-2xl text-blue-600" aria-hidden="true"></i>
+                                View journals
+                            </button>
+                            <button type="button" id="journal-btn-submit"
+                                class="flex-1 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 px-4 py-4 text-center text-sm font-bold text-white shadow-md transition hover:from-blue-500 hover:to-cyan-500">
+                                <i class="fa-solid fa-file-arrow-up mb-2 block text-2xl opacity-95" aria-hidden="true"></i>
+                                Submit journal
+                            </button>
+                        </div>
+                    </div>
+                    <div id="journal-screen-list" class="journal-screen hidden">
+                        <button type="button" data-journal-back-menu
+                            class="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900">
+                            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                            Back
+                        </button>
+                        <p class="mb-3 text-sm font-medium text-slate-700">Submitted journals</p>
+                        <div id="journal-list-loading" class="hidden py-8 text-center text-sm text-slate-500">Loading…
+                        </div>
+                        <p id="journal-list-empty" class="hidden py-8 text-center text-sm text-slate-500">No journals
+                            submitted yet.</p>
+                        <ul id="journal-list-items" class="space-y-2" role="list"></ul>
+                        <p id="journal-list-error" class="mt-3 hidden text-sm text-red-600"></p>
+                    </div>
+                    <div id="journal-screen-submit" class="journal-screen hidden">
+                        <button type="button" data-journal-back-menu
+                            class="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900">
+                            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                            Back
+                        </button>
+                        <form id="journal-submit-form" class="space-y-4">
+                            <div>
+                                <label for="journal-title" class="mb-1 block text-sm font-medium text-slate-700">Title
+                                    (optional)</label>
+                                <input id="journal-title" name="title" type="text" maxlength="255" autocomplete="off"
+                                    class="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
+                                    placeholder="e.g. Research article title" />
+                            </div>
+                            <div>
+                                <label for="journal-pdf" class="mb-1 block text-sm font-medium text-slate-700">PDF
+                                    file</label>
+                                <input id="journal-pdf" name="pdf" type="file" accept="application/pdf,.pdf" required
+                                    class="block w-full text-sm text-slate-600 file:mr-4 file:rounded-lg file:border-0 file:bg-blue-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-blue-700 hover:file:bg-blue-100" />
+                                <p class="mt-1 text-xs text-slate-500">PDF only, max 20 MB.</p>
+                            </div>
+                            <p id="journal-submit-error" class="hidden text-sm text-red-600"></p>
+                            <p id="journal-submit-success" class="hidden text-sm font-medium text-emerald-700"></p>
+                            <div class="flex flex-col-reverse gap-3 pt-2 sm:flex-row sm:justify-end">
+                                <button type="button" data-journal-back-menu
+                                    class="rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
+                                    Cancel
+                                </button>
+                                <button type="submit" id="journal-submit-btn"
+                                    class="rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 px-5 py-2.5 text-sm font-bold text-white shadow-md transition hover:from-blue-500 hover:to-cyan-500 disabled:opacity-60">
+                                    Upload
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Journal PDF viewer --}}
+    <div id="journal-pdf-modal" class="fixed inset-0 z-[2260] hidden" aria-hidden="true" role="dialog"
+        aria-label="Journal PDF">
+        <div class="journal-pdf-backdrop absolute inset-0 z-0 bg-slate-950/80 backdrop-blur-sm"></div>
+        <div class="pointer-events-none absolute inset-0 z-10 flex flex-col p-3 sm:p-6">
+            <div
+                class="pointer-events-auto flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-white/10 bg-slate-900 shadow-2xl sm:rounded-2xl">
+                <div class="flex shrink-0 items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-5">
+                    <p id="journal-pdf-filename" class="min-w-0 truncate text-sm font-semibold text-white"></p>
+                    <button type="button" data-close-journal-pdf
+                        class="shrink-0 rounded-lg p-2 text-slate-300 transition hover:bg-white/10 hover:text-white">
+                        <span class="sr-only">Close PDF</span>
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="relative min-h-0 flex-1 bg-slate-800">
+                    <iframe id="journal-pdf-iframe" title="Journal PDF" class="h-full w-full border-0"
+                        src="about:blank"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- BAO admin: login --}}
+    <div id="bao-admin-login-modal" class="fixed inset-0 z-[2230] hidden" aria-hidden="true" role="dialog"
+        aria-labelledby="bao-admin-login-title">
+        <div class="bao-admin-login-backdrop absolute inset-0 z-0 bg-slate-900/65 backdrop-blur-sm"></div>
+        <div class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center p-4 sm:p-6">
+            <div
+                class="pointer-events-auto w-full max-w-md rounded-2xl border border-white/20 bg-white shadow-2xl shadow-blue-900/20">
+                <div class="flex items-start justify-between gap-4 border-b border-slate-200 px-5 py-4 sm:px-6">
+                    <h2 id="bao-admin-login-title" class="text-lg font-bold text-slate-900 sm:text-xl">Admin login</h2>
+                    <button type="button" data-close-bao-admin-login
+                        class="rounded-lg p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-800">
+                        <span class="sr-only">Close</span>
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <form id="bao-admin-login-form" class="px-5 py-5 sm:px-6 sm:py-6">
+                    <div class="space-y-4">
+                        <div>
+                            <label for="bao-admin-username" class="mb-1 block text-sm font-medium text-slate-700">Username</label>
+                            <input id="bao-admin-username" name="username" type="text" required autocomplete="username"
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" />
+                        </div>
+                        <div>
+                            <label for="bao-admin-password" class="mb-1 block text-sm font-medium text-slate-700">Password</label>
+                            <input id="bao-admin-password" name="password" type="password" required
+                                autocomplete="current-password"
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" />
+                        </div>
+                    </div>
+                    <p id="bao-admin-login-error" class="mt-4 hidden text-sm text-red-600"></p>
+                    <div class="mt-6 flex justify-end gap-3">
+                        <button type="button" data-close-bao-admin-login
+                            class="rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
+                            Cancel
+                        </button>
+                        <button type="submit" id="bao-admin-login-submit"
+                            class="rounded-xl bg-gradient-to-r from-slate-800 to-slate-900 px-5 py-2.5 text-sm font-bold text-white shadow-md transition hover:from-slate-700 hover:to-slate-800 disabled:opacity-60">
+                            Sign in
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{-- BAO admin: visibility --}}
+    <div id="bao-admin-panel-modal" class="fixed inset-0 z-[2235] hidden" aria-hidden="true" role="dialog"
+        aria-labelledby="bao-admin-panel-title">
+        <div class="bao-admin-panel-backdrop absolute inset-0 z-0 bg-slate-900/65 backdrop-blur-sm"></div>
+        <div class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center p-4 sm:p-6">
+            <div
+                class="pointer-events-auto flex max-h-[min(90dvh,760px)] w-full max-w-lg flex-col rounded-2xl border border-white/20 bg-white shadow-2xl shadow-blue-900/20">
+                <div class="flex shrink-0 items-start justify-between gap-4 border-b border-slate-200 px-5 py-4 sm:px-6">
+                    <div>
+                        <h2 id="bao-admin-panel-title" class="text-lg font-bold text-slate-900 sm:text-xl">Journal visibility</h2>
+                        <p class="mt-1 text-xs text-slate-600">Choose which PDFs appear in “View journals” for visitors.</p>
+                    </div>
+                    <button type="button" data-close-bao-admin-panel
+                        class="rounded-lg p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-800">
+                        <span class="sr-only">Close</span>
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="min-h-0 flex-1 overflow-y-auto px-5 py-4 sm:px-6">
+                    <p id="bao-admin-panel-loading" class="hidden py-6 text-center text-sm text-slate-500">Loading…</p>
+                    <p id="bao-admin-panel-empty" class="hidden py-6 text-center text-sm text-slate-500">No submissions yet.
+                    </p>
+                    <p id="bao-admin-panel-error" class="hidden text-sm text-red-600"></p>
+                    <ul id="bao-admin-panel-list" class="space-y-2" role="list"></ul>
+                </div>
+                <div class="flex shrink-0 flex-col gap-3 border-t border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+                    <button type="button" id="bao-admin-logout-btn"
+                        class="rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 sm:order-1">
+                        Log out
+                    </button>
+                    <div class="flex flex-col-reverse gap-2 sm:flex-row sm:gap-3 sm:order-2">
+                        <button type="button" data-close-bao-admin-panel
+                            class="rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
+                            Close
+                        </button>
+                        <button type="button" id="bao-admin-save-visibility"
+                            class="rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 px-5 py-2.5 text-sm font-bold text-white shadow-md transition hover:from-blue-500 hover:to-cyan-500 disabled:opacity-60">
+                            Save visibility
+                        </button>
+                    </div>
+                </div>
+                <p id="bao-admin-panel-save-msg" class="hidden px-5 pb-4 text-center text-sm font-medium text-emerald-700 sm:px-6"></p>
+            </div>
+        </div>
+    </div>
+
     <div id="membership-toast"
         class="pointer-events-none fixed bottom-8 left-1/2 z-[2100] hidden w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 transform px-3 sm:bottom-10 sm:max-w-xl sm:px-4"
         role="status" aria-live="polite">
@@ -1194,6 +1430,17 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
 
     <script>
         (function () {
+            window.baoRefreshBodyScrollLock = function () {
+                var ids = ['membership-modal', 'journal-root-modal', 'journal-pdf-modal', 'bao-admin-login-modal',
+                    'bao-admin-panel-modal'
+                ];
+                var any = ids.some(function (id) {
+                    var el = document.getElementById(id);
+                    return el && !el.classList.contains('hidden');
+                });
+                document.body.classList.toggle('overflow-hidden', any);
+            };
+
             const modal = document.getElementById('membership-modal');
             const form = document.getElementById('membership-form');
             const errEl = document.getElementById('membership-form-error');
@@ -1206,7 +1453,7 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
             function openModal(e) {
                 if (e) e.preventDefault();
                 modal.classList.remove('hidden');
-                document.body.classList.add('overflow-hidden');
+                window.baoRefreshBodyScrollLock();
                 modal.setAttribute('aria-hidden', 'false');
                 errEl.classList.add('hidden');
                 errEl.textContent = '';
@@ -1214,7 +1461,7 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
 
             function closeModal() {
                 modal.classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
+                window.baoRefreshBodyScrollLock();
                 modal.setAttribute('aria-hidden', 'true');
             }
 
@@ -1302,6 +1549,552 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
                     submitBtn.disabled = false;
                 }
             });
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const loginModal = document.getElementById('bao-admin-login-modal');
+            const panelModal = document.getElementById('bao-admin-panel-modal');
+            const loginForm = document.getElementById('bao-admin-login-form');
+            const loginErr = document.getElementById('bao-admin-login-error');
+            const loginSubmit = document.getElementById('bao-admin-login-submit');
+            const panelLoading = document.getElementById('bao-admin-panel-loading');
+            const panelEmpty = document.getElementById('bao-admin-panel-empty');
+            const panelErr = document.getElementById('bao-admin-panel-error');
+            const panelList = document.getElementById('bao-admin-panel-list');
+            const panelSaveMsg = document.getElementById('bao-admin-panel-save-msg');
+            const saveBtn = document.getElementById('bao-admin-save-visibility');
+            const logoutBtn = document.getElementById('bao-admin-logout-btn');
+
+            const sessionUrl = @json(route('bao.admin.session'));
+            const loginUrl = @json(route('bao.admin.login'));
+            const logoutUrl = @json(route('bao.admin.logout'));
+            const adminJournalsUrl = @json(route('bao.admin.journals'));
+            const publishUrl = @json(route('bao.admin.journals.publish'));
+
+            let baoAdminAuth = false;
+
+            function openLoginModal() {
+                loginErr.classList.add('hidden');
+                loginErr.textContent = '';
+                loginModal.classList.remove('hidden');
+                loginModal.setAttribute('aria-hidden', 'false');
+                window.baoRefreshBodyScrollLock();
+            }
+
+            function closeLoginModal() {
+                loginModal.classList.add('hidden');
+                loginModal.setAttribute('aria-hidden', 'true');
+                window.baoRefreshBodyScrollLock();
+            }
+
+            function openPanelModal() {
+                panelErr.classList.add('hidden');
+                panelSaveMsg.classList.add('hidden');
+                panelModal.classList.remove('hidden');
+                panelModal.setAttribute('aria-hidden', 'false');
+                window.baoRefreshBodyScrollLock();
+                loadAdminJournals();
+            }
+
+            function closePanelModal() {
+                panelModal.classList.add('hidden');
+                panelModal.setAttribute('aria-hidden', 'true');
+                window.baoRefreshBodyScrollLock();
+            }
+
+            function updateAdminChrome() {
+                const label = baoAdminAuth ? 'Journal admin' : 'Login';
+                const iconClass = baoAdminAuth ? 'fa-solid fa-gear' : 'fa-solid fa-right-to-bracket';
+                const elLabel = document.getElementById('bao-admin-header-label');
+                const elIcon = document.getElementById('bao-admin-header-icon');
+                const mIcon = document.getElementById('bao-admin-mobile-header-icon');
+                const dLabel = document.getElementById('bao-admin-drawer-label');
+                const dIcon = document.getElementById('bao-admin-drawer-icon');
+                const mBtn = document.getElementById('bao-admin-mobile-header-btn');
+                if (elLabel) elLabel.textContent = label;
+                if (elIcon) elIcon.className = iconClass + ' text-blue-600';
+                if (mIcon) mIcon.className = iconClass + ' text-lg text-blue-600';
+                if (mBtn) {
+                    mBtn.setAttribute('aria-label', label);
+                    mBtn.title = label;
+                }
+                if (dLabel) dLabel.textContent = label;
+                if (dIcon) dIcon.className = iconClass + ' text-blue-600';
+            }
+
+            function handlePrimaryAdminClick(e) {
+                if (e) e.preventDefault();
+                const toggle = document.getElementById('menu-toggle');
+                if (toggle) toggle.checked = false;
+                if (baoAdminAuth) {
+                    openPanelModal();
+                } else {
+                    openLoginModal();
+                }
+            }
+
+            document.getElementById('bao-admin-header-btn').addEventListener('click', handlePrimaryAdminClick);
+            document.getElementById('bao-admin-mobile-header-btn').addEventListener('click', handlePrimaryAdminClick);
+            document.getElementById('bao-admin-drawer-btn').addEventListener('click', handlePrimaryAdminClick);
+
+            loginModal.querySelectorAll('[data-close-bao-admin-login]').forEach(function (el) {
+                el.addEventListener('click', closeLoginModal);
+            });
+            loginModal.querySelector('.bao-admin-login-backdrop').addEventListener('click', closeLoginModal);
+
+            panelModal.querySelectorAll('[data-close-bao-admin-panel]').forEach(function (el) {
+                el.addEventListener('click', closePanelModal);
+            });
+            panelModal.querySelector('.bao-admin-panel-backdrop').addEventListener('click', closePanelModal);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key !== 'Escape') return;
+                const pdfModal = document.getElementById('journal-pdf-modal');
+                if (pdfModal && !pdfModal.classList.contains('hidden')) {
+                    return;
+                }
+                if (panelModal && !panelModal.classList.contains('hidden')) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    closePanelModal();
+                    return;
+                }
+                if (loginModal && !loginModal.classList.contains('hidden')) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    closeLoginModal();
+                }
+            }, true);
+
+            async function refreshSession() {
+                try {
+                    const res = await fetch(sessionUrl, {
+                        headers: {
+                            'Accept': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    });
+                    const data = await res.json().catch(function () {
+                        return {};
+                    });
+                    baoAdminAuth = !!(data && data.authenticated);
+                    updateAdminChrome();
+                } catch (err) {
+                    baoAdminAuth = false;
+                    updateAdminChrome();
+                }
+            }
+
+            loginForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                loginErr.classList.add('hidden');
+                const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+                loginSubmit.disabled = true;
+                try {
+                    const res = await fetch(loginUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'X-CSRF-TOKEN': token || '',
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                        body: JSON.stringify({
+                            username: document.getElementById('bao-admin-username').value,
+                            password: document.getElementById('bao-admin-password').value,
+                        }),
+                    });
+                    const data = await res.json().catch(function () {
+                        return {};
+                    });
+                    if (!res.ok) {
+                        loginErr.textContent = data.message || 'Login failed.';
+                        if (data.errors) {
+                            const first = Object.values(data.errors).flat()[0];
+                            if (first) loginErr.textContent = first;
+                        }
+                        loginErr.classList.remove('hidden');
+                        return;
+                    }
+                    loginForm.reset();
+                    closeLoginModal();
+                    baoAdminAuth = true;
+                    updateAdminChrome();
+                    openPanelModal();
+                } catch (err) {
+                    loginErr.textContent = 'Network error.';
+                    loginErr.classList.remove('hidden');
+                } finally {
+                    loginSubmit.disabled = false;
+                }
+            });
+
+            logoutBtn.addEventListener('click', async function () {
+                const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+                try {
+                    await fetch(logoutUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'X-CSRF-TOKEN': token || '',
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    });
+                } catch (err) { /* ignore */ }
+                baoAdminAuth = false;
+                updateAdminChrome();
+                closePanelModal();
+            });
+
+            async function loadAdminJournals() {
+                panelLoading.classList.remove('hidden');
+                panelEmpty.classList.add('hidden');
+                panelErr.classList.add('hidden');
+                panelList.innerHTML = '';
+                const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+                try {
+                    const res = await fetch(adminJournalsUrl, {
+                        headers: {
+                            'Accept': 'application/json',
+                            'X-CSRF-TOKEN': token || '',
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    });
+                    const data = await res.json().catch(function () {
+                        return {};
+                    });
+                    panelLoading.classList.add('hidden');
+                    if (res.status === 401 || !res.ok) {
+                        panelErr.textContent = data.message || 'Session expired. Log in again.';
+                        panelErr.classList.remove('hidden');
+                        baoAdminAuth = false;
+                        updateAdminChrome();
+                        return;
+                    }
+                    const rows = data.data || [];
+                    if (rows.length === 0) {
+                        panelEmpty.classList.remove('hidden');
+                        return;
+                    }
+                    rows.forEach(function (row) {
+                        const li = document.createElement('li');
+                        li.className =
+                            'flex flex-col gap-2 rounded-xl border border-slate-200 bg-slate-50/90 p-3 sm:flex-row sm:items-center sm:justify-between';
+                        const left = document.createElement('div');
+                        left.className = 'flex min-w-0 flex-1 items-start gap-3';
+                        const cb = document.createElement('input');
+                        cb.type = 'checkbox';
+                        cb.className = 'mt-1 h-4 w-4 rounded border-slate-300 text-blue-600';
+                        cb.dataset.journalId = String(row.id);
+                        cb.checked = !!row.visible_to_public;
+                        cb.setAttribute('aria-label', 'Show to public');
+                        const labels = document.createElement('div');
+                        labels.className = 'min-w-0 flex-1';
+                        const t = document.createElement('p');
+                        t.className = 'text-sm font-semibold text-slate-900';
+                        t.textContent = row.title;
+                        const s = document.createElement('p');
+                        s.className = 'text-xs text-slate-500';
+                        s.textContent = row.original_filename;
+                        labels.appendChild(t);
+                        labels.appendChild(s);
+                        left.appendChild(cb);
+                        left.appendChild(labels);
+                        const actions = document.createElement('div');
+                        actions.className = 'flex shrink-0';
+                        const vbtn = document.createElement('button');
+                        vbtn.type = 'button';
+                        vbtn.className =
+                            'rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-slate-800 transition hover:bg-slate-100';
+                        vbtn.textContent = 'Preview';
+                        vbtn.addEventListener('click', function () {
+                            if (typeof window.baoOpenJournalPdf === 'function') {
+                                window.baoOpenJournalPdf(row.pdf_url, row.original_filename);
+                            }
+                        });
+                        actions.appendChild(vbtn);
+                        li.appendChild(left);
+                        li.appendChild(actions);
+                        panelList.appendChild(li);
+                    });
+                } catch (err) {
+                    panelLoading.classList.add('hidden');
+                    panelErr.textContent = 'Network error.';
+                    panelErr.classList.remove('hidden');
+                }
+            }
+
+            saveBtn.addEventListener('click', async function () {
+                panelSaveMsg.classList.add('hidden');
+                const ids = [];
+                panelList.querySelectorAll('input[type="checkbox"][data-journal-id]').forEach(function (cb) {
+                    if (cb.checked) ids.push(parseInt(cb.dataset.journalId, 10));
+                });
+                const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+                saveBtn.disabled = true;
+                try {
+                    const res = await fetch(publishUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'X-CSRF-TOKEN': token || '',
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                        body: JSON.stringify({
+                            ids: ids
+                        }),
+                    });
+                    const data = await res.json().catch(function () {
+                        return {};
+                    });
+                    if (!res.ok) {
+                        panelErr.textContent = data.message || 'Could not save.';
+                        panelErr.classList.remove('hidden');
+                        return;
+                    }
+                    panelSaveMsg.textContent = data.message || 'Saved.';
+                    panelSaveMsg.classList.remove('hidden');
+                } catch (err) {
+                    panelErr.textContent = 'Network error.';
+                    panelErr.classList.remove('hidden');
+                } finally {
+                    saveBtn.disabled = false;
+                }
+            });
+
+            refreshSession();
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const root = document.getElementById('journal-root-modal');
+            const pdfModal = document.getElementById('journal-pdf-modal');
+            const iframe = document.getElementById('journal-pdf-iframe');
+            const pdfFilename = document.getElementById('journal-pdf-filename');
+            const screenMenu = document.getElementById('journal-screen-menu');
+            const screenList = document.getElementById('journal-screen-list');
+            const screenSubmit = document.getElementById('journal-screen-submit');
+            const listItems = document.getElementById('journal-list-items');
+            const listLoading = document.getElementById('journal-list-loading');
+            const listEmpty = document.getElementById('journal-list-empty');
+            const listError = document.getElementById('journal-list-error');
+            const submitForm = document.getElementById('journal-submit-form');
+            const submitErr = document.getElementById('journal-submit-error');
+            const submitOk = document.getElementById('journal-submit-success');
+            const submitBtn = document.getElementById('journal-submit-btn');
+
+            const journalsIndexUrl = @json(route('bao.journals.index'));
+            const journalsStoreUrl = @json(route('bao.journals.store'));
+
+            function showScreen(name) {
+                screenMenu.classList.toggle('hidden', name !== 'menu');
+                screenList.classList.toggle('hidden', name !== 'list');
+                screenSubmit.classList.toggle('hidden', name !== 'submit');
+            }
+
+            function openJournalRoot(e) {
+                if (e) e.preventDefault();
+                showScreen('menu');
+                listError.classList.add('hidden');
+                listError.textContent = '';
+                submitErr.classList.add('hidden');
+                submitOk.classList.add('hidden');
+                root.classList.remove('hidden');
+                root.setAttribute('aria-hidden', 'false');
+                window.baoRefreshBodyScrollLock();
+            }
+
+            function closeJournalRoot() {
+                closeJournalPdf();
+                root.classList.add('hidden');
+                root.setAttribute('aria-hidden', 'true');
+                showScreen('menu');
+                submitForm.reset();
+                window.baoRefreshBodyScrollLock();
+            }
+
+            function openJournalPdf(url, filename) {
+                pdfFilename.textContent = filename || 'Journal';
+                iframe.src = url;
+                pdfModal.classList.remove('hidden');
+                pdfModal.setAttribute('aria-hidden', 'false');
+                window.baoRefreshBodyScrollLock();
+            }
+
+            function closeJournalPdf() {
+                pdfModal.classList.add('hidden');
+                pdfModal.setAttribute('aria-hidden', 'true');
+                iframe.src = 'about:blank';
+                pdfFilename.textContent = '';
+                window.baoRefreshBodyScrollLock();
+            }
+
+            document.querySelectorAll('[data-open-journal-modal]').forEach(function (el) {
+                el.addEventListener('click', openJournalRoot);
+            });
+
+            root.querySelectorAll('[data-close-journal-root]').forEach(function (el) {
+                el.addEventListener('click', closeJournalRoot);
+            });
+            root.querySelector('.journal-root-backdrop').addEventListener('click', closeJournalRoot);
+
+            pdfModal.querySelectorAll('[data-close-journal-pdf]').forEach(function (el) {
+                el.addEventListener('click', closeJournalPdf);
+            });
+            pdfModal.querySelector('.journal-pdf-backdrop').addEventListener('click', closeJournalPdf);
+
+            document.getElementById('journal-btn-view').addEventListener('click', function () {
+                showScreen('list');
+                loadJournalList();
+            });
+
+            document.getElementById('journal-btn-submit').addEventListener('click', function () {
+                showScreen('submit');
+                submitErr.classList.add('hidden');
+                submitOk.classList.add('hidden');
+            });
+
+            root.querySelectorAll('[data-journal-back-menu]').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    showScreen('menu');
+                    listError.classList.add('hidden');
+                    submitErr.classList.add('hidden');
+                    submitOk.classList.add('hidden');
+                });
+            });
+
+            async function loadJournalList() {
+                listLoading.classList.remove('hidden');
+                listEmpty.classList.add('hidden');
+                listError.classList.add('hidden');
+                listItems.innerHTML = '';
+                try {
+                    const res = await fetch(journalsIndexUrl, {
+                        headers: {
+                            'Accept': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    });
+                    const data = await res.json().catch(function () {
+                        return {};
+                    });
+                    listLoading.classList.add('hidden');
+                    if (!res.ok) {
+                        listError.textContent = data.message || 'Could not load journals.';
+                        listError.classList.remove('hidden');
+                        return;
+                    }
+                    const rows = data.data || [];
+                    if (rows.length === 0) {
+                        listEmpty.classList.remove('hidden');
+                        return;
+                    }
+                    rows.forEach(function (row) {
+                        const li = document.createElement('li');
+                        li.className =
+                            'flex flex-col gap-2 rounded-xl border border-slate-200 bg-slate-50/80 p-3 sm:flex-row sm:items-center sm:justify-between';
+                        const info = document.createElement('div');
+                        info.className = 'min-w-0 flex-1';
+                        const t = document.createElement('p');
+                        t.className = 'truncate text-sm font-semibold text-slate-900';
+                        t.textContent = row.title;
+                        const s = document.createElement('p');
+                        s.className = 'truncate text-xs text-slate-500';
+                        s.textContent = row.original_filename;
+                        info.appendChild(t);
+                        info.appendChild(s);
+                        const actions = document.createElement('div');
+                        actions.className = 'flex shrink-0 gap-2';
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className =
+                            'rounded-lg bg-blue-600 px-3 py-2 text-xs font-bold text-white shadow transition hover:bg-blue-500';
+                        btn.textContent = 'View PDF';
+                        btn.addEventListener('click', function () {
+                            openJournalPdf(row.pdf_url, row.original_filename);
+                        });
+                        actions.appendChild(btn);
+                        li.appendChild(info);
+                        li.appendChild(actions);
+                        listItems.appendChild(li);
+                    });
+                } catch (err) {
+                    listLoading.classList.add('hidden');
+                    listError.textContent = 'Network error. Please try again.';
+                    listError.classList.remove('hidden');
+                }
+            }
+
+            submitForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                submitErr.classList.add('hidden');
+                submitOk.classList.add('hidden');
+                const pdfInput = document.getElementById('journal-pdf');
+                if (!pdfInput.files || !pdfInput.files[0]) {
+                    submitErr.textContent = 'Please choose a PDF file.';
+                    submitErr.classList.remove('hidden');
+                    return;
+                }
+                const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+                const fd = new FormData();
+                const title = document.getElementById('journal-title').value.trim();
+                if (title) fd.append('title', title);
+                fd.append('pdf', pdfInput.files[0]);
+                submitBtn.disabled = true;
+                try {
+                    const res = await fetch(journalsStoreUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'X-CSRF-TOKEN': token || '',
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                        body: fd,
+                    });
+                    const data = await res.json().catch(function () {
+                        return {};
+                    });
+                    if (!res.ok) {
+                        let msg = data.message || 'Upload failed.';
+                        if (data.errors) {
+                            const first = Object.values(data.errors).flat()[0];
+                            if (first) msg = first;
+                        }
+                        submitErr.textContent = msg;
+                        submitErr.classList.remove('hidden');
+                        return;
+                    }
+                    submitOk.textContent = data.message || 'Journal submitted successfully.';
+                    submitOk.classList.remove('hidden');
+                    submitForm.reset();
+                } catch (err) {
+                    submitErr.textContent = 'Network error. Please try again.';
+                    submitErr.classList.remove('hidden');
+                } finally {
+                    submitBtn.disabled = false;
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key !== 'Escape') return;
+                if (pdfModal && !pdfModal.classList.contains('hidden')) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    closeJournalPdf();
+                    return;
+                }
+                if (root && !root.classList.contains('hidden')) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    closeJournalRoot();
+                }
+            }, true);
+
+            window.baoOpenJournalPdf = openJournalPdf;
         })();
     </script>
 
