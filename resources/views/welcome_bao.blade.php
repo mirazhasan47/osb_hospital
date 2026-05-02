@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -26,18 +26,19 @@
             }
         }
 
-        li a {
-            color: #353535;
-            font-weight: bold;
-        }
-
         .button_sec {
             color: #353535;
             font-weight: bold;
             background-color: #396cf0;
         }
 
-        li a:hover {
+        /* Main site nav: readable defaults without affecting header */
+        .content-area li a {
+            color: #353535;
+            font-weight: bold;
+        }
+
+        .content-area li a:hover {
             color: white;
             font-weight: bold;
         }
@@ -91,339 +92,176 @@
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body class="text-gray-800">
+<body class="text-gray-800 overflow-x-hidden">
 
+    {{-- Checkbox must be a body-level sibling so peer-checked drawer/backdrop are not clipped by header backdrop-blur --}}
+    <input type="checkbox" id="menu-toggle" class="peer hidden" autocomplete="off" aria-hidden="true">
 
-    <header class="hidden lg:block fixed top-0 w-full z-[999] shadow-md font-['Lato',_sans-serif] 
-             bg-gradient-to-r from-purple-500/10 via-pink-500/10 via-cyan-500/10 to-violet-500/10 
-             backdrop-blur-xl border-b border-white/30">
-        <div class="max-w-7xl mx-auto px-4 h-[70px] flex items-center justify-between">
+    <header
+        class="site-header hidden lg:flex fixed top-0 left-0 right-0 w-full z-[999] font-['Lato',_sans-serif]
+        bg-[linear-gradient(to_right,rgba(168,85,247,0.12),rgba(236,72,153,0.12),rgba(6,182,212,0.12),rgba(139,92,246,0.12)),linear-gradient(rgba(255,255,255,0.72),rgba(255,255,255,0.62)),url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000')]
+        bg-cover bg-center bg-no-repeat backdrop-blur-xl border-b-4 border-blue-600 overflow-hidden
+        shadow-[0_6px_28px_-6px_rgba(37,99,235,0.55),0_2px_0_0_rgba(6,182,212,0.35)_inset]
+        before:absolute before:inset-0 before:bg-white/55 before:backdrop-blur-2xl before:pointer-events-none">
+        <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 h-[72px] w-full flex items-center justify-between gap-8">
 
-            <div class="flex-shrink-0">
-                <a href="#hero-1" class="flex items-center gap-4">
-                    <img src="{{ asset('pictures/bao_logo.png') }}" class="w-[85px] h-[80px] object-contain"
-                        alt="header-logo">
+            <div class="flex-shrink-0 min-w-0">
+                <a href="#hero-1" class="flex items-center gap-3 min-w-0">
+                    <img src="{{ asset('pictures/bao_logo.png') }}" class="w-16 h-16 shrink-0 object-contain"
+                        alt="BAO logo" width="64" height="64">
 
-                    <div class="flex flex-col justify-center border-l border-gray-300 pl-4">
-                        <span class="text-[14px] font-bold text-gray-800 leading-tight">
+                    <div class="flex flex-col justify-center border-l border-gray-300/80 pl-3 min-w-0">
+                        <span class="text-sm font-semibold text-gray-800 leading-snug truncate max-w-[280px] xl:max-w-none">
                             বাংলাদেশ একাডেমি অব অপথ্যালমোলজি (বিএও)
                         </span>
-                        <span class="text-[8px] text-stone-900 font-medium">
+                        <span class="text-xs text-stone-900 font-medium leading-tight mt-0.5">
                             Bangladesh Academy Of Ophthalmology (BAO)
                         </span>
                     </div>
                 </a>
             </div>
 
+            <div class="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
+                <nav class="shrink-0" aria-label="Primary">
+                    <ul class="flex items-center gap-0.5 xl:gap-1">
+                        <li>
+                            <a href="appointment.html"
+                                class="inline-flex items-center rounded-lg px-3 xl:px-4 py-2.5 text-[14px] xl:text-[15px] leading-5 font-medium text-stone-900 hover:text-cyan-600 hover:bg-white/25 transition-colors">
+                                Journal of BAO
+                            </a>
+                        </li>
+                        <li>
+                            <a href="membership.html"
+                                class="inline-flex items-center rounded-lg px-3 xl:px-4 py-2.5 text-[14px] xl:text-[15px] leading-5 font-medium text-stone-900 hover:text-cyan-600 hover:bg-white/25 transition-colors">
+                                Membership
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#photo-gallery"
+                                class="inline-flex items-center rounded-lg px-3 xl:px-4 py-2.5 text-[14px] xl:text-[15px] leading-5 font-medium text-stone-900 hover:text-cyan-600 hover:bg-white/25 transition-colors">
+                                Photo Gallery
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#committee"
+                                class="inline-flex items-center rounded-lg px-3 xl:px-4 py-2.5 text-[14px] xl:text-[15px] leading-5 font-medium text-stone-900 hover:text-cyan-600 hover:bg-white/25 transition-colors">
+                                Committee
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
-            <nav class="hidden lg:block">
-
-                <ul class="flex items-center space-x-1">
-
-
-                    <li class="group static">
-
-                        <a href="#"
-                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 flex items-center group-hover:text-cyan-600 transition-colors">
-                            Contact Number
-                            <span class="ml-2 border-t-4 border-x-4 border-x-transparent border-t-gray-400"></span>
-                        </a>
-
-                        <div class="absolute top-[70px] left-0 w-full bg-[#BF8142] border-t border-gray-100 shadow-2xl
-        opacity-0 invisible
-        translate-y-6 scale-95
-        group-hover:opacity-100 group-hover:visible
-        group-hover:translate-y-0 group-hover:scale-100
-        transition-all duration-300 ease-out px-8 py-10">
-
-                            <div class="max-w-5xl mx-auto grid grid-cols-2 gap-10">
-
-                                <!-- Phone Numbers -->
-                                <div>
-                                    <h3 class="text-lg font-bold text-black mb-4">📞 Phone Numbers</h3>
-                                    <ul class="space-y-2">
-                                        <li class="text-[15px] text-black border-b border-dashed border-gray-300 py-2">
-                                            Hospital Helpline: +8801335147313
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <!-- Emails -->
-                                <div>
-                                    <h3 class="text-lg font-bold text-black mb-4">📧 Email Address</h3>
-                                    <ul class="space-y-2">
-                                        <li class="text-[15px] text-black border-b border-dashed border-gray-300 py-2">
-                                            it@osb.org.bd
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </li>
-
-                    <li class="group relative">
-
-                        <a href="#"
-                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 flex items-center group-hover:text-cyan-600 transition-colors">
-
-                            Services <span
-                                class="ml-2 border-t-4 border-x-4 border-x-transparent border-t-gray-400"></span>
-
-                        </a>
-
-                        <ul class="absolute top-[70px] left-0 w-48 bg-[#BF8142] border border-gray-100 shadow-xl
-           opacity-0 invisible translate-y-4 scale-95
-           group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:scale-100
-           transition-all duration-300 ease-out">
-
-                            <li>
-                                <a href="demo-2.html"
-                                    class="block px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:pl-6 transition-all">
-                                    Operation
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="demo-2.html"
-                                    class="block px-4 py-2 text-sm text-black hover:bg-cyan-600 hover:pl-6 transition-all">
-                                    Investigation
-                                </a>
-                            </li>
-                        </ul>
-
-                    </li>
-
-                    <li><a href="#"
-                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 hover:text-cyan-600 transition-colors">Ticket</a>
-                    </li>
-
-                    <li><a href="#"
-                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 hover:text-cyan-600 transition-colors">Consultant
-                            Information</a>
-                    </li>
-
-
-
-                    <li class="group static">
-                        <a href="#"
-                            class="px-4 py-6 text-[14.5px] font-medium text-stone-900 flex items-center group-hover:text-cyan-600 transition-colors">
-                            Mega Menu
-                            <span class="ml-2 border-t-4 border-x-4 border-x-transparent border-t-gray-400"></span>
-                        </a>
-
-                        <div class="absolute top-[70px] left-0 w-full bg-[#BF8142] border-t border-gray-100 shadow-2xl
-         opacity-0 invisible
-         translate-y-6 scale-95
-         group-hover:opacity-100 group-hover:visible
-         group-hover:translate-y-0 group-hover:scale-100
-         transition-all duration-400 ease-out px-8 py-10">
-
-                            <div class="max-w-7xl mx-auto flex flex-wrap lg:flex-nowrap gap-8">
-
-                                <div class="w-1/4">
-                                    <h3 class="text-lg font-bold text-black mb-4">Quick Links:</h3>
-                                    <ul class="space-y-1">
-                                        <li><a href="#"
-                                                class="block py-2 text-[15px] text-black border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Online
-                                                Patients Portal</a></li>
-                                        <li><a href="#"
-                                                class="block py-2 text-[15px] text-black border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Insurance
-                                                Info</a></li>
-                                        <li><a href="#"
-                                                class="block py-2 text-[15px] text-black border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Medical
-                                                Services</a></li>
-                                        <li><a href="#"
-                                                class="block py-2 text-[15px] text-black border-b border-dashed border-gray-300 hover:text-cyan-600 hover:pl-2 transition-all">Find
-                                                a Doctor</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="w-5/12">
-                                    <h3 class="text-lg font-bold text-black mb-4">Featured News:</h3>
-                                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
-                                        class="w-full rounded h-48 object-cover" alt="Medical News Featured">
-                                    <h5 class="mt-4 text-md font-bold text-black hover:underline cursor-pointer">
-                                        5 Benefits of integrative medicine
-                                    </h5>
-                                    <p class="text-xs text-black mt-2 leading-relaxed">
-                                        Porta semper lacus cursus, feugiat primis ultrice in ligula risus auctor tempus
-                                        feugiat dolor.
-                                    </p>
-                                </div>
-
-                                <div class="w-1/3">
-                                    <h3 class="text-lg font-bold text-black mb-4">Latest News:</h3>
-
-                                    <div class="space-y-4 max-h-[400px] overflow-y-auto pr-4 custom-news-scrollbar">
-
-                                        <div
-                                            class="flex items-center gap-4 border-b border-dashed border-gray-300 pb-4">
-                                            <img src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&w=150&q=80"
-                                                class="w-20 h-20 min-w-[80px] object-cover rounded shadow-sm"
-                                                alt="News">
-                                            <div>
-                                                <a href="#"
-                                                    class="text-sm text-black hover:text-cyan-600 hover:underline font-medium leading-tight block">
-                                                    Etiam sapien risus ante auctor tempus...
-                                                </a>
-                                                <p class="text-xs text-black-400 mt-1">43 Comments</p>
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            class="flex items-center gap-4 border-b border-dashed border-gray-300 pb-4">
-                                            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=150&q=80"
-                                                class="w-20 h-20 min-w-[80px] object-cover rounded shadow-sm"
-                                                alt="News">
-                                            <div>
-                                                <a href="#"
-                                                    class="text-sm text-black hover:text-cyan-600 hover:underline font-medium leading-tight block">
-                                                    Maecenas vel elit at purus lacinia...
-                                                </a>
-                                                <p class="text-xs text-black-400 mt-1">12 Comments</p>
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            class="flex items-center gap-4 border-b border-dashed border-gray-300 pb-4">
-                                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=150&q=80"
-                                                class="w-20 h-20 min-w-[80px] object-cover rounded shadow-sm"
-                                                alt="News">
-                                            <div>
-                                                <a href="#"
-                                                    class="text-sm text-black hover:text-cyan-600 hover:underline font-medium leading-tight block">
-                                                    New advancements in Cardiology 2024...
-                                                </a>
-                                                <p class="text-xs text-black-400 mt-1">18 Comments</p>
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            class="flex items-center gap-4 border-b border-dashed border-gray-300 pb-4">
-                                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=150&q=80"
-                                                class="w-20 h-20 min-w-[80px] object-cover rounded shadow-sm"
-                                                alt="News">
-                                            <div>
-                                                <a href="#"
-                                                    class="text-sm text-black hover:text-cyan-600 hover:underline font-medium leading-tight block">
-                                                    Understanding the future of Telehealth...
-                                                </a>
-                                                <p class="text-xs text-black-400 mt-1">25 Comments</p>
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            class="flex items-center gap-4 border-b border-dashed border-gray-300 pb-4">
-                                            <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=150&q=80"
-                                                class="w-20 h-20 min-w-[80px] object-cover rounded shadow-sm"
-                                                alt="News">
-                                            <div>
-                                                <a href="#"
-                                                    class="text-sm text-black hover:text-cyan-600 hover:underline font-medium leading-tight block">
-                                                    Global Health Summit highlights...
-                                                </a>
-                                                <p class="text-xs text-black-400 mt-1">9 Comments</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <style>
-                        /* Custom Scrollbar Styles */
-                        .custom-news-scrollbar::-webkit-scrollbar {
-                            width: 4px;
-                        }
-
-                        .custom-news-scrollbar::-webkit-scrollbar-track {
-                            background: #f3f4f6;
-                            border-radius: 10px;
-                        }
-
-                        .custom-news-scrollbar::-webkit-scrollbar-thumb {
-                            background: #0891b2;
-                            /* Matches Cyan-600 */
-                            border-radius: 10px;
-                        }
-
-                        .custom-news-scrollbar::-webkit-scrollbar-thumb:hover {
-                            background: #0e7490;
-                        }
-                    </style>
-
-
-                </ul>
-
-            </nav>
-
-        </div>
-    </header>
-
-    <header class="block lg:hidden fixed top-0 w-full z-[999] bg-white shadow-md font-['Lato',_sans-serif]">
-        <div class="max-w-7xl mx-auto px-4 h-[70px] flex items-center justify-between">
-
-            <div class="flex-shrink-0">
-                <a href="#hero-1">
-                    <img src="{{ asset('pictures/bao_logo.png') }}" class="w-[80px] h-auto" alt="logo">
+                <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
+                    class="group relative inline-flex shrink-0 items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-500 px-4 xl:px-5 py-2.5 text-[13px] xl:text-[15px] font-bold uppercase tracking-wide text-white shadow-[0_4px_18px_rgba(37,99,235,0.5)] ring-2 ring-white/45 transition duration-300 hover:from-blue-500 hover:via-blue-600 hover:to-cyan-400 hover:shadow-[0_6px_24px_rgba(8,145,178,0.45)] hover:ring-white/75 active:scale-[0.97]">
+                    <span
+                        class="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition duration-700 group-hover:translate-x-full group-hover:opacity-100"></span>
+                    <i class="fas fa-user-plus relative text-sm opacity-90" aria-hidden="true"></i>
+                    <span class="relative">Register</span>
+                    <i class="fas fa-arrow-right relative text-[10px] opacity-85 transition group-hover:translate-x-1" aria-hidden="true"></i>
                 </a>
             </div>
 
-            <label for="menu-toggle" class="cursor-pointer p-2 text-gray-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </label>
-
-            <input type="checkbox" id="menu-toggle" class="hidden peer">
-
-            <div
-                class="fixed inset-0 bg-black/50 opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all">
-            </div>
-
-            <nav
-                class="fixed top-0 left-0 h-full w-[300px] bg-white shadow-2xl -translate-x-full peer-checked:translate-x-0 transition-transform duration-300 z-[1000] overflow-y-auto">
-                <div class="flex justify-end p-4">
-                    <label for="menu-toggle" class="cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </label>
-                </div>
-
-                <ul class="flex flex-col">
-                    <li class="border-b border-gray-100">
-                        <a href="#"
-                            class="px-5 py-4 text-[15px] font-medium text-gray-700 flex justify-between items-center">Home</a>
-                    </li>
-                    <li class="border-b border-gray-100">
-                        <a href="#" class="px-5 py-4 text-[15px] font-medium text-gray-700">Pages</a>
-                    </li>
-                    <li class="p-5">
-                        <a href="appointment.html"
-                            class="block text-center bg-cyan-600 text-black px-6 py-3 rounded font-medium">
-                            Make an Appointment
-                        </a>
-                    </li>
-                </ul>
-            </nav>
         </div>
     </header>
 
+    <header
+        class="site-header block lg:hidden fixed top-0 left-0 right-0 w-full z-[999] font-['Lato',_sans-serif]
+        bg-[linear-gradient(to_right,rgba(168,85,247,0.12),rgba(236,72,153,0.12),rgba(6,182,212,0.12),rgba(139,92,246,0.12)),linear-gradient(rgba(255,255,255,0.72),rgba(255,255,255,0.62)),url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000')]
+        bg-cover bg-center bg-no-repeat backdrop-blur-xl border-b-4 border-blue-600 overflow-hidden
+        shadow-[0_6px_28px_-6px_rgba(37,99,235,0.55),0_2px_0_0_rgba(6,182,212,0.35)_inset]
+        before:absolute before:inset-0 before:bg-white/55 before:backdrop-blur-2xl before:pointer-events-none">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 h-[72px] flex items-center justify-between">
 
+            <div class="flex min-w-0 flex-1 items-center gap-2 pr-2">
+                <a href="#hero-1" class="flex min-w-0 items-center gap-2">
+                    <img src="{{ asset('pictures/bao_logo.png') }}" class="w-14 h-14 shrink-0 object-contain" alt="BAO logo" width="56" height="56">
+                    <span class="text-sm font-semibold text-slate-900 leading-tight line-clamp-2">বিএও</span>
+                </a>
+            </div>
 
+            <div class="flex shrink-0 items-center gap-1.5">
+                <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 px-3 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-md ring-1 ring-white/30 active:scale-95">
+                    <i class="fas fa-user-plus text-[10px] opacity-90"></i>
+                    Register
+                </a>
+                <label for="menu-toggle" class="cursor-pointer p-2 text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </header>
 
+    {{-- Full-page mobile menu (fixed to viewport; checkbox is body-level peer) --}}
+    <nav
+        class="lg:hidden fixed inset-0 z-[1000] flex h-dvh max-h-dvh w-full flex-col overflow-hidden overscroll-contain
+        bg-[linear-gradient(to_right,rgba(168,85,247,0.12),rgba(236,72,153,0.12),rgba(6,182,212,0.12),rgba(139,92,246,0.12)),linear-gradient(rgba(255,255,255,0.72),rgba(255,255,255,0.62)),url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000')]
+        bg-cover bg-center bg-no-repeat backdrop-blur-xl
+        opacity-0 invisible pointer-events-none translate-y-1
+        peer-checked:opacity-100 peer-checked:visible peer-checked:pointer-events-auto peer-checked:translate-y-0
+        transition-[opacity,transform] duration-300 ease-out
+        before:absolute before:inset-0 before:bg-white/55 before:backdrop-blur-2xl before:pointer-events-none"
+        aria-label="Mobile primary">
+        <div class="relative z-10 flex min-h-0 flex-1 flex-col">
+            <div
+                class="flex shrink-0 items-center justify-between gap-3 border-b-4 border-blue-600 bg-white/25 px-4 py-3 backdrop-blur-md">
+                <span class="text-base font-semibold text-stone-900">Menu</span>
+                <label for="menu-toggle"
+                    class="inline-flex cursor-pointer items-center justify-center rounded-full border-2 border-stone-800/20 bg-white/80 p-3 text-stone-900 shadow-md transition-colors hover:border-blue-600 hover:bg-white hover:text-blue-700 active:scale-95">
+                    <span class="sr-only">Close menu</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2.25" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </label>
+            </div>
 
+            <ul class="flex flex-1 flex-col gap-2 overflow-y-auto px-4 py-6 pb-10" role="list">
+                <li class="mb-2">
+                    <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
+                        onclick="document.getElementById('menu-toggle').checked=false"
+                        class="relative flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-500 px-4 py-4 text-base font-bold uppercase tracking-wide text-white shadow-lg shadow-blue-600/35 ring-2 ring-white/40 transition hover:from-blue-500 hover:to-cyan-400 active:scale-[0.98]">
+                        <i class="fas fa-user-plus text-lg opacity-90"></i>
+                        Register for BAO
+                    </a>
+                </li>
+                <li>
+                    <a href="appointment.html"
+                        onclick="document.getElementById('menu-toggle').checked=false"
+                        class="flex items-center rounded-xl px-4 py-4 text-base font-medium text-stone-900 shadow-sm ring-1 ring-stone-900/10 transition-colors hover:bg-white/45 hover:text-cyan-700 active:bg-white/55">
+                        Journal of BAO
+                    </a>
+                </li>
+                <li>
+                    <a href="membership.html"
+                        onclick="document.getElementById('menu-toggle').checked=false"
+                        class="flex items-center rounded-xl px-4 py-4 text-base font-medium text-stone-900 shadow-sm ring-1 ring-stone-900/10 transition-colors hover:bg-white/45 hover:text-cyan-700 active:bg-white/55">
+                        Membership
+                    </a>
+                </li>
+                <li>
+                    <a href="#photo-gallery"
+                        onclick="document.getElementById('menu-toggle').checked=false"
+                        class="flex items-center rounded-xl px-4 py-4 text-base font-medium text-stone-900 shadow-sm ring-1 ring-stone-900/10 transition-colors hover:bg-white/45 hover:text-cyan-700 active:bg-white/55">
+                        Photo Gallery
+                    </a>
+                </li>
+                <li>
+                    <a href="#committee"
+                        onclick="document.getElementById('menu-toggle').checked=false"
+                        class="flex items-center rounded-xl px-4 py-4 text-base font-medium text-stone-900 shadow-sm ring-1 ring-stone-900/10 transition-colors hover:bg-white/45 hover:text-cyan-700 active:bg-white/55">
+                        Committee
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <div x-data="{ 
         activeSlide: 1, 
@@ -468,17 +306,18 @@
             this.activeSlide = this.activeSlide === 1 ? this.slides.length : this.activeSlide - 1;
             this.startTimer(); // reset timer on manual navigation
         }
-    }" x-init="startTimer()" @mouseenter="stopTimer()" @mouseleave="startTimer()"
-        class="relative h-dvh min-h-[600px] w-full overflow-hidden bg-black group">
+    }" x-init="startTimer()" @mouseenter="stopTimer()" @mouseleave="startTimer()" id="hero-1"
+        class="relative h-dvh min-h-[520px] w-screen max-w-[100vw] overflow-hidden bg-black group scroll-mt-[76px]">
 
-        <!-- Slides -->
+        <!-- Slides: full-bleed below fixed header (72px bar + 4px border = 76px) — no margin gap -->
         <template x-for="slide in slides" :key="slide.id">
             <div x-show="activeSlide === slide.id" x-transition:enter="transition ease-in-out duration-[3000ms]"
-                x-transition:enter-start="opacity-0 scale-110" x-transition:enter-end="opacity-100 scale-100"
+                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
                 x-transition:leave="transition ease-in-out duration-[3000ms]"
-                x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-105"
-                class="absolute inset-0">
-                <img :src="slide.img" class="absolute inset-0 w-full h-full object-cover brightness-[0.8]"
+                x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                class="absolute inset-x-0 top-[76px] bottom-0 bg-black">
+                <img :src="slide.img"
+                    class="absolute inset-0 h-full w-full min-w-full object-cover object-center brightness-[0.92]"
                     :alt="slide.title || 'Slide image'">
 
                 <div class="relative h-full flex items-center px-12 md:px-24 lg:px-32">
@@ -526,22 +365,19 @@
 
     </div>
 
-    <!-- Alpine.js -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <section id="about" class="content-area relative bg-cover bg-center scroll-mt-[76px] py-14 sm:py-16 md:py-20 lg:py-24 xl:py-28">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-10 md:gap-12 xl:flex-row xl:flex-nowrap xl:items-start xl:gap-x-12 2xl:gap-x-16">
 
-    <section class="relative bg-cover bg-center pt-20 lg:pt-40">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col xl:flex-row flex-wrap -mx-4">
-
-                <div class="w-full xl:w-7/12 px-4 order-1 xl:order-2 mb-10 xl:mb-40">
-                    <div class="item-content">
-                        <h2 class="text-3xl lg:text-4xl font-semibold text-gray-900 capitalize mb-5 leading-tight">
+                <div class="order-1 w-full min-w-0 xl:order-1 xl:w-7/12">
+                    <div class="item-content max-w-2xl xl:max-w-none space-y-5 lg:space-y-6">
+                        <h2 class="text-3xl lg:text-4xl font-semibold text-gray-900 capitalize leading-tight">
                             বাংলাদেশ একাডেমি অব অপথ্যালমোলজিতে স্বাগতম
                         </h2>
-                        <div class="text-xl font-medium text-gray-900 mb-5">
+                        <div class="text-xl font-medium text-gray-900 leading-snug">
                             চক্ষুবিজ্ঞানের উন্নয়ন, শিক্ষা ও গবেষণায় দেশের অন্যতম অগ্রণী প্রতিষ্ঠান।
                         </div>
-                        <p class="text-gray-700 mb-6 leading-relaxed">
+                        <p class="text-gray-700 leading-relaxed text-base lg:text-lg">
                             বাংলাদেশ একাডেমি অব অপথ্যালমোলজি দেশের চক্ষু চিকিৎসা শিক্ষা ও গবেষণার মান উন্নয়নে
                             গুরুত্বপূর্ণ ভূমিকা পালন করছে। এখানে দক্ষ চিকিৎসক, গবেষক ও শিক্ষার্থীদের জন্য রয়েছে আধুনিক
                             প্রশিক্ষণ ব্যবস্থা, সেমিনার এবং কর্মশালার সুযোগ। আন্তর্জাতিক মানের জ্ঞান ও দক্ষতা অর্জনের
@@ -550,8 +386,8 @@
                     </div>
                 </div>
 
-                <div class="w-full xl:w-4/12 lg:w-7/12 px-4 order-2 xl:order-3 mb-10 xl:mb-0">
-                    <ul class="space-y-5">
+                <div class="order-2 w-full min-w-0 lg:mx-auto lg:max-w-xl xl:mx-0 xl:max-w-none xl:w-5/12 xl:shrink-0">
+                    <ul class="space-y-4 sm:space-y-5">
                         <!-- Button 1 -->
                         <li>
                             <a href="appointment.html"
@@ -606,6 +442,54 @@
                                 <span class="relative z-10 text-white tracking-wide">Membership</span>
                             </a>
                         </li>
+
+                        <!-- Button 3: Photo Gallery -->
+                        <li>
+                            <a href="#photo-gallery"
+                                class="group relative block p-7 lg:p-9 pl-20 lg:pl-24 text-white text-lg lg:text-xl font-bold rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02] 
+                       border-2 border-white/40 shadow-xl hover:border-white/80 hover:shadow-[0_0_30px_rgba(30,74,138,0.3)]">
+
+                                <div
+                                    class="absolute inset-0 bg-[#1e4a8a]/80 bg-gradient-to-br from-[#2f5a9e]/90 via-[#1e4a8a]/95 to-[#0f2d5e] backdrop-blur-xl transition-colors duration-500 group-hover:from-[#254b8a]">
+                                </div>
+
+                                <div class="absolute inset-0 opacity-[0.25] group-hover:opacity-[0.4] transition-opacity duration-500"
+                                    style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 14px 14px;">
+                                </div>
+
+                                <div
+                                    class="absolute inset-x-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent -translate-y-full group-hover:translate-y-[200%] transition-all duration-[1200ms] ease-in-out">
+                                </div>
+
+                                <i
+                                    class="fas fa-images absolute left-7 lg:left-9 top-1/2 -translate-y-1/2 text-3xl lg:text-4xl text-white/90 group-hover:text-white group-hover:scale-110 transition-all duration-500 z-10"></i>
+                                <span class="relative z-10 text-white tracking-wide">Photo Gallery</span>
+                            </a>
+                        </li>
+
+                        <!-- Button 4: Committee -->
+                        <li>
+                            <a href="#committee"
+                                class="group relative block p-7 lg:p-9 pl-20 lg:pl-24 text-white text-lg lg:text-xl font-bold rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02] 
+                       border-2 border-white/40 shadow-xl hover:border-white/80 hover:shadow-[0_0_30px_rgba(30,74,138,0.3)]">
+
+                                <div
+                                    class="absolute inset-0 bg-[#1e4a8a]/80 bg-gradient-to-br from-[#2f5a9e]/90 via-[#1e4a8a]/95 to-[#0f2d5e] backdrop-blur-xl transition-colors duration-500 group-hover:from-[#254b8a]">
+                                </div>
+
+                                <div class="absolute inset-0 opacity-[0.25] group-hover:opacity-[0.4] transition-opacity duration-500"
+                                    style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 14px 14px;">
+                                </div>
+
+                                <div
+                                    class="absolute inset-x-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent -translate-y-full group-hover:translate-y-[200%] transition-all duration-[1200ms] ease-in-out">
+                                </div>
+
+                                <i
+                                    class="fas fa-users absolute left-7 lg:left-9 top-1/2 -translate-y-1/2 text-3xl lg:text-4xl text-white/90 group-hover:text-white group-hover:scale-110 transition-all duration-500 z-10"></i>
+                                <span class="relative z-10 text-white tracking-wide">Committee</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
@@ -615,7 +499,8 @@
     </section>
 
 
-    <div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-16 px-4">
+    <div id="committee"
+        class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-16 px-4 scroll-mt-[76px]">
 
         <!-- HEADER -->
         <div class="text-center mb-16">
@@ -971,6 +856,7 @@
     </div>
 
 
+    <section id="photo-gallery" class="scroll-mt-[76px]">
     <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mt-2 m-0-auto text-center mt-[100px] mb-[100px]">
         ফটো গ্যালারি
     </h1>
@@ -989,6 +875,7 @@
             <img class="h-auto max-w-full rounded-base" src="{{ asset('pictures/bao_photo_one.jpg') }}" alt="">
         </div>
     </div>
+    </section>
 
 
 
