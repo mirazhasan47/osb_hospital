@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BaoStudentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,3 +10,5 @@ Route::get('/', function () {
 Route::get('/bao-website', function () {
     return view('welcome_bao');
 });
+
+Route::post('/bao/students', [BaoStudentController::class, 'store'])->name('bao.students.store');

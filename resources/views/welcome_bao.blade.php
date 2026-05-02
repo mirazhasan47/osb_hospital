@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Bangladesh Academy Of Ophthalmology (BAO)</title>
 
     {{-- Tailwind via Vite --}}
@@ -91,6 +92,41 @@
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        @keyframes membershipToastPop {
+            0% { opacity: 0; transform: translateY(2rem) scale(0.88); }
+            55% { opacity: 1; transform: translateY(-0.35rem) scale(1.04); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes membershipToastOut {
+            from { opacity: 1; transform: translateY(0) scale(1); }
+            to { opacity: 0; transform: translateY(1rem) scale(0.94); }
+        }
+
+        @keyframes membershipToastIcon {
+            0% { opacity: 0; transform: scale(0) rotate(-25deg); }
+            55% { opacity: 1; transform: scale(1.12) rotate(6deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+
+        @keyframes membershipToastGlow {
+            0%, 100% { box-shadow: 0 25px 50px -12px rgba(5, 150, 105, 0.35), 0 0 0 1px rgba(16, 185, 129, 0.2); }
+            50% { box-shadow: 0 28px 60px -12px rgba(5, 150, 105, 0.5), 0 0 0 4px rgba(52, 211, 153, 0.35); }
+        }
+
+        .membership-toast-animate {
+            animation: membershipToastPop 0.7s cubic-bezier(0.34, 1.25, 0.64, 1) forwards,
+                membershipToastGlow 2.2s ease-in-out 0.7s 2;
+        }
+
+        .membership-toast-animate .membership-toast-icon {
+            animation: membershipToastIcon 0.65s cubic-bezier(0.34, 1.45, 0.64, 1) 0.1s both;
+        }
+
+        .membership-toast-leave {
+            animation: membershipToastOut 0.4s ease-in forwards !important;
+        }
     </style>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -134,7 +170,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="membership.html"
+                            <a href="#"
+                                data-open-membership-modal
                                 class="inline-flex items-center rounded-lg px-3 xl:px-4 py-2.5 text-[14px] xl:text-[15px] leading-5 font-medium text-stone-900 hover:text-cyan-600 hover:bg-white/25 transition-colors">
                                 Membership
                             </a>
@@ -155,12 +192,16 @@
                 </nav>
 
                 <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
-                    class="group relative inline-flex shrink-0 items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-500 px-4 xl:px-5 py-2.5 text-[13px] xl:text-[15px] font-bold uppercase tracking-wide text-white shadow-[0_4px_18px_rgba(37,99,235,0.5)] ring-2 ring-white/45 transition duration-300 hover:from-blue-500 hover:via-blue-600 hover:to-cyan-400 hover:shadow-[0_6px_24px_rgba(8,145,178,0.45)] hover:ring-white/75 active:scale-[0.97]">
+                    title="Register for MOCK test – July 2026 session"
+                    class="group relative inline-flex max-w-[min(100%,22rem)] shrink-0 items-center gap-2.5 overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-500 px-3 py-2 text-white shadow-[0_4px_18px_rgba(37,99,235,0.5)] ring-2 ring-white/45 transition duration-300 hover:from-blue-500 hover:via-blue-600 hover:to-cyan-400 hover:shadow-[0_6px_24px_rgba(8,145,178,0.45)] hover:ring-white/75 active:scale-[0.97] xl:max-w-none xl:gap-3 xl:px-4 xl:py-2">
                     <span
                         class="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition duration-700 group-hover:translate-x-full group-hover:opacity-100"></span>
-                    <i class="fas fa-user-plus relative text-sm opacity-90" aria-hidden="true"></i>
-                    <span class="relative">Register</span>
-                    <i class="fas fa-arrow-right relative text-[10px] opacity-85 transition group-hover:translate-x-1" aria-hidden="true"></i>
+                    <i class="fas fa-clipboard-check relative shrink-0 text-base opacity-90 xl:text-lg" aria-hidden="true"></i>
+                    <span class="relative min-w-0 flex-1 text-left leading-tight">
+                        <span class="block text-[11px] font-bold uppercase tracking-wide xl:text-xs">Register for MOCK test</span>
+                        <span class="mt-0.5 block text-[9px] font-semibold normal-case leading-snug text-white/95 xl:text-[10px]">For Postgraduate Examinees (Ophthalmology) – July 2026 Session</span>
+                    </span>
+                    <i class="fas fa-arrow-right relative shrink-0 text-[9px] opacity-85 transition group-hover:translate-x-1 xl:text-[10px]" aria-hidden="true"></i>
                 </a>
             </div>
 
@@ -184,9 +225,10 @@
 
             <div class="flex shrink-0 items-center gap-1.5">
                 <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 px-3 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-md ring-1 ring-white/30 active:scale-95">
-                    <i class="fas fa-user-plus text-[10px] opacity-90"></i>
-                    Register
+                    title="Register for MOCK test – For Postgraduate Examinees (Ophthalmology), July 2026 Session"
+                    class="inline-flex max-w-[9.5rem] flex-col items-center justify-center gap-0 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 px-2 py-1.5 text-center text-white shadow-md ring-1 ring-white/30 active:scale-95">
+                    <span class="text-[9px] font-bold uppercase leading-tight tracking-wide">MOCK test</span>
+                    <span class="text-[8px] font-semibold leading-tight text-white/90">July 2026</span>
                 </a>
                 <label for="menu-toggle" class="cursor-pointer p-2 text-gray-600">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
@@ -226,9 +268,12 @@
                 <li class="mb-2">
                     <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
                         onclick="document.getElementById('menu-toggle').checked=false"
-                        class="relative flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-500 px-4 py-4 text-base font-bold uppercase tracking-wide text-white shadow-lg shadow-blue-600/35 ring-2 ring-white/40 transition hover:from-blue-500 hover:to-cyan-400 active:scale-[0.98]">
-                        <i class="fas fa-user-plus text-lg opacity-90"></i>
-                        Register for BAO
+                        class="relative flex flex-col items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-500 px-4 py-5 text-center text-white shadow-lg shadow-blue-600/35 ring-2 ring-white/40 transition hover:from-blue-500 hover:to-cyan-400 active:scale-[0.98]">
+                        <span class="flex items-center gap-2 text-base font-bold uppercase tracking-wide">
+                            <i class="fas fa-clipboard-check text-xl opacity-90" aria-hidden="true"></i>
+                            Register for MOCK test
+                        </span>
+                        <span class="text-sm font-semibold leading-snug text-white/95">For Postgraduate Examinees (Ophthalmology) – July 2026 Session</span>
                     </a>
                 </li>
                 <li>
@@ -239,7 +284,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="membership.html"
+                    <a href="#"
+                        data-open-membership-modal
                         onclick="document.getElementById('menu-toggle').checked=false"
                         class="flex items-center rounded-xl px-4 py-4 text-base font-medium text-stone-900 shadow-sm ring-1 ring-stone-900/10 transition-colors hover:bg-white/45 hover:text-cyan-700 active:bg-white/55">
                         Membership
@@ -421,7 +467,8 @@
 
                         <!-- Button 2 -->
                         <li>
-                            <a href="membership.html"
+                            <a href="#"
+                                data-open-membership-modal
                                 class="group relative block p-7 lg:p-9 pl-20 lg:pl-24 text-white text-lg lg:text-xl font-bold rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02] 
                        border-2 border-white/40 shadow-xl hover:border-white/80 hover:shadow-[0_0_30px_rgba(30,74,138,0.3)]">
 
@@ -1055,6 +1102,208 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
         </div>
     </footer>
 
+    {{-- Membership registration modal --}}
+    <div id="membership-modal" class="fixed inset-0 z-[2000] hidden" aria-hidden="true" role="dialog"
+        aria-labelledby="membership-modal-title">
+        <div
+            class="membership-modal-backdrop absolute inset-0 z-0 bg-slate-900/60 backdrop-blur-sm transition-opacity">
+        </div>
+        <div
+            class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center p-4 sm:p-6">
+            <div
+                class="pointer-events-auto relative w-full max-w-lg rounded-2xl border border-white/20 bg-white shadow-2xl shadow-blue-900/20">
+                <div class="flex items-start justify-between gap-4 border-b border-slate-200 px-5 py-4 sm:px-6">
+                    <h2 id="membership-modal-title" class="text-lg font-bold text-slate-900 sm:text-xl">Membership
+                        registration</h2>
+                    <button type="button" data-close-membership-modal
+                        class="rounded-lg p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-800">
+                        <span class="sr-only">Close</span>
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <form id="membership-form" class="px-5 py-5 sm:px-6 sm:py-6">
+                    <div class="space-y-4">
+                        <div>
+                            <label for="member-name" class="mb-1 block text-sm font-medium text-slate-700">Name</label>
+                            <input id="member-name" name="name" type="text" required autocomplete="name"
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" />
+                        </div>
+                        <div>
+                            <label for="member-phone" class="mb-1 block text-sm font-medium text-slate-700">Phone</label>
+                            <input id="member-phone" name="phone" type="tel" required autocomplete="tel"
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" />
+                        </div>
+                        <div>
+                            <label for="member-email" class="mb-1 block text-sm font-medium text-slate-700">Email</label>
+                            <input id="member-email" name="email" type="email" required autocomplete="email"
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" />
+                        </div>
+                        <div>
+                            <label for="member-institute" class="mb-1 block text-sm font-medium text-slate-700">Institute
+                                name</label>
+                            <input id="member-institute" name="institute_name" type="text" required
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" />
+                        </div>
+                        <div>
+                            <label for="member-designation"
+                                class="mb-1 block text-sm font-medium text-slate-700">Designation</label>
+                            <input id="member-designation" name="designation" type="text" required
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-slate-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30" />
+                        </div>
+                    </div>
+                    <p id="membership-form-error" class="mt-4 hidden text-sm text-red-600"></p>
+                    <div class="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+                        <button type="button" data-close-membership-modal
+                            class="rounded-xl border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
+                            Cancel
+                        </button>
+                        <button type="submit" id="membership-submit"
+                            class="rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 px-5 py-2.5 text-sm font-bold text-white shadow-md transition hover:from-blue-500 hover:to-cyan-500 disabled:opacity-60">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="membership-toast"
+        class="pointer-events-none fixed bottom-8 left-1/2 z-[2100] hidden w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 transform px-3 sm:bottom-10 sm:max-w-xl sm:px-4"
+        role="status" aria-live="polite">
+        <div id="membership-toast-panel"
+            class="pointer-events-auto relative overflow-hidden rounded-3xl border-2 border-emerald-400/60 bg-gradient-to-br from-emerald-50 via-white to-teal-50 px-6 py-7 text-center shadow-2xl shadow-emerald-700/20 ring-4 ring-emerald-300/30 sm:px-10 sm:py-9">
+            <div class="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-emerald-400/15 blur-2xl"></div>
+            <div class="pointer-events-none absolute -bottom-10 -left-10 h-36 w-36 rounded-full bg-teal-400/15 blur-2xl"></div>
+            <div class="relative">
+                <div class="mb-4 flex justify-center sm:mb-5">
+                    <span
+                        class="membership-toast-icon inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-3xl text-white shadow-lg shadow-emerald-600/40 sm:h-20 sm:w-20 sm:text-4xl"
+                        aria-hidden="true">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </span>
+                </div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700/90 sm:text-sm">Success</p>
+                <p id="membership-toast-message"
+                    class="mt-2 text-lg font-bold leading-snug text-emerald-950 sm:mt-3 sm:text-2xl sm:leading-tight"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const modal = document.getElementById('membership-modal');
+            const form = document.getElementById('membership-form');
+            const errEl = document.getElementById('membership-form-error');
+            const toast = document.getElementById('membership-toast');
+            const toastPanel = document.getElementById('membership-toast-panel');
+            const toastMsg = document.getElementById('membership-toast-message');
+            const submitBtn = document.getElementById('membership-submit');
+            const storeUrl = @json(route('bao.students.store'));
+
+            function openModal(e) {
+                if (e) e.preventDefault();
+                modal.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+                modal.setAttribute('aria-hidden', 'false');
+                errEl.classList.add('hidden');
+                errEl.textContent = '';
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+                modal.setAttribute('aria-hidden', 'true');
+            }
+
+            document.querySelectorAll('[data-open-membership-modal]').forEach(function (el) {
+                el.addEventListener('click', openModal);
+            });
+
+            modal.querySelectorAll('[data-close-membership-modal]').forEach(function (el) {
+                el.addEventListener('click', closeModal);
+            });
+
+            modal.querySelector('.membership-modal-backdrop').addEventListener('click', closeModal);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+            });
+
+            function showToast(text) {
+                toastMsg.textContent = text;
+                toastPanel.classList.remove('membership-toast-leave');
+                toast.classList.remove('hidden');
+                toastPanel.classList.remove('membership-toast-animate');
+                void toastPanel.offsetWidth;
+                toastPanel.classList.add('membership-toast-animate');
+                clearTimeout(window._membershipToastTimer);
+                clearTimeout(window._membershipToastHideTimer);
+                window._membershipToastTimer = setTimeout(function () {
+                    toastPanel.classList.add('membership-toast-leave');
+                    window._membershipToastHideTimer = setTimeout(function () {
+                        toast.classList.add('hidden');
+                        toastPanel.classList.remove('membership-toast-animate', 'membership-toast-leave');
+                    }, 420);
+                }, 5500);
+            }
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                errEl.classList.add('hidden');
+                errEl.textContent = '';
+                submitBtn.disabled = true;
+
+                const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+                const payload = {
+                    name: document.getElementById('member-name').value.trim(),
+                    phone: document.getElementById('member-phone').value.trim(),
+                    email: document.getElementById('member-email').value.trim(),
+                    institute_name: document.getElementById('member-institute').value.trim(),
+                    designation: document.getElementById('member-designation').value.trim(),
+                };
+
+                try {
+                    const res = await fetch(storeUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'X-CSRF-TOKEN': token || '',
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                        body: JSON.stringify(payload),
+                    });
+
+                    const data = await res.json().catch(function () {
+                        return {};
+                    });
+
+                    if (!res.ok) {
+                        if (data.errors) {
+                            const first = Object.values(data.errors).flat()[0];
+                            errEl.textContent = first || data.message || 'Something went wrong.';
+                        } else {
+                            errEl.textContent = data.message || 'Something went wrong.';
+                        }
+                        errEl.classList.remove('hidden');
+                        return;
+                    }
+
+                    form.reset();
+                    closeModal();
+                    showToast(data.message || 'You have registered as a member.');
+                } catch (err) {
+                    errEl.textContent = 'Network error. Please try again.';
+                    errEl.classList.remove('hidden');
+                } finally {
+                    submitBtn.disabled = false;
+                }
+            });
+        })();
+    </script>
 
 </body>
 
