@@ -127,6 +127,35 @@
         .membership-toast-leave {
             animation: membershipToastOut 0.4s ease-in forwards !important;
         }
+
+        @keyframes baoAdminToastGlowLogin {
+            0%, 100% { box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.32), 0 0 0 1px rgba(59, 130, 246, 0.2); }
+            50% { box-shadow: 0 28px 60px -12px rgba(37, 99, 235, 0.48), 0 0 0 4px rgba(125, 211, 252, 0.32); }
+        }
+
+        @keyframes baoAdminToastGlowLogout {
+            0%, 100% { box-shadow: 0 25px 50px -12px rgba(71, 85, 105, 0.28), 0 0 0 1px rgba(99, 102, 241, 0.18); }
+            50% { box-shadow: 0 28px 60px -12px rgba(71, 85, 105, 0.42), 0 0 0 4px rgba(165, 180, 252, 0.28); }
+        }
+
+        .bao-admin-toast-animate--login {
+            animation: membershipToastPop 0.7s cubic-bezier(0.34, 1.25, 0.64, 1) forwards,
+                baoAdminToastGlowLogin 2.2s ease-in-out 0.7s 2;
+        }
+
+        .bao-admin-toast-animate--logout {
+            animation: membershipToastPop 0.7s cubic-bezier(0.34, 1.25, 0.64, 1) forwards,
+                baoAdminToastGlowLogout 2.2s ease-in-out 0.7s 2;
+        }
+
+        .bao-admin-toast-animate--login .bao-admin-toast-icon,
+        .bao-admin-toast-animate--logout .bao-admin-toast-icon {
+            animation: membershipToastIcon 0.65s cubic-bezier(0.34, 1.45, 0.64, 1) 0.1s both;
+        }
+
+        .bao-admin-toast-leave {
+            animation: membershipToastOut 0.4s ease-in forwards !important;
+        }
     </style>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -142,73 +171,72 @@
         bg-cover bg-center bg-no-repeat backdrop-blur-xl border-b-4 border-blue-600 overflow-hidden
         shadow-[0_6px_28px_-6px_rgba(37,99,235,0.55),0_2px_0_0_rgba(6,182,212,0.35)_inset]
         before:absolute before:inset-0 before:bg-white/55 before:backdrop-blur-2xl before:pointer-events-none">
-        <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 h-[72px] w-full flex items-center justify-between gap-8">
+        <div
+            class="relative z-10 mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
 
-            <div class="flex-shrink-0 min-w-0">
-                <a href="#hero-1" class="flex items-center gap-3 min-w-0">
-                    <img src="{{ asset('pictures/bao_logo.png') }}" class="w-16 h-16 shrink-0 object-contain"
-                        alt="BAO logo" width="64" height="64">
+            <div class="min-w-0 flex-shrink-0">
+                <a href="#hero-1" class="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                    <img src="{{ asset('pictures/bao_logo.png') }}" class="h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14"
+                        alt="BAO logo" width="56" height="56">
 
-                    <div class="flex flex-col justify-center border-l border-gray-300/80 pl-3 min-w-0">
-                        <span class="text-sm font-semibold text-gray-800 leading-snug truncate max-w-[280px] xl:max-w-none">
+                    <div class="min-w-0 border-l border-gray-300/80 pl-2.5 sm:pl-3">
+                        <span class="block truncate text-xs font-semibold leading-snug text-gray-800 sm:text-sm lg:max-w-[14rem] xl:max-w-[20rem] 2xl:max-w-none">
                             বাংলাদেশ একাডেমি অব অপথ্যালমোলজি (বিএও)
                         </span>
-                        <span class="text-xs text-stone-900 font-medium leading-tight mt-0.5">
+                        <span class="mt-0.5 block truncate text-[10px] font-medium leading-tight text-stone-800 sm:text-xs lg:max-w-[14rem] xl:max-w-[20rem] 2xl:max-w-none">
                             Bangladesh Academy Of Ophthalmology (BAO)
                         </span>
                     </div>
                 </a>
             </div>
 
-            <div class="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
+            <div class="hidden min-w-0 flex-1 items-center justify-end gap-2 lg:flex lg:gap-3">
                 <nav class="shrink-0" aria-label="Primary">
-                    <ul class="flex items-center gap-0.5 xl:gap-1">
+                    <ul class="flex items-center gap-0.5">
                         <li>
-                            <a href="#"
-                                data-open-journal-modal
-                                class="inline-flex items-center rounded-lg px-3 xl:px-4 py-2.5 text-[14px] xl:text-[15px] leading-5 font-medium text-stone-900 hover:text-cyan-600 hover:bg-white/25 transition-colors">
-                                Journal of BAO
+                            <a href="#" data-open-journal-modal
+                                class="inline-flex items-center rounded-md px-2.5 py-2 text-sm font-medium text-stone-800 transition-colors hover:bg-white/40 hover:text-blue-700">
+                                Journal
                             </a>
                         </li>
                         <li>
-                            <a href="#"
-                                data-open-membership-modal
-                                class="inline-flex items-center rounded-lg px-3 xl:px-4 py-2.5 text-[14px] xl:text-[15px] leading-5 font-medium text-stone-900 hover:text-cyan-600 hover:bg-white/25 transition-colors">
+                            <a href="#" data-open-membership-modal
+                                class="inline-flex items-center rounded-md px-2.5 py-2 text-sm font-medium text-stone-800 transition-colors hover:bg-white/40 hover:text-blue-700">
                                 Membership
                             </a>
                         </li>
                         <li>
                             <a href="#photo-gallery"
-                                class="inline-flex items-center rounded-lg px-3 xl:px-4 py-2.5 text-[14px] xl:text-[15px] leading-5 font-medium text-stone-900 hover:text-cyan-600 hover:bg-white/25 transition-colors">
-                                Photo Gallery
+                                class="inline-flex items-center rounded-md px-2.5 py-2 text-sm font-medium text-stone-800 transition-colors hover:bg-white/40 hover:text-blue-700">
+                                Gallery
                             </a>
                         </li>
                         <li>
                             <a href="#committee"
-                                class="inline-flex items-center rounded-lg px-3 xl:px-4 py-2.5 text-[14px] xl:text-[15px] leading-5 font-medium text-stone-900 hover:text-cyan-600 hover:bg-white/25 transition-colors">
+                                class="inline-flex items-center rounded-md px-2.5 py-2 text-sm font-medium text-stone-800 transition-colors hover:bg-white/40 hover:text-blue-700">
                                 Committee
                             </a>
                         </li>
                     </ul>
                 </nav>
 
-                <button type="button" id="bao-admin-header-btn"
-                    class="inline-flex shrink-0 items-center gap-2 rounded-xl border-2 border-stone-800/15 bg-white/75 px-3 py-2 text-[13px] font-bold text-stone-900 shadow-sm backdrop-blur-sm transition hover:border-blue-500 hover:bg-white hover:text-blue-700 xl:px-3.5">
-                    <i id="bao-admin-header-icon" class="fa-solid fa-right-to-bracket text-blue-600" aria-hidden="true"></i>
-                    <span id="bao-admin-header-label">Login</span>
+                <div class="mx-0.5 hidden h-6 w-px shrink-0 bg-stone-900/15 sm:block" aria-hidden="true"></div>
+
+                <button type="button" id="bao-admin-header-btn" title="Login" aria-label="Login"
+                    class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-stone-800/15 bg-white/80 text-stone-900 shadow-sm backdrop-blur-sm transition hover:border-blue-500 hover:text-blue-700 2xl:h-auto 2xl:w-auto 2xl:gap-2 2xl:px-3 2xl:py-2">
+                    <i id="bao-admin-header-icon" class="fa-solid fa-right-to-bracket text-sm text-blue-600 2xl:text-base"
+                        aria-hidden="true"></i>
+                    <span id="bao-admin-header-label" class="hidden text-sm font-semibold 2xl:inline" aria-hidden="true">Login</span>
                 </button>
 
                 <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
-                    title="Register for MOCK test – July 2026 session"
-                    class="group relative inline-flex max-w-[min(100%,22rem)] shrink-0 items-center gap-2.5 overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-500 px-3 py-2 text-white shadow-[0_4px_18px_rgba(37,99,235,0.5)] ring-2 ring-white/45 transition duration-300 hover:from-blue-500 hover:via-blue-600 hover:to-cyan-400 hover:shadow-[0_6px_24px_rgba(8,145,178,0.45)] hover:ring-white/75 active:scale-[0.97] xl:max-w-none xl:gap-3 xl:px-4 xl:py-2">
-                    <span
-                        class="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition duration-700 group-hover:translate-x-full group-hover:opacity-100"></span>
-                    <i class="fas fa-clipboard-check relative shrink-0 text-base opacity-90 xl:text-lg" aria-hidden="true"></i>
-                    <span class="relative min-w-0 flex-1 text-left leading-tight">
-                        <span class="block text-[11px] font-bold uppercase tracking-wide xl:text-xs">Register for MOCK test</span>
-                        <span class="mt-0.5 block text-[9px] font-semibold normal-case leading-snug text-white/95 xl:text-[10px]">For Postgraduate Examinees (Ophthalmology) – July 2026 Session</span>
+                    title="Register for MOCK test – Postgraduate Examinees (Ophthalmology), July 2026"
+                    class="group inline-flex min-w-0 max-w-[min(100%,18rem)] shrink-0 items-center gap-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 px-4 py-2.5 text-[15px] font-bold leading-tight text-white shadow-[0_6px_22px_rgba(37,99,235,0.45)] ring-2 ring-white/40 transition hover:from-blue-500 hover:to-cyan-500 hover:shadow-[0_8px_28px_rgba(8,145,178,0.5)] active:scale-[0.98] xl:max-w-none xl:gap-3.5 xl:px-6 xl:py-3 xl:text-lg">
+                    <i class="fas fa-clipboard-check shrink-0 text-lg opacity-95 xl:text-xl" aria-hidden="true"></i>
+                    <span class="min-w-0 text-left">
+                        <span class="block xl:whitespace-nowrap">MOCK registration</span>
+                        <span class="mt-0.5 hidden text-[11px] font-semibold leading-tight text-white/90 xl:block xl:text-xs">July 2026 · PG Ophthalmology</span>
                     </span>
-                    <i class="fas fa-arrow-right relative shrink-0 text-[9px] opacity-85 transition group-hover:translate-x-1 xl:text-[10px]" aria-hidden="true"></i>
                 </a>
             </div>
 
@@ -221,31 +249,30 @@
         bg-cover bg-center bg-no-repeat backdrop-blur-xl border-b-4 border-blue-600 overflow-hidden
         shadow-[0_6px_28px_-6px_rgba(37,99,235,0.55),0_2px_0_0_rgba(6,182,212,0.35)_inset]
         before:absolute before:inset-0 before:bg-white/55 before:backdrop-blur-2xl before:pointer-events-none">
-        <div class="relative z-10 max-w-7xl mx-auto px-4 h-[72px] flex items-center justify-between">
+        <div class="relative z-10 mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-4">
 
-            <div class="flex min-w-0 flex-1 items-center gap-2 pr-2">
-                <a href="#hero-1" class="flex min-w-0 items-center gap-2">
-                    <img src="{{ asset('pictures/bao_logo.png') }}" class="w-14 h-14 shrink-0 object-contain" alt="BAO logo" width="56" height="56">
-                    <span class="text-sm font-semibold text-slate-900 leading-tight line-clamp-2">বিএও</span>
+            <div class="flex min-w-0 flex-1 items-center gap-2">
+                <a href="#hero-1" class="flex min-w-0 items-center gap-2.5">
+                    <img src="{{ asset('pictures/bao_logo.png') }}" class="h-12 w-12 shrink-0 object-contain" alt="BAO logo" width="48" height="48">
+                    <div class="min-w-0 leading-tight">
+                        <span class="block text-xs font-bold text-slate-900">বিএও</span>
+                        <span class="block truncate text-[10px] font-medium text-slate-600">BAO</span>
+                    </div>
                 </a>
             </div>
 
-            <div class="flex shrink-0 items-center gap-1.5">
+            <div class="flex shrink-0 items-center gap-1">
                 <button type="button" id="bao-admin-mobile-header-btn" title="Login" aria-label="Login"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-stone-800/15 bg-white/80 text-stone-900 shadow-sm backdrop-blur-sm transition hover:border-blue-500 hover:text-blue-700 active:scale-95">
-                    <i id="bao-admin-mobile-header-icon" class="fa-solid fa-right-to-bracket text-lg text-blue-600"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-stone-800/12 bg-white/85 text-stone-900 shadow-sm backdrop-blur-sm transition hover:border-blue-500 hover:text-blue-700 active:scale-95">
+                    <i id="bao-admin-mobile-header-icon" class="fa-solid fa-right-to-bracket text-base text-blue-600"
                         aria-hidden="true"></i>
                 </button>
-                <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
-                    title="Register for MOCK test – For Postgraduate Examinees (Ophthalmology), July 2026 Session"
-                    class="inline-flex max-w-[9.5rem] flex-col items-center justify-center gap-0 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 px-2 py-1.5 text-center text-white shadow-md ring-1 ring-white/30 active:scale-95">
-                    <span class="text-[9px] font-bold uppercase leading-tight tracking-wide">MOCK test</span>
-                    <span class="text-[8px] font-semibold leading-tight text-white/90">July 2026</span>
-                </a>
-                <label for="menu-toggle" class="cursor-pointer p-2 text-gray-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                <label for="menu-toggle"
+                    class="inline-flex cursor-pointer items-center justify-center rounded-lg p-2.5 text-stone-700 transition hover:bg-white/50 hover:text-blue-700 active:scale-95">
+                    <span class="sr-only">Open menu</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                 </label>
             </div>
@@ -277,15 +304,15 @@
             </div>
 
             <ul class="flex flex-1 flex-col gap-2 overflow-y-auto px-4 py-6 pb-10" role="list">
-                <li class="mb-2">
+                <li class="mb-3">
                     <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
                         onclick="document.getElementById('menu-toggle').checked=false"
-                        class="relative flex flex-col items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-500 px-4 py-5 text-center text-white shadow-lg shadow-blue-600/35 ring-2 ring-white/40 transition hover:from-blue-500 hover:to-cyan-400 active:scale-[0.98]">
-                        <span class="flex items-center gap-2 text-base font-bold uppercase tracking-wide">
-                            <i class="fas fa-clipboard-check text-xl opacity-90" aria-hidden="true"></i>
+                        class="relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-500 px-5 py-7 text-center text-white shadow-[0_8px_30px_rgba(37,99,235,0.45)] ring-2 ring-white/45 transition hover:from-blue-500 hover:to-cyan-400 active:scale-[0.98]">
+                        <span class="flex items-center gap-3 text-lg font-bold uppercase tracking-wide sm:text-xl">
+                            <i class="fas fa-clipboard-check text-2xl opacity-90 sm:text-[1.65rem]" aria-hidden="true"></i>
                             Register for MOCK test
                         </span>
-                        <span class="text-sm font-semibold leading-snug text-white/95">For Postgraduate Examinees (Ophthalmology) – July 2026 Session</span>
+                        <span class="max-w-md text-base font-semibold leading-snug text-white/95 sm:text-lg">For Postgraduate Examinees (Ophthalmology) – July 2026 Session</span>
                     </a>
                 </li>
                 <li>
@@ -979,37 +1006,30 @@ before:absolute before:inset-0 before:bg-white/30 before:backdrop-blur-3xl befor
                         class="space-y-3 text-sm text-gray-900 mt-4 font-semibold drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]">
 
                         <li>
-                            <a href="#"
+                            <a href="#" data-open-journal-modal
                                 class="inline-block transition-all duration-300 hover:text-blue-500 hover:translate-x-2">
-                                About Us
+                                Journal
                             </a>
                         </li>
 
                         <li>
-                            <a href="#"
+                            <a href="#" data-open-membership-modal
                                 class="inline-block transition-all duration-300 hover:text-blue-500 hover:translate-x-2">
-                                Our Services
+                                Membership
                             </a>
                         </li>
 
                         <li>
-                            <a href="#"
+                            <a href="#photo-gallery"
                                 class="inline-block transition-all duration-300 hover:text-blue-500 hover:translate-x-2">
-                                Our Team
+                                Gallery
                             </a>
                         </li>
 
                         <li>
-                            <a href="#"
+                            <a href="#committee"
                                 class="inline-block transition-all duration-300 hover:text-blue-500 hover:translate-x-2">
-                                Appointments
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#"
-                                class="inline-block transition-all duration-300 hover:text-blue-500 hover:translate-x-2">
-                                Contact Us
+                                Committee
                             </a>
                         </li>
 
@@ -1026,26 +1046,50 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
                     <ul
                         class="space-y-4 text-sm mt-4 font-semibold text-gray-900 drop-shadow-[0_1px_1px_rgba(0,0,0,0.15)]">
 
+                        <li class="flex items-start gap-3 border-b border-black/10 pb-3">
+                            <i class="fa-solid fa-location-dot mt-1 shrink-0"></i>
+                            <div class="min-w-0 space-y-1">
+                                <p class="leading-snug">
+                                    Plot # 7, OSB Bhaban, 1 Road No. 1, Dhaka 1216
+                                </p>
+                                <p class="text-xs font-normal text-gray-700">
+                                    <span class="font-semibold text-gray-900">Get there:</span>
+                                    14 min · 12 min · 27 min
+                                </p>
+                            </div>
+                        </li>
+
                         <li class="flex items-center gap-3 border-b border-black/10 pb-3">
-                            <i class="fa-regular fa-envelope"></i>
-                            <a href="mailto:contact@company.com"
-                                class="hover:text-blue-500 transition-colors duration-300">
-                                contact@company.com
+                            <i class="fa-regular fa-envelope shrink-0"></i>
+                            <a href="mailto:osbbd@yahoo.com"
+                                class="min-w-0 break-all hover:text-blue-500 transition-colors duration-300">
+                                osbbd@yahoo.com
                             </a>
                         </li>
 
                         <li class="flex items-center gap-3 border-b border-black/10 pb-3">
-                            <i class="fa-solid fa-phone-volume"></i>
-                            <a href="tel:+11234567890" class="hover:text-blue-500 transition-colors duration-300">
-                                (414) 687 - 5892
-                            </a>
+                            <i class="fa-solid fa-phone-volume shrink-0"></i>
+                            <span class="font-semibold">
+                                <span class="text-gray-800">Phone:</span>
+                                <a href="tel:+88029003088" class="hover:text-blue-500 transition-colors duration-300">
+                                    02-9003088
+                                </a>
+                            </span>
                         </li>
 
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot mt-1"></i>
-                            <span class="hover:text-blue-500 transition-colors duration-300">
-                                794 Mcallister St <br> San Francisco, 94102
-                            </span>
+                            <i class="fa-regular fa-clock mt-0.5 shrink-0"></i>
+                            <div class="space-y-1">
+                                <p>
+                                    <span class="text-gray-800">Hours:</span>
+                                </p>
+                                <p class="font-normal leading-snug">
+                                    Opens soon · 9&nbsp;AM
+                                </p>
+                                <p class="text-xs font-normal text-gray-600">
+                                    Updated by others 3 weeks ago
+                                </p>
+                            </div>
                         </li>
 
                     </ul>
@@ -1428,6 +1472,33 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
         </div>
     </div>
 
+    <div id="bao-admin-toast"
+        class="pointer-events-none fixed bottom-8 left-1/2 z-[2280] hidden w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 transform px-3 sm:bottom-10 sm:max-w-xl sm:px-4"
+        role="status" aria-live="polite">
+        <div id="bao-admin-toast-panel"
+            class="pointer-events-auto relative overflow-hidden rounded-3xl border-2 border-blue-400/60 bg-gradient-to-br from-blue-50 via-white to-cyan-50 px-6 py-7 text-center shadow-2xl shadow-blue-700/20 ring-4 ring-blue-300/30 sm:px-10 sm:py-9">
+            <div
+                class="bao-admin-toast-blob-a pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full blur-2xl bg-blue-400/15">
+            </div>
+            <div
+                class="bao-admin-toast-blob-b pointer-events-none absolute -bottom-10 -left-10 h-36 w-36 rounded-full blur-2xl bg-cyan-400/12">
+            </div>
+            <div class="relative">
+                <div class="mb-4 flex justify-center sm:mb-5">
+                    <span id="bao-admin-toast-icon-wrap"
+                        class="bao-admin-toast-icon inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-600 text-3xl text-white shadow-lg shadow-blue-600/40 sm:h-20 sm:w-20 sm:text-4xl"
+                        aria-hidden="true">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </span>
+                </div>
+                <p id="bao-admin-toast-heading"
+                    class="text-xs font-bold uppercase tracking-[0.2em] text-blue-800/90 sm:text-sm">Signed in</p>
+                <p id="bao-admin-toast-message"
+                    class="mt-2 text-lg font-bold leading-snug text-slate-900 sm:mt-3 sm:text-2xl sm:leading-tight"></p>
+            </div>
+        </div>
+    </div>
+
     <script>
         (function () {
             window.baoRefreshBodyScrollLock = function () {
@@ -1609,19 +1680,95 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
                 const iconClass = baoAdminAuth ? 'fa-solid fa-gear' : 'fa-solid fa-right-to-bracket';
                 const elLabel = document.getElementById('bao-admin-header-label');
                 const elIcon = document.getElementById('bao-admin-header-icon');
+                const deskBtn = document.getElementById('bao-admin-header-btn');
                 const mIcon = document.getElementById('bao-admin-mobile-header-icon');
                 const dLabel = document.getElementById('bao-admin-drawer-label');
                 const dIcon = document.getElementById('bao-admin-drawer-icon');
                 const mBtn = document.getElementById('bao-admin-mobile-header-btn');
                 if (elLabel) elLabel.textContent = label;
-                if (elIcon) elIcon.className = iconClass + ' text-blue-600';
-                if (mIcon) mIcon.className = iconClass + ' text-lg text-blue-600';
+                if (elIcon) elIcon.className = iconClass + ' text-sm text-blue-600 2xl:text-base';
+                if (deskBtn) {
+                    deskBtn.setAttribute('aria-label', label);
+                    deskBtn.title = label;
+                }
+                if (mIcon) mIcon.className = iconClass + ' text-base text-blue-600';
                 if (mBtn) {
                     mBtn.setAttribute('aria-label', label);
                     mBtn.title = label;
                 }
                 if (dLabel) dLabel.textContent = label;
                 if (dIcon) dIcon.className = iconClass + ' text-blue-600';
+            }
+
+            const baoAdminToastPanelBase =
+                'pointer-events-auto relative overflow-hidden rounded-3xl border-2 px-6 py-7 text-center shadow-2xl ring-4 sm:px-10 sm:py-9';
+            const baoAdminToastIconBase =
+                'bao-admin-toast-icon inline-flex h-16 w-16 items-center justify-center rounded-2xl text-3xl text-white shadow-lg sm:h-20 sm:w-20 sm:text-4xl';
+            const baoAdminToastBlobBase = 'pointer-events-none absolute rounded-full blur-2xl';
+
+            function applyBaoAdminToastTheme(kind) {
+                const panel = document.getElementById('bao-admin-toast-panel');
+                const iconWrap = document.getElementById('bao-admin-toast-icon-wrap');
+                const heading = document.getElementById('bao-admin-toast-heading');
+                const blobA = panel.querySelector('.bao-admin-toast-blob-a');
+                const blobB = panel.querySelector('.bao-admin-toast-blob-b');
+                if (kind === 'login') {
+                    panel.className = baoAdminToastPanelBase +
+                        ' border-blue-400/60 bg-gradient-to-br from-blue-50 via-white to-cyan-50 shadow-blue-700/20 ring-blue-300/30';
+                    iconWrap.className = baoAdminToastIconBase +
+                        ' bg-gradient-to-br from-blue-600 to-cyan-600 shadow-blue-600/40';
+                    heading.className =
+                        'text-xs font-bold uppercase tracking-[0.2em] text-blue-800/90 sm:text-sm';
+                    blobA.className = baoAdminToastBlobBase +
+                        ' bao-admin-toast-blob-a -right-8 -top-8 h-32 w-32 bg-blue-400/15';
+                    blobB.className = baoAdminToastBlobBase +
+                        ' bao-admin-toast-blob-b -bottom-10 -left-10 h-36 w-36 bg-cyan-400/12';
+                } else {
+                    panel.className = baoAdminToastPanelBase +
+                        ' border-slate-400/55 bg-gradient-to-br from-slate-50 via-white to-indigo-50 shadow-slate-700/20 ring-slate-300/35';
+                    iconWrap.className = baoAdminToastIconBase +
+                        ' bg-gradient-to-br from-slate-600 to-indigo-600 shadow-indigo-600/35';
+                    heading.className =
+                        'text-xs font-bold uppercase tracking-[0.2em] text-slate-700/90 sm:text-sm';
+                    blobA.className = baoAdminToastBlobBase +
+                        ' bao-admin-toast-blob-a -right-8 -top-8 h-32 w-32 bg-slate-400/14';
+                    blobB.className = baoAdminToastBlobBase +
+                        ' bao-admin-toast-blob-b -bottom-10 -left-10 h-36 w-36 bg-indigo-400/12';
+                }
+            }
+
+            function showBaoAdminToast(kind, message) {
+                const wrap = document.getElementById('bao-admin-toast');
+                const panel = document.getElementById('bao-admin-toast-panel');
+                const iconWrap = document.getElementById('bao-admin-toast-icon-wrap');
+                const heading = document.getElementById('bao-admin-toast-heading');
+                const msg = document.getElementById('bao-admin-toast-message');
+                applyBaoAdminToastTheme(kind);
+                if (kind === 'login') {
+                    iconWrap.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+                    heading.textContent = 'Signed in';
+                } else {
+                    iconWrap.innerHTML = '<i class="fa-solid fa-right-from-bracket"></i>';
+                    heading.textContent = 'Signed out';
+                }
+                msg.textContent = message;
+                panel.classList.remove('bao-admin-toast-animate--login', 'bao-admin-toast-animate--logout',
+                    'bao-admin-toast-leave');
+                wrap.classList.remove('hidden');
+                void panel.offsetWidth;
+                panel.classList.add(kind === 'login' ? 'bao-admin-toast-animate--login' :
+                    'bao-admin-toast-animate--logout');
+                clearTimeout(window._baoAdminToastTimer);
+                clearTimeout(window._baoAdminToastHideTimer);
+                window._baoAdminToastTimer = setTimeout(function () {
+                    panel.classList.remove('bao-admin-toast-animate--login', 'bao-admin-toast-animate--logout');
+                    panel.classList.add('bao-admin-toast-leave');
+                    window._baoAdminToastHideTimer = setTimeout(function () {
+                        wrap.classList.add('hidden');
+                        panel.classList.remove('bao-admin-toast-animate--login', 'bao-admin-toast-animate--logout',
+                            'bao-admin-toast-leave');
+                    }, 420);
+                }, 5500);
             }
 
             function handlePrimaryAdminClick(e) {
@@ -1723,6 +1870,7 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
                     baoAdminAuth = true;
                     updateAdminChrome();
                     openPanelModal();
+                    showBaoAdminToast('login', data.message || 'You are signed in as admin.');
                 } catch (err) {
                     loginErr.textContent = 'Network error.';
                     loginErr.classList.remove('hidden');
@@ -1733,8 +1881,9 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
 
             logoutBtn.addEventListener('click', async function () {
                 const token = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+                let logoutMessage = 'You have been logged out.';
                 try {
-                    await fetch(logoutUrl, {
+                    const res = await fetch(logoutUrl, {
                         method: 'POST',
                         headers: {
                             'Accept': 'application/json',
@@ -1742,10 +1891,17 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
                             'X-Requested-With': 'XMLHttpRequest',
                         },
                     });
+                    const data = await res.json().catch(function () {
+                        return {};
+                    });
+                    if (data.message) logoutMessage = data.message;
                 } catch (err) { /* ignore */ }
                 baoAdminAuth = false;
                 updateAdminChrome();
                 closePanelModal();
+                setTimeout(function () {
+                    showBaoAdminToast('logout', logoutMessage);
+                }, 120);
             });
 
             async function loadAdminJournals() {

@@ -60,6 +60,8 @@ class BaoJournalController extends Controller
             'file_path' => $path,
         ]);
 
+        BaoPublishedJournals::appendPublishedIdIfRestricted((int) $journal->id);
+
         return response()->json([
             'message' => 'Journal submitted successfully.',
             'journal' => [

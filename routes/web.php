@@ -13,6 +13,10 @@ Route::get('/bao-website', function () {
     return view('welcome_bao');
 });
 
+Route::get('/startech-layout', function () {
+    return view('startech_catalog');
+})->name('startech.layout');
+
 Route::post('/bao/students', [BaoStudentController::class, 'store'])->name('bao.students.store');
 
 Route::get('/bao/journals', [BaoJournalController::class, 'index'])->name('bao.journals.index');
