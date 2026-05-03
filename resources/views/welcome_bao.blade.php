@@ -167,63 +167,70 @@
 
     <header
         class="site-header hidden lg:flex fixed top-0 left-0 right-0 w-full z-[999] font-['Lato',_sans-serif]
-        bg-[linear-gradient(to_right,rgba(168,85,247,0.12),rgba(236,72,153,0.12),rgba(6,182,212,0.12),rgba(139,92,246,0.12)),linear-gradient(rgba(255,255,255,0.72),rgba(255,255,255,0.62)),url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000')]
-        bg-cover bg-center bg-no-repeat backdrop-blur-xl border-b-4 border-blue-600 overflow-hidden
-        shadow-[0_6px_28px_-6px_rgba(37,99,235,0.55),0_2px_0_0_rgba(6,182,212,0.35)_inset]
-        before:absolute before:inset-0 before:bg-white/55 before:backdrop-blur-2xl before:pointer-events-none">
+        overflow-hidden border-b border-slate-200/80 bg-gradient-to-b from-white/95 via-white/90 to-slate-50/85 text-slate-900 shadow-[0_4px_32px_-8px_rgba(15,23,42,0.12),0_1px_0_0_rgba(255,255,255,0.9)_inset] backdrop-blur-xl backdrop-saturate-150
+        before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(120%_140%_at_0%_0%,rgba(59,130,246,0.08),transparent_55%),radial-gradient(100%_120%_at_100%_0%,rgba(6,182,212,0.06),transparent_50%)]
+        after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-[2px] after:bg-gradient-to-r after:from-blue-600 after:via-cyan-500 after:to-blue-600 after:opacity-90">
         <div
-            class="relative z-10 mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+            class="relative z-10 mx-auto flex h-[76px] w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
 
             <div class="min-w-0 flex-shrink-0">
-                <a href="#hero-1" class="flex min-w-0 items-center gap-2.5 sm:gap-3">
-                    <img src="{{ asset('pictures/bao_logo.png') }}" class="h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14"
-                        alt="BAO logo" width="56" height="56">
+                <a href="#hero-1"
+                    class="group flex min-w-0 items-center gap-3 rounded-2xl py-1 pr-2 transition hover:bg-slate-900/[0.03] sm:gap-3.5 sm:pr-3">
+                    <span
+                        class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white shadow-[0_2px_12px_-2px_rgba(37,99,235,0.2)] ring-1 ring-slate-900/[0.06] sm:h-[52px] sm:w-[52px]">
+                        <img src="{{ asset('pictures/bao_logo.png') }}" class="h-9 w-9 object-contain sm:h-10 sm:w-10"
+                            alt="BAO logo" width="40" height="40">
+                    </span>
 
-                    <div class="min-w-0 border-l border-gray-300/80 pl-2.5 sm:pl-3">
-                        <span class="block truncate text-xs font-semibold leading-snug text-gray-800 sm:text-sm lg:max-w-[14rem] xl:max-w-[20rem] 2xl:max-w-none">
+                    <div class="min-w-0 border-l border-slate-200 pl-2.5 sm:pl-3.5">
+                        <span
+                            class="block truncate text-xs font-semibold leading-snug text-slate-900 sm:text-sm lg:max-w-[14rem] xl:max-w-[20rem] 2xl:max-w-none">
                             বাংলাদেশ একাডেমি অব অপথ্যালমোলজি (বিএও)
                         </span>
-                        <span class="mt-0.5 block truncate text-[10px] font-medium leading-tight text-stone-800 sm:text-xs lg:max-w-[14rem] xl:max-w-[20rem] 2xl:max-w-none">
+                        <span
+                            class="mt-0.5 block truncate text-[10px] font-medium leading-tight text-slate-600 sm:text-xs lg:max-w-[14rem] xl:max-w-[20rem] 2xl:max-w-none">
                             Bangladesh Academy Of Ophthalmology (BAO)
                         </span>
                     </div>
                 </a>
             </div>
 
-            <div class="hidden min-w-0 flex-1 items-center justify-end gap-2 lg:flex lg:gap-3">
-                <nav class="shrink-0" aria-label="Primary">
+            <div class="hidden min-w-0 flex-1 items-center justify-end gap-2.5 lg:flex xl:gap-3.5">
+                <nav class="shrink-0 rounded-full bg-slate-900/[0.04] p-1 ring-1 ring-slate-900/[0.06] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.65)]"
+                    aria-label="Primary">
                     <ul class="flex items-center gap-0.5">
                         <li>
                             <a href="#" data-open-journal-modal
-                                class="inline-flex items-center rounded-md px-2.5 py-2 text-sm font-medium text-stone-800 transition-colors hover:bg-white/40 hover:text-blue-700">
+                                class="inline-flex items-center rounded-full px-3.5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white hover:text-blue-700 hover:shadow-sm">
                                 Journal
                             </a>
                         </li>
                         <li>
                             <a href="#" data-open-membership-modal
-                                class="inline-flex items-center rounded-md px-2.5 py-2 text-sm font-medium text-stone-800 transition-colors hover:bg-white/40 hover:text-blue-700">
+                                class="inline-flex items-center rounded-full px-3.5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white hover:text-blue-700 hover:shadow-sm">
                                 Membership
                             </a>
                         </li>
                         <li>
                             <a href="#photo-gallery"
-                                class="inline-flex items-center rounded-md px-2.5 py-2 text-sm font-medium text-stone-800 transition-colors hover:bg-white/40 hover:text-blue-700">
+                                class="inline-flex items-center rounded-full px-3.5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white hover:text-blue-700 hover:shadow-sm">
                                 Gallery
                             </a>
                         </li>
                         <li>
                             <a href="#committee"
-                                class="inline-flex items-center rounded-md px-2.5 py-2 text-sm font-medium text-stone-800 transition-colors hover:bg-white/40 hover:text-blue-700">
+                                class="inline-flex items-center rounded-full px-3.5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white hover:text-blue-700 hover:shadow-sm">
                                 Committee
                             </a>
                         </li>
                     </ul>
                 </nav>
 
-                <div class="mx-0.5 hidden h-6 w-px shrink-0 bg-stone-900/15 sm:block" aria-hidden="true"></div>
+                <div class="mx-0.5 hidden h-8 w-px shrink-0 bg-gradient-to-b from-transparent via-slate-300/90 to-transparent xl:block"
+                    aria-hidden="true"></div>
 
                 <button type="button" id="bao-admin-header-btn" title="Login" aria-label="Login"
-                    class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-stone-800/15 bg-white/80 text-stone-900 shadow-sm backdrop-blur-sm transition hover:border-blue-500 hover:text-blue-700 2xl:h-auto 2xl:w-auto 2xl:gap-2 2xl:px-3 2xl:py-2">
+                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200/90 bg-white text-slate-800 shadow-sm transition hover:border-blue-300 hover:bg-blue-50/80 hover:text-blue-700 active:scale-[0.98] 2xl:h-auto 2xl:w-auto 2xl:gap-2 2xl:px-4 2xl:py-2.5">
                     <i id="bao-admin-header-icon" class="fa-solid fa-right-to-bracket text-sm text-blue-600 2xl:text-base"
                         aria-hidden="true"></i>
                     <span id="bao-admin-header-label" class="hidden text-sm font-semibold 2xl:inline" aria-hidden="true">Login</span>
@@ -231,11 +238,12 @@
 
                 <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
                     title="Register for MOCK test – Postgraduate Examinees (Ophthalmology), July 2026"
-                    class="group inline-flex min-w-0 max-w-[min(100%,18rem)] shrink-0 items-center gap-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 px-4 py-2.5 text-[15px] font-bold leading-tight text-white shadow-[0_6px_22px_rgba(37,99,235,0.45)] ring-2 ring-white/40 transition hover:from-blue-500 hover:to-cyan-500 hover:shadow-[0_8px_28px_rgba(8,145,178,0.5)] active:scale-[0.98] xl:max-w-none xl:gap-3.5 xl:px-6 xl:py-3 xl:text-lg">
-                    <i class="fas fa-clipboard-check shrink-0 text-lg opacity-95 xl:text-xl" aria-hidden="true"></i>
+                    class="group inline-flex min-w-0 max-w-[min(100%,18rem)] shrink-0 items-center gap-2.5 rounded-full bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-600 px-4 py-2.5 text-[14px] font-bold leading-tight text-white shadow-[0_6px_24px_-4px_rgba(37,99,235,0.45)] ring-1 ring-white/30 transition hover:from-blue-500 hover:via-blue-500 hover:to-cyan-500 hover:shadow-[0_10px_32px_-6px_rgba(8,145,178,0.45)] active:scale-[0.98] xl:max-w-none xl:gap-3 xl:px-5 xl:py-3 xl:text-[15px]">
+                    <i class="fas fa-clipboard-check shrink-0 text-base opacity-95 xl:text-lg" aria-hidden="true"></i>
                     <span class="min-w-0 text-left">
                         <span class="block xl:whitespace-nowrap">MOCK registration</span>
-                        <span class="mt-0.5 hidden text-[11px] font-semibold leading-tight text-white/90 xl:block xl:text-xs">July 2026 · PG Ophthalmology</span>
+                        <span class="mt-0.5 hidden text-[10px] font-semibold leading-tight text-white/90 xl:block xl:text-[11px]">July
+                            2026 · PG Ophthalmology</span>
                     </span>
                 </a>
             </div>
@@ -245,32 +253,35 @@
 
     <header
         class="site-header block lg:hidden fixed top-0 left-0 right-0 w-full z-[999] font-['Lato',_sans-serif]
-        bg-[linear-gradient(to_right,rgba(168,85,247,0.12),rgba(236,72,153,0.12),rgba(6,182,212,0.12),rgba(139,92,246,0.12)),linear-gradient(rgba(255,255,255,0.72),rgba(255,255,255,0.62)),url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000')]
-        bg-cover bg-center bg-no-repeat backdrop-blur-xl border-b-4 border-blue-600 overflow-hidden
-        shadow-[0_6px_28px_-6px_rgba(37,99,235,0.55),0_2px_0_0_rgba(6,182,212,0.35)_inset]
-        before:absolute before:inset-0 before:bg-white/55 before:backdrop-blur-2xl before:pointer-events-none">
-        <div class="relative z-10 mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-4">
+        overflow-hidden border-b border-slate-200/80 bg-gradient-to-b from-white/95 via-white/92 to-slate-50/88 backdrop-blur-xl backdrop-saturate-150
+        shadow-[0_4px_28px_-8px_rgba(15,23,42,0.12)]
+        before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(100%_120%_at_0%_0%,rgba(59,130,246,0.07),transparent_55%)]
+        after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-[2px] after:bg-gradient-to-r after:from-blue-600 after:via-cyan-500 after:to-blue-600 after:opacity-90">
+        <div class="relative z-10 mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-3 px-4">
 
-            <div class="flex min-w-0 flex-1 items-center gap-2">
-                <a href="#hero-1" class="flex min-w-0 items-center gap-2.5">
-                    <img src="{{ asset('pictures/bao_logo.png') }}" class="h-12 w-12 shrink-0 object-contain" alt="BAO logo" width="48" height="48">
+            <div class="flex min-w-0 flex-1 items-center gap-2.5">
+                <a href="#hero-1" class="flex min-w-0 items-center gap-2.5 rounded-xl py-0.5 pr-1 transition active:bg-slate-900/[0.04]">
+                    <span
+                        class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white shadow-[0_2px_10px_-2px_rgba(37,99,235,0.18)] ring-1 ring-slate-900/[0.06]">
+                        <img src="{{ asset('pictures/bao_logo.png') }}" class="h-8 w-8 object-contain" alt="BAO logo" width="32" height="32">
+                    </span>
                     <div class="min-w-0 leading-tight">
-                        <span class="block text-xs font-bold text-slate-900">বিএও</span>
-                        <span class="block truncate text-[10px] font-medium text-slate-600">BAO</span>
+                        <span class="block text-xs font-bold tracking-tight text-slate-900">বিএও</span>
+                        <span class="block truncate text-[10px] font-semibold text-slate-600">BAO</span>
                     </div>
                 </a>
             </div>
 
-            <div class="flex shrink-0 items-center gap-1">
+            <div class="flex shrink-0 items-center gap-1.5">
                 <button type="button" id="bao-admin-mobile-header-btn" title="Login" aria-label="Login"
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-stone-800/12 bg-white/85 text-stone-900 shadow-sm backdrop-blur-sm transition hover:border-blue-500 hover:text-blue-700 active:scale-95">
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200/90 bg-white text-slate-800 shadow-sm transition hover:border-blue-300 hover:bg-blue-50/80 hover:text-blue-700 active:scale-95">
                     <i id="bao-admin-mobile-header-icon" class="fa-solid fa-right-to-bracket text-base text-blue-600"
                         aria-hidden="true"></i>
                 </button>
                 <label for="menu-toggle"
-                    class="inline-flex cursor-pointer items-center justify-center rounded-lg p-2.5 text-stone-700 transition hover:bg-white/50 hover:text-blue-700 active:scale-95">
+                    class="inline-flex cursor-pointer items-center justify-center rounded-full border border-slate-200/80 bg-white p-2.5 text-slate-700 shadow-sm transition hover:border-blue-200 hover:bg-blue-50/50 hover:text-blue-700 active:scale-95">
                     <span class="sr-only">Open menu</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
@@ -282,19 +293,18 @@
     {{-- Full-page mobile menu (fixed to viewport; checkbox is body-level peer) --}}
     <nav
         class="lg:hidden fixed inset-0 z-[1000] flex h-dvh max-h-dvh w-full flex-col overflow-hidden overscroll-contain
-        bg-[linear-gradient(to_right,rgba(168,85,247,0.12),rgba(236,72,153,0.12),rgba(6,182,212,0.12),rgba(139,92,246,0.12)),linear-gradient(rgba(255,255,255,0.72),rgba(255,255,255,0.62)),url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000')]
-        bg-cover bg-center bg-no-repeat backdrop-blur-xl
+        bg-gradient-to-b from-slate-50/98 via-white/95 to-blue-50/40 backdrop-blur-xl
         opacity-0 invisible pointer-events-none translate-y-1
         peer-checked:opacity-100 peer-checked:visible peer-checked:pointer-events-auto peer-checked:translate-y-0
         transition-[opacity,transform] duration-300 ease-out
-        before:absolute before:inset-0 before:bg-white/55 before:backdrop-blur-2xl before:pointer-events-none"
+        before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(80%_60%_at_50%_-10%,rgba(59,130,246,0.08),transparent_65%)]"
         aria-label="Mobile primary">
         <div class="relative z-10 flex min-h-0 flex-1 flex-col">
             <div
-                class="flex shrink-0 items-center justify-between gap-3 border-b-4 border-blue-600 bg-white/25 px-4 py-3 backdrop-blur-md">
-                <span class="text-base font-semibold text-stone-900">Menu</span>
+                class="flex shrink-0 items-center justify-between gap-3 border-b border-slate-200/80 bg-white/90 px-4 py-3.5 shadow-[0_4px_20px_-12px_rgba(15,23,42,0.12)] backdrop-blur-md">
+                <span class="text-base font-bold tracking-tight text-slate-900">Menu</span>
                 <label for="menu-toggle"
-                    class="inline-flex cursor-pointer items-center justify-center rounded-full border-2 border-stone-800/20 bg-white/80 p-3 text-stone-900 shadow-md transition-colors hover:border-blue-600 hover:bg-white hover:text-blue-700 active:scale-95">
+                    class="inline-flex cursor-pointer items-center justify-center rounded-full border border-slate-200/90 bg-white p-2.5 text-slate-800 shadow-sm transition hover:border-blue-300 hover:bg-blue-50/80 hover:text-blue-700 active:scale-95">
                     <span class="sr-only">Close menu</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2.25" aria-hidden="true">
@@ -1048,15 +1058,9 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
 
                         <li class="flex items-start gap-3 border-b border-black/10 pb-3">
                             <i class="fa-solid fa-location-dot mt-1 shrink-0"></i>
-                            <div class="min-w-0 space-y-1">
-                                <p class="leading-snug">
-                                    Plot # 7, OSB Bhaban, 1 Road No. 1, Dhaka 1216
-                                </p>
-                                <p class="text-xs font-normal text-gray-700">
-                                    <span class="font-semibold text-gray-900">Get there:</span>
-                                    14 min · 12 min · 27 min
-                                </p>
-                            </div>
+                            <p class="min-w-0 leading-snug">
+                                Plot # 7, OSB Bhaban, 1 Road No. 1, Dhaka 1216
+                            </p>
                         </li>
 
                         <li class="flex items-center gap-3 border-b border-black/10 pb-3">
@@ -1067,7 +1071,7 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
                             </a>
                         </li>
 
-                        <li class="flex items-center gap-3 border-b border-black/10 pb-3">
+                        <li class="flex items-center gap-3">
                             <i class="fa-solid fa-phone-volume shrink-0"></i>
                             <span class="font-semibold">
                                 <span class="text-gray-800">Phone:</span>
@@ -1075,21 +1079,6 @@ after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-gray-900 after
                                     02-9003088
                                 </a>
                             </span>
-                        </li>
-
-                        <li class="flex items-start gap-3">
-                            <i class="fa-regular fa-clock mt-0.5 shrink-0"></i>
-                            <div class="space-y-1">
-                                <p>
-                                    <span class="text-gray-800">Hours:</span>
-                                </p>
-                                <p class="font-normal leading-snug">
-                                    Opens soon · 9&nbsp;AM
-                                </p>
-                                <p class="text-xs font-normal text-gray-600">
-                                    Updated by others 3 weeks ago
-                                </p>
-                            </div>
                         </li>
 
                     </ul>
