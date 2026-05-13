@@ -156,6 +156,100 @@
         .bao-admin-toast-leave {
             animation: membershipToastOut 0.4s ease-in forwards !important;
         }
+
+        /* MOCK registration CTA — shifting gradient + light sweep (accessibility-aware) */
+        .mock-registration-cta {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background-image: linear-gradient(
+                115deg,
+                #1d4ed8 0%,
+                #0e7490 15%,
+                #4338ca 30%,
+                #0369a1 45%,
+                #2563eb 58%,
+                #0891b2 72%,
+                #4f46e5 86%,
+                #1d4ed8 100%
+            );
+            background-size: 320% 100%;
+            animation: mockRegistrationGradientFlow 5.5s ease-in-out infinite,
+                mockRegistrationGlowPulse 3.2s ease-in-out infinite;
+        }
+
+        .mock-registration-cta > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mock-registration-cta::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.55;
+            background: linear-gradient(
+                105deg,
+                transparent 0%,
+                transparent 38%,
+                rgba(255, 255, 255, 0.35) 49%,
+                rgba(255, 255, 255, 0.55) 50%,
+                rgba(255, 255, 255, 0.32) 51%,
+                transparent 62%,
+                transparent 100%
+            );
+            background-size: 220% 100%;
+            animation: mockRegistrationShimmer 3.8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes mockRegistrationGradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes mockRegistrationGlowPulse {
+            0%,
+            100% {
+                filter: saturate(1) brightness(1);
+                box-shadow: 0 6px 24px -4px rgba(37, 99, 235, 0.45);
+            }
+            50% {
+                filter: saturate(1.08) brightness(1.06);
+                box-shadow: 0 10px 32px -4px rgba(8, 145, 178, 0.55), 0 0 24px -6px rgba(99, 102, 241, 0.35);
+            }
+        }
+
+        @keyframes mockRegistrationShimmer {
+            0% {
+                background-position: 160% 50%;
+            }
+            100% {
+                background-position: -60% 50%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .mock-registration-cta {
+                animation: none;
+                background-size: 100% 100%;
+                filter: none;
+                box-shadow: 0 6px 24px -4px rgba(37, 99, 235, 0.4);
+            }
+
+            .mock-registration-cta::after {
+                animation: none;
+                opacity: 0;
+            }
+        }
     </style>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -238,10 +332,10 @@
 
                 <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
                     title="Register for MOCK test – Postgraduate Examinees (Ophthalmology), July 2026"
-                    class="group inline-flex min-w-0 max-w-[min(100%,18rem)] shrink-0 items-center gap-2.5 rounded-full bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-600 px-4 py-2.5 text-[14px] font-bold leading-tight text-white shadow-[0_6px_24px_-4px_rgba(37,99,235,0.45)] ring-1 ring-white/30 transition hover:from-blue-500 hover:via-blue-500 hover:to-cyan-500 hover:shadow-[0_10px_32px_-6px_rgba(8,145,178,0.45)] active:scale-[0.98] xl:max-w-none xl:gap-3 xl:px-5 xl:py-3 xl:text-[15px]">
+                    class="mock-registration-cta group inline-flex min-w-0 max-w-[min(100%,18rem)] shrink-0 items-center gap-2.5 rounded-full px-4 py-2.5 text-[14px] font-bold leading-tight text-white ring-1 ring-white/35 transition hover:brightness-110 active:scale-[0.98] xl:max-w-none xl:gap-3 xl:px-5 xl:py-3 xl:text-[15px]">
                     <i class="fas fa-clipboard-check shrink-0 text-base opacity-95 xl:text-lg" aria-hidden="true"></i>
                     <span class="min-w-0 text-left">
-                        <span class="block xl:whitespace-nowrap">MOCK registration</span>
+                        <span class="block xl:whitespace-nowrap">MOCK Test registration</span>
                         <span class="mt-0.5 hidden text-[10px] font-semibold leading-tight text-white/90 xl:block xl:text-[11px]">July
                             2026 · PG Ophthalmology</span>
                     </span>
@@ -317,7 +411,7 @@
                 <li class="mb-3">
                     <a href="https://osb.org.bd/registration-bao" target="_blank" rel="noopener noreferrer"
                         onclick="document.getElementById('menu-toggle').checked=false"
-                        class="relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-500 px-5 py-7 text-center text-white shadow-[0_8px_30px_rgba(37,99,235,0.45)] ring-2 ring-white/45 transition hover:from-blue-500 hover:to-cyan-400 active:scale-[0.98]">
+                        class="mock-registration-cta relative flex flex-col items-center gap-3 overflow-hidden rounded-2xl px-5 py-7 text-center text-white ring-2 ring-white/45 transition hover:brightness-110 active:scale-[0.98]">
                         <span class="flex items-center gap-3 text-lg font-bold uppercase tracking-wide sm:text-xl">
                             <i class="fas fa-clipboard-check text-2xl opacity-90 sm:text-[1.65rem]" aria-hidden="true"></i>
                             Register for MOCK test

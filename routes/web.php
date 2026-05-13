@@ -13,6 +13,10 @@ Route::get('/bao-website', function () {
     return view('welcome_bao');
 });
 
+Route::get('/finance-software', function () {
+    return view('finance_software');
+});
+
 Route::get('/startech-layout', function () {
     return view('startech_catalog');
 })->name('startech.layout');
