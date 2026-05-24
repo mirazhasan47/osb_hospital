@@ -4,6 +4,15 @@ use App\Http\Controllers\BaoAdminController;
 use App\Http\Controllers\BaoJournalController;
 use App\Http\Controllers\BaoStudentController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AccountantController;
+
+Route::post('/login-check', [AccountantController::class, 'loginCheck'])->name('login.check');
+
+// Dashboard Routes
+Route::prefix('accountant')->name('accountant.')->group(function () {
+    Route::get('/dashboard', [AccountantController::class, 'dashboard'])->name('dashboard');
+    Route::post('/income', [AccountantController::class, 'storeIncome'])->name('income.store');
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,6 +25,7 @@ Route::get('/bao-website', function () {
 Route::get('/finance-software', function () {
     return view('finance_software');
 });
+
 
 Route::get('/startech-layout', function () {
     return view('startech_catalog');

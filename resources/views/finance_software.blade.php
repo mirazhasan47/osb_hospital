@@ -40,7 +40,7 @@
       <!-- Left Side -->
       <div>
         <h1 class="text-4xl font-extrabold text-gray-800">
-         OSB Financial Dashboard
+          OSB Financial Dashboard
         </h1>
 
         <p class="text-gray-500 mt-2 text-lg">
@@ -68,18 +68,52 @@
 
       </div>
 
-      <button
-        class="relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-semibold text-white transition-all duration-300 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 shadow-lg hover:scale-105 hover:shadow-2xl active:scale-95">
-        <span class="absolute inset-0 bg-white opacity-0 hover:opacity-10 transition-opacity duration-300"></span>
-
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M15 12H3m0 0l4-4m-4 4l4 4m13-9v10a2 2 0 01-2 2h-5a2 2 0 01-2-2V7a2 2 0 012-2h5a2 2 0 012 2z" />
-        </svg>
-
+      <!-- Login Button -->
+      <button onclick="openModal()"
+        class="px-8 py-3 text-white rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg">
         Login
       </button>
+
+      <!-- Overlay -->
+      <div id="loginModal" class="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50
+         opacity-0 pointer-events-none transition-all duration-300" onclick="outsideClick(event)">
+        <!-- Modal Box (FIXED: Added scale-95 here as the default state) -->
+        <div class="relative w-[90%] max-w-md p-8 bg-white rounded-3xl shadow-2xl
+           transform scale-95 transition duration-300" id="modalBox">
+
+          <!-- Close Button -->
+          <button onclick="closeModal()" class="absolute top-3 right-4 text-3xl text-gray-500 hover:text-black">
+            &times;
+          </button>
+
+          <h2 class="text-2xl font-bold mb-5 text-center">Login</h2>
+
+          <form action="{{ route('login.check') }}" method="POST">
+            @csrf
+            <h2 class="text-2xl font-bold mb-5 text-center">Login</h2>
+
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              class="w-full mb-3 px-4 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500"
+              required
+            />
+
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              class="w-full mb-5 px-4 py-2 border rounded-xl focus:ring-2 focus:ring-blue-500"
+              required
+            />
+
+            <button type="submit" class="w-full py-2 text-white bg-blue-600 rounded-xl hover:bg-blue-700">
+              Sign In
+            </button>
+          </form>
+        </div>
+      </div>
 
     </div>
 
@@ -473,6 +507,31 @@
     function addNewTransaction() {
       alert("নতুন লেনদেন এন্ট্রি ফর্ম এখানে ওপেন হবে");
     }
+
+
+            const modal = document.getElementById("loginModal");
+        const box = document.getElementById("modalBox");
+
+        function openModal() {
+          modal.classList.remove("opacity-0", "pointer-events-none");
+          box.classList.remove("scale-95");
+          box.classList.add("scale-100");
+        }
+
+        function closeModal() {
+          modal.classList.add("opacity-0", "pointer-events-none");
+          box.classList.add("scale-95");
+          box.classList.remove("scale-100");
+        }
+
+        function outsideClick(e) {
+          if (e.target === modal) closeModal();
+        }
+
+        // ESC key support
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeModal();
+        });
   </script>
 
 </body>
